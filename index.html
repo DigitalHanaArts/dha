@@ -1,2176 +1,2829 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-```
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-    name="description"
-    content="Digital Hana Arts — Computational creativity at the intersection of art, data, artificial intelligence and blockchain."
->
+    <meta
+        name="description"
+        content="Digital Hana Arts — Computational creativity at the intersection of art, data, artificial intelligence and blockchain."
+    >
 
-<meta
-    name="theme-color"
-    content="#08080d"
->
+    <meta
+        name="theme-color"
+        content="#08080d"
+    >
 
-<meta
-    property="og:title"
-    content="Digital Hana Arts"
->
+    <meta
+        property="og:title"
+        content="Digital__Hana__Arts®"
+    >
 
-<meta
-    property="og:description"
-    content="Art × Data × Intelligence × Blockchain"
->
+    <meta
+        property="og:description"
+        content="Art × Data × Intelligence × Blockchain"
+    >
 
-<meta
-    property="og:type"
-    content="website"
->
+    <meta
+        property="og:type"
+        content="website"
+    >
 
-<title>Digital Hana Arts — Art × Data × Intelligence</title>
+    <title>
+        Digital Hana Arts — Art × Data × Intelligence
+    </title>
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
-
-<style>
-
-    /* =========================================================
-       DHA — GLOBAL
-    ========================================================= */
-
-    :root {
-        --bg: #07070b;
-        --bg-soft: #0d0d14;
-        --text: #f5f5f7;
-        --muted: #9b9ba8;
-        --line: rgba(255,255,255,.10);
-
-        --cyan: #00e5ff;
-        --violet: #8b5cf6;
-        --pink: #ff3cac;
-        --orange: #ff9f43;
-
-        --radius: 24px;
-        --max-width: 1240px;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-
-        background:
-            radial-gradient(
-                circle at 15% 15%,
-                rgba(139,92,246,.14),
-                transparent 28%
-            ),
-            radial-gradient(
-                circle at 85% 30%,
-                rgba(0,229,255,.10),
-                transparent 28%
-            ),
-            radial-gradient(
-                circle at 50% 90%,
-                rgba(255,60,172,.09),
-                transparent 30%
-            ),
-            var(--bg);
-
-        color: var(--text);
-
-        font-family:
-            "Inter",
-            system-ui,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-
-        overflow-x: hidden;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    ::selection {
-        background: var(--pink);
-        color: white;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
 
-    /* =========================================================
-       AMBIENT GRID
-    ========================================================= */
+    <style>
 
-    body::before {
-        content: "";
+        /* =========================================================
+           DHA — GLOBAL
+        ========================================================= */
 
-        position: fixed;
-        inset: 0;
+        :root {
 
-        pointer-events: none;
+            --bg: #07070b;
+            --bg-soft: #0d0d14;
 
-        background-image:
-            linear-gradient(
-                rgba(255,255,255,.025) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                90deg,
-                rgba(255,255,255,.025) 1px,
-                transparent 1px
-            );
+            --text: #f5f5f7;
+            --muted: #9b9ba8;
 
-        background-size: 70px 70px;
+            --line:
+                rgba(255,255,255,.10);
 
-        mask-image:
-            linear-gradient(
-                to bottom,
-                black,
-                transparent 80%
-            );
+            --cyan: #00e5ff;
+            --violet: #8b5cf6;
+            --pink: #ff3cac;
+            --orange: #ff9f43;
 
-        z-index: -3;
-    }
+            --radius: 24px;
 
+            --max-width: 1240px;
 
-    /* =========================================================
-       FLOATING LIGHT
-    ========================================================= */
-
-    .orb {
-        position: fixed;
-
-        width: 320px;
-        height: 320px;
-
-        border-radius: 50%;
-
-        filter: blur(90px);
-
-        opacity: .15;
-
-        pointer-events: none;
-
-        z-index: -2;
-    }
-
-    .orb.one {
-        background: var(--violet);
-        top: 5%;
-        left: -100px;
-
-        animation: floatOne 14s ease-in-out infinite;
-    }
-
-    .orb.two {
-        background: var(--cyan);
-        top: 40%;
-        right: -120px;
-
-        animation: floatTwo 18s ease-in-out infinite;
-    }
-
-    .orb.three {
-        background: var(--pink);
-        bottom: -100px;
-        left: 40%;
-
-        animation: floatThree 16s ease-in-out infinite;
-    }
-
-    @keyframes floatOne {
-        0%, 100% {
-            transform: translate(0, 0);
         }
 
-        50% {
-            transform: translate(100px, 80px);
-        }
-    }
 
-    @keyframes floatTwo {
-        0%, 100% {
-            transform: translate(0, 0);
+        * {
+            box-sizing: border-box;
         }
 
-        50% {
-            transform: translate(-80px, -60px);
-        }
-    }
 
-    @keyframes floatThree {
-        0%, 100% {
-            transform: translate(0, 0);
+        html {
+            scroll-behavior: smooth;
         }
 
-        50% {
-            transform: translate(60px, -80px);
-        }
-    }
 
+        body {
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
+            margin: 0;
+            padding: 0;
 
-    nav {
-        position: fixed;
+            background:
 
-        top: 18px;
-        left: 50%;
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(139,92,246,.14),
+                    transparent 28%
+                ),
 
-        transform: translateX(-50%);
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(0,229,255,.10),
+                    transparent 28%
+                ),
 
-        width: min(
-            calc(100% - 32px),
-            1120px
-        );
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(255,60,172,.09),
+                    transparent 30%
+                ),
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+                var(--bg);
 
-        padding: 12px 16px 12px 20px;
+            color: var(--text);
 
-        background:
-            rgba(10,10,16,.72);
+            font-family:
+                "Inter",
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
 
-        border:
-            1px solid rgba(255,255,255,.10);
+            overflow-x: hidden;
 
-        backdrop-filter: blur(22px);
-        -webkit-backdrop-filter: blur(22px);
-
-        border-radius: 999px;
-
-        z-index: 1000;
-
-        box-shadow:
-            0 20px 60px rgba(0,0,0,.35);
-    }
-
-    .nav-brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        font-weight: 700;
-        letter-spacing: -.02em;
-    }
-
-    .nav-dot {
-        width: 10px;
-        height: 10px;
-
-        border-radius: 50%;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--cyan),
-                var(--violet),
-                var(--pink)
-            );
-
-        box-shadow:
-            0 0 18px rgba(0,229,255,.65);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 26px;
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 11px;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-
-        color: var(--muted);
-    }
-
-    .nav-links a {
-        transition:
-            color .25s ease,
-            transform .25s ease;
-    }
-
-    .nav-links a:hover {
-        color: white;
-        transform: translateY(-1px);
-    }
-
-
-    /* =========================================================
-       CONTAINER
-    ========================================================= */
-
-    .container {
-        width: min(
-            calc(100% - 40px),
-            var(--max-width)
-        );
-
-        margin: auto;
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-        min-height: 100vh;
-
-        display: flex;
-        align-items: center;
-
-        position: relative;
-
-        padding:
-            140px 0
-            90px;
-    }
-
-    .hero-grid {
-        display: grid;
-
-        grid-template-columns:
-            minmax(0, 1.15fr)
-            minmax(320px, .85fr);
-
-        gap: 70px;
-
-        align-items: center;
-    }
-
-    .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 11px;
-
-        letter-spacing: .16em;
-
-        text-transform: uppercase;
-
-        color: var(--muted);
-
-        margin-bottom: 26px;
-    }
-
-    .eyebrow::before {
-        content: "";
-
-        width: 28px;
-        height: 1px;
-
-        background:
-            linear-gradient(
-                90deg,
-                var(--cyan),
-                var(--pink)
-            );
-    }
-
-    .hero h1 {
-        margin: 0;
-
-        font-size:
-            clamp(4rem, 9vw, 8.5rem);
-
-        line-height: .82;
-
-        letter-spacing: -.085em;
-
-        font-weight: 800;
-    }
-
-    .hero h1 span {
-        display: block;
-    }
-
-    .hero h1 .gradient {
-        background:
-            linear-gradient(
-                100deg,
-                var(--cyan),
-                #7c7cff 35%,
-                var(--pink) 70%,
-                var(--orange)
-            );
-
-        background-size: 250% auto;
-
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        color: transparent;
-
-        animation:
-            gradientMove 8s ease infinite;
-    }
-
-    @keyframes gradientMove {
-        0%, 100% {
-            background-position: 0% 50%;
         }
 
-        50% {
-            background-position: 100% 50%;
-        }
-    }
 
-    .hero-copy {
-        max-width: 650px;
+        a {
 
-        margin-top: 36px;
+            color: inherit;
 
-        color: var(--muted);
+            text-decoration: none;
 
-        font-size:
-            clamp(1rem, 1.6vw, 1.25rem);
-
-        line-height: 1.75;
-
-        font-weight: 300;
-    }
-
-    .hero-copy strong {
-        color: white;
-        font-weight: 500;
-    }
-
-    .hero-actions {
-        display: flex;
-        gap: 14px;
-
-        margin-top: 36px;
-
-        flex-wrap: wrap;
-    }
-
-    .button {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
-        min-height: 48px;
-
-        padding:
-            0 22px;
-
-        border-radius: 999px;
-
-        border:
-            1px solid rgba(255,255,255,.14);
-
-        font-size: 13px;
-        font-weight: 600;
-
-        transition:
-            transform .25s ease,
-            border-color .25s ease,
-            background .25s ease;
-    }
-
-    .button:hover {
-        transform: translateY(-3px);
-
-        border-color:
-            rgba(255,255,255,.35);
-    }
-
-    .button.primary {
-        color: #050507;
-
-        background:
-            linear-gradient(
-                100deg,
-                var(--cyan),
-                #8b7cff,
-                var(--pink)
-            );
-
-        border: none;
-    }
-
-    .button.secondary {
-        background:
-            rgba(255,255,255,.04);
-    }
-
-
-    /* =========================================================
-       HERO ART
-    ========================================================= */
-
-    .hero-art {
-        min-height: 520px;
-
-        position: relative;
-
-        display: grid;
-        place-items: center;
-    }
-
-    .planet {
-        width: min(440px, 80vw);
-        aspect-ratio: 1;
-
-        border-radius: 50%;
-
-        background:
-            radial-gradient(
-                circle at 35% 30%,
-                rgba(255,255,255,.8),
-                transparent 2%
-            ),
-            radial-gradient(
-                circle at 35% 35%,
-                #4033ff,
-                #17137d 38%,
-                #090916 72%
-            );
-
-        box-shadow:
-            0 0 100px rgba(92,80,255,.25),
-            inset -40px -30px 100px rgba(0,0,0,.65);
-
-        position: relative;
-
-        animation:
-            planetFloat 8s ease-in-out infinite;
-    }
-
-    @keyframes planetFloat {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
         }
 
-        50% {
-            transform: translateY(-15px) rotate(2deg);
-        }
-    }
 
-    .planet::before {
-        content: "";
+        ::selection {
 
-        position: absolute;
-        inset: -20px;
+            background: var(--pink);
 
-        border:
-            1px solid
-            rgba(0,229,255,.30);
+            color: white;
 
-        border-radius: 50%;
-
-        transform:
-            rotate(-18deg)
-            scaleY(.32);
-
-        box-shadow:
-            0 0 35px rgba(0,229,255,.15);
-    }
-
-    .planet::after {
-        content: "";
-
-        position: absolute;
-
-        inset: 18%;
-
-        border-radius: 50%;
-
-        background:
-            repeating-radial-gradient(
-                circle,
-                transparent 0 10px,
-                rgba(255,255,255,.025) 11px 12px
-            );
-
-        opacity: .6;
-    }
-
-    .node {
-        position: absolute;
-
-        width: 7px;
-        height: 7px;
-
-        border-radius: 50%;
-
-        background: white;
-
-        box-shadow:
-            0 0 16px
-            rgba(255,255,255,.8);
-    }
-
-    .node.n1 {
-        top: 18%;
-        left: 15%;
-    }
-
-    .node.n2 {
-        top: 70%;
-        left: 18%;
-    }
-
-    .node.n3 {
-        top: 25%;
-        right: 18%;
-    }
-
-    .node.n4 {
-        bottom: 16%;
-        right: 22%;
-    }
-
-    .node.n5 {
-        top: 48%;
-        right: 7%;
-    }
-
-
-    /* =========================================================
-       MARQUEE
-    ========================================================= */
-
-    .marquee {
-        overflow: hidden;
-
-        border-top:
-            1px solid var(--line);
-
-        border-bottom:
-            1px solid var(--line);
-
-        padding: 16px 0;
-
-        color: rgba(255,255,255,.45);
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 12px;
-
-        letter-spacing: .14em;
-
-        text-transform: uppercase;
-
-        white-space: nowrap;
-    }
-
-    .marquee-track {
-        display: inline-flex;
-
-        gap: 50px;
-
-        animation:
-            marquee 28s linear infinite;
-    }
-
-    .marquee-track span:nth-child(4n+1) {
-        color: var(--cyan);
-    }
-
-    .marquee-track span:nth-child(4n+2) {
-        color: var(--violet);
-    }
-
-    .marquee-track span:nth-child(4n+3) {
-        color: var(--pink);
-    }
-
-    @keyframes marquee {
-        to {
-            transform: translateX(-50%);
-        }
-    }
-
-
-    /* =========================================================
-       SECTION
-    ========================================================= */
-
-    section {
-        padding: 130px 0;
-    }
-
-    .section-label {
-        font-family:
-            "DM Mono",
-            monospace;
-
-        color: var(--muted);
-
-        font-size: 11px;
-
-        letter-spacing: .14em;
-
-        text-transform: uppercase;
-
-        margin-bottom: 22px;
-    }
-
-    .section-title {
-        margin: 0;
-
-        max-width: 900px;
-
-        font-size:
-            clamp(2.7rem, 6vw, 5.8rem);
-
-        line-height: .95;
-
-        letter-spacing: -.065em;
-    }
-
-    .section-title .gradient {
-        background:
-            linear-gradient(
-                100deg,
-                var(--cyan),
-                var(--violet),
-                var(--pink)
-            );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        color: transparent;
-    }
-
-    .section-intro {
-        max-width: 700px;
-
-        margin-top: 30px;
-
-        color: var(--muted);
-
-        line-height: 1.8;
-
-        font-size: 1.05rem;
-    }
-
-
-    /* =========================================================
-       DOMAIN CARDS
-    ========================================================= */
-
-    .domains {
-        display: grid;
-
-        grid-template-columns:
-            repeat(4, 1fr);
-
-        gap: 14px;
-
-        margin-top: 60px;
-    }
-
-    .domain {
-        min-height: 320px;
-
-        padding: 28px;
-
-        border:
-            1px solid var(--line);
-
-        border-radius:
-            var(--radius);
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,.07),
-                rgba(255,255,255,.025)
-            );
-
-        position: relative;
-
-        overflow: hidden;
-
-        transition:
-            transform .35s ease,
-            border-color .35s ease;
-    }
-
-    .domain:hover {
-        transform:
-            translateY(-10px)
-            rotate(-.5deg);
-
-        border-color:
-            rgba(255,255,255,.28);
-    }
-
-    .domain::before {
-        content: "";
-
-        position: absolute;
-
-        width: 180px;
-        height: 180px;
-
-        border-radius: 50%;
-
-        top: -80px;
-        right: -70px;
-
-        filter: blur(35px);
-
-        opacity: .35;
-    }
-
-    .domain.art::before {
-        background: var(--pink);
-    }
-
-    .domain.data::before {
-        background: var(--cyan);
-    }
-
-    .domain.ai::before {
-        background: var(--violet);
-    }
-
-    .domain.chain::before {
-        background: var(--orange);
-    }
-
-    .domain-number {
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 11px;
-
-        color: var(--muted);
-    }
-
-    .domain-symbol {
-        font-size: 42px;
-
-        margin:
-            40px 0 25px;
-    }
-
-    .domain h3 {
-        margin: 0 0 12px;
-
-        font-size: 23px;
-    }
-
-    .domain p {
-        color: var(--muted);
-
-        font-size: 14px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-grid {
-        display: grid;
-
-        grid-template-columns:
-            .8fr 1.2fr;
-
-        gap: 80px;
-
-        align-items: center;
-    }
-
-    .about-visual {
-        min-height: 520px;
-
-        border-radius:
-            40px;
-
-        position: relative;
-
-        overflow: hidden;
-
-        background:
-            radial-gradient(
-                circle at 30% 30%,
-                var(--pink),
-                transparent 22%
-            ),
-            radial-gradient(
-                circle at 70% 60%,
-                var(--cyan),
-                transparent 25%
-            ),
-            radial-gradient(
-                circle at 45% 80%,
-                var(--violet),
-                transparent 28%
-            ),
-            #11111a;
-    }
-
-    .about-visual::before {
-        content: "DHA";
-
-        position: absolute;
-
-        inset: 0;
-
-        display: grid;
-        place-items: center;
-
-        font-size:
-            clamp(7rem, 18vw, 15rem);
-
-        font-weight: 800;
-
-        letter-spacing: -.1em;
-
-        color:
-            rgba(255,255,255,.05);
-
-        transform:
-            rotate(-10deg);
-    }
-
-    .about-visual::after {
-        content: "";
-
-        position: absolute;
-
-        width: 280px;
-        height: 280px;
-
-        border:
-            1px solid
-            rgba(255,255,255,.25);
-
-        border-radius: 50%;
-
-        top: 50%;
-        left: 50%;
-
-        transform:
-            translate(-50%,-50%)
-            rotate(25deg)
-            scaleY(.38);
-    }
-
-    .about-text h2 {
-        font-size:
-            clamp(2.5rem, 5vw, 5rem);
-
-        line-height: .95;
-
-        letter-spacing: -.06em;
-
-        margin: 0;
-    }
-
-    .about-text p {
-        color: var(--muted);
-
-        font-size: 1.05rem;
-
-        line-height: 1.85;
-
-        margin-top: 28px;
-    }
-
-
-    /* =========================================================
-       PROJECT
-    ========================================================= */
-
-    .project {
-        margin-top: 65px;
-
-        display: grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        min-height: 520px;
-
-        border:
-            1px solid var(--line);
-
-        border-radius:
-            36px;
-
-        overflow: hidden;
-
-        background:
-            rgba(255,255,255,.035);
-    }
-
-    .project-visual {
-        position: relative;
-
-        display: grid;
-        place-items: center;
-
-        overflow: hidden;
-
-        background:
-            radial-gradient(
-                circle at 30% 30%,
-                rgba(0,229,255,.28),
-                transparent 25%
-            ),
-            radial-gradient(
-                circle at 70% 70%,
-                rgba(255,60,172,.22),
-                transparent 30%
-            ),
-            #0b0b13;
-    }
-
-    .project-orbit {
-        width: 280px;
-        height: 280px;
-
-        border:
-            1px solid
-            rgba(255,255,255,.25);
-
-        border-radius: 50%;
-
-        position: relative;
-
-        transform:
-            rotate(-20deg)
-            scaleY(.45);
-    }
-
-    .project-orbit::before,
-    .project-orbit::after {
-        content: "";
-
-        position: absolute;
-
-        inset: 35px;
-
-        border:
-            1px solid
-            rgba(0,229,255,.35);
-
-        border-radius: 50%;
-    }
-
-    .project-orbit::after {
-        inset: 75px;
-
-        border-color:
-            rgba(255,60,172,.35);
-    }
-
-    .project-core {
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        width: 90px;
-        height: 90px;
-
-        transform:
-            translate(-50%,-50%)
-            scaleY(2.2);
-
-        border-radius: 50%;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--cyan),
-                var(--violet),
-                var(--pink)
-            );
-
-        box-shadow:
-            0 0 80px
-            rgba(139,92,246,.5);
-    }
-
-    .project-info {
-        padding:
-            clamp(35px, 6vw, 75px);
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-    }
-
-    .project-tag {
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 11px;
-
-        color: var(--cyan);
-
-        text-transform: uppercase;
-
-        letter-spacing: .15em;
-
-        margin-bottom: 20px;
-    }
-
-    .project-info h3 {
-        margin: 0;
-
-        font-size:
-            clamp(2.5rem, 5vw, 4.8rem);
-
-        letter-spacing: -.07em;
-
-        line-height: .9;
-    }
-
-    .project-info p {
-        color: var(--muted);
-
-        line-height: 1.8;
-
-        margin:
-            30px 0;
-    }
-
-    .tech {
-        display: flex;
-
-        gap: 8px;
-
-        flex-wrap: wrap;
-    }
-
-    .tech span {
-        border:
-            1px solid var(--line);
-
-        padding:
-            7px 11px;
-
-        border-radius: 999px;
-
-        color: var(--muted);
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 10px;
-    }
-
-
-    /* =========================================================
-       HANA
-    ========================================================= */
-
-    .hana {
-        position: relative;
-
-        overflow: hidden;
-
-        padding:
-            100px 0;
-
-        border-top:
-            1px solid var(--line);
-
-        border-bottom:
-            1px solid var(--line);
-    }
-
-    .hana-grid {
-        display: grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap: 80px;
-
-        align-items: center;
-    }
-
-    .hana-copy h2 {
-        font-size:
-            clamp(3rem, 7vw, 7rem);
-
-        line-height: .82;
-
-        letter-spacing: -.08em;
-
-        margin: 0;
-    }
-
-    .hana-copy h2 span {
-        display: block;
-    }
-
-    .hana-copy h2 .hana-gradient {
-        background:
-            linear-gradient(
-                100deg,
-                var(--orange),
-                var(--pink),
-                var(--violet)
-            );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        color: transparent;
-    }
-
-    .hana-copy p {
-        color: var(--muted);
-
-        max-width: 550px;
-
-        line-height: 1.8;
-
-        margin-top: 30px;
-    }
-
-    .hana-image {
-        min-height: 480px;
-
-        border-radius: 40px;
-
-        position: relative;
-
-        overflow: hidden;
-
-        background:
-            linear-gradient(
-                145deg,
-                #171721,
-                #0c0c12
-            );
-    }
-
-    .hana-image::before {
-        content: "";
-
-        position: absolute;
-        inset: 0;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0,229,255,.15),
-                transparent 35%,
-                rgba(255,60,172,.15)
-            );
-
-        z-index: 1;
-
-        pointer-events: none;
-    }
-
-    .hana-image img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        display: block;
-
-        filter:
-            saturate(.9)
-            contrast(1.05);
-    }
-
-
-    /* =========================================================
-       PHILOSOPHY
-    ========================================================= */
-
-    .philosophy {
-        text-align: center;
-
-        padding:
-            180px 0;
-    }
-
-    .philosophy-mark {
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 12px;
-
-        color: var(--muted);
-
-        letter-spacing: .2em;
-
-        margin-bottom: 30px;
-    }
-
-    .philosophy h2 {
-        margin: auto;
-
-        max-width: 1100px;
-
-        font-size:
-            clamp(3rem, 7vw, 7rem);
-
-        line-height: .9;
-
-        letter-spacing: -.075em;
-    }
-
-    .philosophy h2 span {
-        background:
-            linear-gradient(
-                100deg,
-                var(--cyan),
-                var(--violet),
-                var(--pink)
-            );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        color: transparent;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-        border-top:
-            1px solid var(--line);
-
-        padding:
-            60px 0 35px;
-    }
-
-    .footer-grid {
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: flex-start;
-
-        gap: 40px;
-    }
-
-    .footer-brand {
-        font-size: 22px;
-
-        font-weight: 700;
-
-        letter-spacing: -.04em;
-    }
-
-    .footer-sub {
-        color: var(--muted);
-
-        margin-top: 10px;
-
-        font-size: 13px;
-    }
-
-    .footer-links {
-        display: flex;
-
-        gap: 20px;
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 11px;
-
-        text-transform: uppercase;
-
-        letter-spacing: .08em;
-
-        color: var(--muted);
-    }
-
-    .footer-links a:hover {
-        color: white;
-    }
-
-    .copyright {
-        margin-top: 60px;
-
-        padding-top: 20px;
-
-        border-top:
-            1px solid var(--line);
-
-        display: flex;
-
-        justify-content: space-between;
-
-        color: #555560;
-
-        font-family:
-            "DM Mono",
-            monospace;
-
-        font-size: 10px;
-
-        letter-spacing: .08em;
-
-        text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 900px) {
-
-        .nav-links {
-            display: none;
         }
 
-        .hero-grid,
-        .about-grid,
-        .hana-grid,
-        .project {
-            grid-template-columns: 1fr;
+
+        /* =========================================================
+           AMBIENT GRID
+        ========================================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            mask-image:
+
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 80%
+                );
+
+            z-index: -3;
+
         }
 
-        .hero {
-            padding-top: 130px;
+
+        /* =========================================================
+           FLOATING LIGHT
+        ========================================================= */
+
+        .orb {
+
+            position: fixed;
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            opacity: .15;
+
+            pointer-events: none;
+
+            z-index: -2;
+
         }
 
-        .hero-art {
-            min-height: 380px;
+
+        .orb.one {
+
+            background: var(--violet);
+
+            top: 5%;
+            left: -100px;
+
+            animation:
+                floatOne 14s ease-in-out infinite;
+
         }
 
-        .domains {
-            grid-template-columns:
-                repeat(2, 1fr);
+
+        .orb.two {
+
+            background: var(--cyan);
+
+            top: 40%;
+            right: -120px;
+
+            animation:
+                floatTwo 18s ease-in-out infinite;
+
         }
 
-        .project-visual {
-            min-height: 400px;
+
+        .orb.three {
+
+            background: var(--pink);
+
+            bottom: -100px;
+            left: 40%;
+
+            animation:
+                floatThree 16s ease-in-out infinite;
+
         }
 
-        .hana-image {
-            min-height: 400px;
+
+        @keyframes floatOne {
+
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(100px, 80px);
+            }
+
         }
-    }
 
-    @media (max-width: 600px) {
 
-        .container {
+        @keyframes floatTwo {
+
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-80px, -60px);
+            }
+
+        }
+
+
+        @keyframes floatThree {
+
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(60px, -80px);
+            }
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 18px;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
             width:
                 min(
-                    calc(100% - 28px),
+                    calc(100% - 32px),
+                    1120px
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                10px 16px 10px 14px;
+
+            background:
+                rgba(10,10,16,.72);
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            backdrop-filter:
+                blur(22px);
+
+            -webkit-backdrop-filter:
+                blur(22px);
+
+            border-radius: 999px;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,.35);
+
+        }
+
+
+        .nav-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .nav-logo {
+
+            width: 36px;
+            height: 36px;
+
+            object-fit: contain;
+
+            display: block;
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(0,229,255,.25)
+                );
+
+            transition:
+                transform .25s ease,
+                filter .25s ease;
+
+        }
+
+
+        .nav-brand:hover .nav-logo {
+
+            transform:
+                scale(1.08);
+
+            filter:
+                drop-shadow(
+                    0 0 16px
+                    rgba(0,229,255,.45)
+                );
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 26px;
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+
+        }
+
+
+        .nav-links a {
+
+            transition:
+                color .25s ease,
+                transform .25s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
                     var(--max-width)
                 );
+
+            margin: auto;
+
         }
 
-        section {
-            padding: 90px 0;
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            padding:
+                140px 0
+                90px;
+
         }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(320px, .85fr);
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: .16em;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+
+            margin-bottom: 26px;
+
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 28px;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--pink)
+                );
+
+        }
+
 
         .hero h1 {
-            font-size: 4rem;
+
+            margin: 0;
+
+            font-size:
+                clamp(
+                    4rem,
+                    9vw,
+                    8.5rem
+                );
+
+            line-height: .82;
+
+            letter-spacing: -.085em;
+
+            font-weight: 800;
+
         }
 
-        .domains {
-            grid-template-columns: 1fr;
+
+        .hero h1 span {
+
+            display: block;
+
         }
 
-        .domain {
-            min-height: 260px;
+
+        .hero h1 .gradient {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    #7c7cff 35%,
+                    var(--pink) 70%,
+                    var(--orange)
+                );
+
+            background-size:
+                250% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                gradientMove
+                8s ease infinite;
+
         }
 
-        .footer-grid,
-        .copyright {
-            flex-direction: column;
+
+        @keyframes gradientMove {
+
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
         }
 
-        .footer-links {
+
+        .hero-copy {
+
+            max-width: 650px;
+
+            margin-top: 36px;
+
+            color: var(--muted);
+
+            font-size:
+                clamp(
+                    1rem,
+                    1.6vw,
+                    1.25rem
+                );
+
+            line-height: 1.75;
+
+            font-weight: 300;
+
+        }
+
+
+        .hero-copy strong {
+
+            color: white;
+
+            font-weight: 500;
+
+        }
+
+
+        .hero-actions {
+
+            display: flex;
+
+            gap: 14px;
+
+            margin-top: 36px;
+
             flex-wrap: wrap;
+
         }
+
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding:
+                0 22px;
+
+            border-radius: 999px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                background .25s ease;
+
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(255,255,255,.35);
+
+        }
+
+
+        .button.primary {
+
+            color: #050507;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    #8b7cff,
+                    var(--pink)
+                );
+
+            border: none;
+
+        }
+
+
+        .button.secondary {
+
+            background:
+                rgba(255,255,255,.04);
+
+        }
+
+
+        /* =========================================================
+           HERO ART
+        ========================================================= */
+
+        .hero-art {
+
+            min-height: 520px;
+
+            position: relative;
+
+            display: grid;
+
+            place-items: center;
+
+        }
+
 
         .planet {
-            width: 300px;
-        }
-    }
 
-</style>
-```
+            width:
+                min(
+                    440px,
+                    80vw
+                );
+
+            aspect-ratio: 1;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 35% 30%,
+                    rgba(255,255,255,.8),
+                    transparent 2%
+                ),
+
+                radial-gradient(
+                    circle at 35% 35%,
+                    #4033ff,
+                    #17137d 38%,
+                    #090916 72%
+                );
+
+            box-shadow:
+
+                0 0 100px
+                rgba(92,80,255,.25),
+
+                inset -40px -30px 100px
+                rgba(0,0,0,.65);
+
+            position: relative;
+
+            animation:
+                planetFloat
+                8s ease-in-out infinite;
+
+        }
+
+
+        @keyframes planetFloat {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(2deg);
+
+            }
+
+        }
+
+
+        .planet::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -20px;
+
+            border:
+                1px solid
+                rgba(0,229,255,.30);
+
+            border-radius: 50%;
+
+            transform:
+                rotate(-18deg)
+                scaleY(.32);
+
+            box-shadow:
+                0 0 35px
+                rgba(0,229,255,.15);
+
+        }
+
+
+        .planet::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 18%;
+
+            border-radius: 50%;
+
+            background:
+                repeating-radial-gradient(
+                    circle,
+                    transparent 0 10px,
+                    rgba(255,255,255,.025)
+                    11px 12px
+                );
+
+            opacity: .6;
+
+        }
+
+
+        .node {
+
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            box-shadow:
+                0 0 16px
+                rgba(255,255,255,.8);
+
+        }
+
+
+        .node.n1 {
+            top: 18%;
+            left: 15%;
+        }
+
+
+        .node.n2 {
+            top: 70%;
+            left: 18%;
+        }
+
+
+        .node.n3 {
+            top: 25%;
+            right: 18%;
+        }
+
+
+        .node.n4 {
+            bottom: 16%;
+            right: 22%;
+        }
+
+
+        .node.n5 {
+            top: 48%;
+            right: 7%;
+        }
+
+
+        /* =========================================================
+           MARQUEE
+        ========================================================= */
+
+        .marquee {
+
+            overflow: hidden;
+
+            border-top:
+                1px solid var(--line);
+
+            border-bottom:
+                1px solid var(--line);
+
+            padding: 16px 0;
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 12px;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+        }
+
+
+        .marquee-track {
+
+            display: inline-flex;
+
+            gap: 50px;
+
+            animation:
+                marquee
+                28s linear infinite;
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+1) {
+
+            color: var(--cyan);
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+2) {
+
+            color: var(--violet);
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+3) {
+
+            color: var(--pink);
+
+        }
+
+
+        @keyframes marquee {
+
+            to {
+
+                transform:
+                    translateX(-50%);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        section {
+
+            padding: 130px 0;
+
+        }
+
+
+        .section-label {
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .section-title {
+
+            margin: 0;
+
+            max-width: 900px;
+
+            font-size:
+                clamp(
+                    2.7rem,
+                    6vw,
+                    5.8rem
+                );
+
+            line-height: .95;
+
+            letter-spacing: -.065em;
+
+        }
+
+
+        .section-title .gradient {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    var(--violet),
+                    var(--pink)
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .section-intro {
+
+            max-width: 700px;
+
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 1.05rem;
+
+        }
+
+
+        /* =========================================================
+           DOMAIN CARDS
+        ========================================================= */
+
+        .domains {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+
+            margin-top: 60px;
+
+        }
+
+
+        .domain {
+
+            min-height: 320px;
+
+            padding: 28px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius:
+                var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.025)
+                );
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+
+        }
+
+
+        .domain:hover {
+
+            transform:
+                translateY(-10px)
+                rotate(-.5deg);
+
+            border-color:
+                rgba(255,255,255,.28);
+
+        }
+
+
+        .domain::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            top: -80px;
+            right: -70px;
+
+            filter: blur(35px);
+
+            opacity: .35;
+
+        }
+
+
+        .domain.art::before {
+            background: var(--pink);
+        }
+
+
+        .domain.data::before {
+            background: var(--cyan);
+        }
+
+
+        .domain.ai::before {
+            background: var(--violet);
+        }
+
+
+        .domain.chain::before {
+            background: var(--orange);
+        }
+
+
+        .domain-number {
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+        }
+
+
+        .domain-symbol {
+
+            font-size: 42px;
+
+            margin:
+                40px 0 25px;
+
+        }
+
+
+        .domain h3 {
+
+            margin:
+                0 0 12px;
+
+            font-size: 23px;
+
+        }
+
+
+        .domain p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+        }
+
+
+        .about-visual {
+
+            min-height: 520px;
+
+            border-radius: 40px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    var(--pink),
+                    transparent 22%
+                ),
+
+                radial-gradient(
+                    circle at 70% 60%,
+                    var(--cyan),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 45% 80%,
+                    var(--violet),
+                    transparent 28%
+                ),
+
+                #11111a;
+
+        }
+
+
+        .about-visual::before {
+
+            content: "DHA";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size:
+                clamp(
+                    7rem,
+                    18vw,
+                    15rem
+                );
+
+            font-weight: 800;
+
+            letter-spacing: -.1em;
+
+            color:
+                rgba(255,255,255,.05);
+
+            transform:
+                rotate(-10deg);
+
+        }
+
+
+        .about-visual::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            border-radius: 50%;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%,-50%)
+                rotate(25deg)
+                scaleY(.38);
+
+        }
+
+
+        .about-text h2 {
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: .95;
+
+            letter-spacing: -.06em;
+
+            margin: 0;
+
+        }
+
+
+        .about-text p {
+
+            color: var(--muted);
+
+            font-size: 1.05rem;
+
+            line-height: 1.85;
+
+            margin-top: 28px;
+
+        }
+
+
+        /* =========================================================
+           PROJECT / DHA VISION
+        ========================================================= */
+
+        .project {
+
+            margin-top: 65px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            min-height: 520px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 36px;
+
+            overflow: hidden;
+
+            background:
+                rgba(255,255,255,.035);
+
+        }
+
+
+        .project-visual {
+
+            position: relative;
+
+            min-height: 520px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(0,229,255,.20),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 75% 70%,
+                    rgba(255,60,172,.20),
+                    transparent 35%
+                ),
+
+                #0b0b13;
+
+        }
+
+
+        .project-visual img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .7s ease,
+                filter .7s ease;
+
+        }
+
+
+        .project-visual::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,.16),
+                    transparent 35%,
+                    rgba(139,92,246,.10) 60%,
+                    rgba(255,60,172,.18)
+                );
+
+            mix-blend-mode: screen;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+        }
+
+
+        .project-visual::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 5px,
+                    rgba(255,255,255,.025) 6px
+                );
+
+            opacity: .35;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+        }
+
+
+        .project:hover
+        .project-visual img {
+
+            transform:
+                scale(1.035);
+
+            filter:
+                saturate(1.08)
+                contrast(1.04);
+
+        }
+
+
+        .project-info {
+
+            padding:
+                clamp(
+                    35px,
+                    6vw,
+                    75px
+                );
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        .project-tag {
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            color: var(--cyan);
+
+            text-transform: uppercase;
+
+            letter-spacing: .15em;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .project-info h3 {
+
+            margin: 0;
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    4.8rem
+                );
+
+            letter-spacing: -.07em;
+
+            line-height: .9;
+
+        }
+
+
+        .project-info p {
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin:
+                30px 0;
+
+        }
+
+
+        .tech {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .tech span {
+
+            border:
+                1px solid var(--line);
+
+            padding:
+                7px 11px;
+
+            border-radius: 999px;
+
+            color: var(--muted);
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================================
+           HANA
+        ========================================================= */
+
+        .hana {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                100px 0;
+
+            border-top:
+                1px solid var(--line);
+
+            border-bottom:
+                1px solid var(--line);
+
+        }
+
+
+        .hana-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+        }
+
+
+        .hana-copy h2 {
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height: .82;
+
+            letter-spacing: -.08em;
+
+            margin: 0;
+
+        }
+
+
+        .hana-copy h2 span {
+
+            display: block;
+
+        }
+
+
+        .hana-copy h2
+        .hana-gradient {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--orange),
+                    var(--pink),
+                    var(--violet)
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .hana-copy p {
+
+            color: var(--muted);
+
+            max-width: 550px;
+
+            line-height: 1.8;
+
+            margin-top: 30px;
+
+        }
+
+
+        .hana-image {
+
+            min-height: 480px;
+
+            border-radius: 40px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171721,
+                    #0c0c12
+                );
+
+        }
+
+
+        .hana-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,.15),
+                    transparent 35%,
+                    rgba(255,60,172,.15)
+                );
+
+            z-index: 1;
+
+            pointer-events: none;
+
+        }
+
+
+        .hana-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            filter:
+                saturate(.9)
+                contrast(1.05);
+
+            transition:
+                transform .7s ease,
+                filter .7s ease;
+
+        }
+
+
+        .hana-image:hover img {
+
+            transform:
+                scale(1.035);
+
+            filter:
+                saturate(1.05)
+                contrast(1.05);
+
+        }
+
+
+        /* =========================================================
+           PHILOSOPHY
+        ========================================================= */
+
+        .philosophy {
+
+            text-align: center;
+
+            padding:
+                180px 0;
+
+        }
+
+
+        .philosophy-mark {
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+            letter-spacing: .2em;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .philosophy h2 {
+
+            margin: auto;
+
+            max-width: 1100px;
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height: .9;
+
+            letter-spacing: -.075em;
+
+        }
+
+
+        .philosophy h2 span {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    var(--violet),
+                    var(--pink)
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            border-top:
+                1px solid var(--line);
+
+            padding:
+                60px 0 35px;
+
+        }
+
+
+        .footer-grid {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 40px;
+
+        }
+
+
+        .footer-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            letter-spacing: -.04em;
+
+        }
+
+
+        .footer-logo {
+
+            width: 42px;
+            height: 42px;
+
+            object-fit: contain;
+
+            display: block;
+
+        }
+
+
+        .footer-sub {
+
+            color: var(--muted);
+
+            margin-top: 10px;
+
+            font-size: 13px;
+
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 20px;
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+
+            color: var(--muted);
+
+        }
+
+
+        .footer-links a:hover {
+
+            color: white;
+
+        }
+
+
+        .copyright {
+
+            margin-top: 60px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid var(--line);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #555560;
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 10px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            .hero-grid,
+            .about-grid,
+            .hana-grid,
+            .project {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding-top: 130px;
+
+            }
+
+
+            .hero-art {
+
+                min-height: 380px;
+
+            }
+
+
+            .domains {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .project-visual {
+
+                min-height: 420px;
+
+            }
+
+
+            .hana-image {
+
+                min-height: 400px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--max-width)
+                    );
+
+            }
+
+
+            section {
+
+                padding:
+                    90px 0;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 4rem;
+
+            }
+
+
+            .domains {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .domain {
+
+                min-height: 260px;
+
+            }
+
+
+            .project-visual {
+
+                min-height: 340px;
+
+            }
+
+
+            .hana-image {
+
+                min-height: 340px;
+
+            }
+
+
+            .footer-grid,
+            .copyright {
+
+                flex-direction: column;
+
+            }
+
+
+            .footer-links {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .planet {
+
+                width: 300px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<!-- Ambient background -->
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="orb three"></div>
+
+    <!-- =========================================================
+         AMBIENT BACKGROUND
+    ========================================================== -->
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
 
 
-<!-- =========================================================
-     NAVIGATION
-========================================================== -->
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-<nav>
+    <nav>
 
-    <a
-        href="#top"
-        class="nav-brand"
-    >
-        <span class="nav-dot"></span>
-        DHA
-    </a>
+        <a
+            href="#top"
+            class="nav-brand"
+        >
 
-    <div class="nav-links">
+            <img
+                src="assets/DHA_logo_h.png"
+                alt="Digital__Hana__Arts® logo"
+                class="nav-logo"
+            >
 
-        <a href="#about">
-            About
+            <span>
+                DHA
+            </span>
+
         </a>
 
-        <a href="#domains">
-            Domains
-        </a>
 
-        <a href="#work">
-            Work
-        </a>
+        <div class="nav-links">
 
-        <a href="#hana">
-            Hana
-        </a>
+            <a href="#about">
+                About
+            </a>
 
-        <a href="https://github.com/DigitalHanaArts">
-            GitHub
-        </a>
+            <a href="#domains">
+                Domains
+            </a>
 
-    </div>
+            <a href="#work">
+                Work
+            </a>
 
-</nav>
+            <a href="#hana">
+                Hana
+            </a>
+
+            <a
+                href="https://github.com/DigitalHanaArts"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </nav>
 
 
-<!-- =========================================================
-     HERO
-========================================================== -->
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
 
-<main id="top">
+    <main id="top">
 
-    <section class="hero">
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            Computational Creativity Studio
+                        </div>
+
+
+                        <h1>
+
+                            <span>
+                                DIGITAL
+                            </span>
+
+                            <span class="gradient">
+                                HANA
+                            </span>
+
+                            <span>
+                                ARTS
+                            </span>
+
+                        </h1>
+
+
+                        <p class="hero-copy">
+
+                            Where
+                            <strong>art</strong>,
+                            <strong>data</strong>,
+                            <strong>artificial intelligence</strong>
+                            and
+                            <strong>decentralized technology</strong>
+                            converge into new forms of digital expression.
+
+                        </p>
+
+
+                        <div class="hero-actions">
+
+                            <a
+                                href="#work"
+                                class="button primary"
+                            >
+                                Explore the work
+                            </a>
+
+
+                            <a
+                                href="https://github.com/DigitalHanaArts"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button secondary"
+                            >
+                                GitHub ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-art">
+
+                        <div class="planet">
+
+                            <span class="node n1"></span>
+                            <span class="node n2"></span>
+                            <span class="node n3"></span>
+                            <span class="node n4"></span>
+                            <span class="node n5"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARQUEE
+        ====================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <span>ART</span>
+                <span>DATA</span>
+                <span>AI</span>
+                <span>BLOCKCHAIN</span>
+                <span>GENERATIVE</span>
+                <span>COMPUTATIONAL</span>
+                <span>INTELLIGENCE</span>
+                <span>VISUALIZATION</span>
+
+                <span>ART</span>
+                <span>DATA</span>
+                <span>AI</span>
+                <span>BLOCKCHAIN</span>
+                <span>GENERATIVE</span>
+                <span>COMPUTATIONAL</span>
+                <span>INTELLIGENCE</span>
+                <span>VISUALIZATION</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+
+                    <div class="about-visual"></div>
+
+
+                    <div class="about-text">
+
+                        <div class="section-label">
+                            01 / The Studio
+                        </div>
+
+
+                        <h2>
+
+                            Technology is
+
+                            <span class="gradient">
+                                material.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Digital Hana Arts is an experimental
+                            computational creativity studio exploring
+                            the space between technology and artistic
+                            expression.
+
+                        </p>
+
+
+                        <p>
+
+                            We develop software, visual systems,
+                            machine-learning experiments, data-driven
+                            artwork and blockchain-oriented digital
+                            assets.
+
+                        </p>
+
+
+                        <p>
+
+                            Our central question is simple:
+
+                            <strong>
+                                What happens when computation becomes
+                                a creative medium?
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DOMAINS
+        ====================================================== -->
+
+        <section id="domains">
+
+            <div class="container">
+
+                <div class="section-label">
+                    02 / The Ecosystem
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Four domains.
+
+                    <span class="gradient">
+                        One system.
+                    </span>
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    DHA operates across disciplines rather than
+                    inside a single technological category.
+
+                </p>
+
+
+                <div class="domains">
+
+
+                    <article class="domain art">
+
+                        <div class="domain-number">
+                            01
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◇
+                        </div>
+
+
+                        <h3>
+                            Digital Art
+                        </h3>
+
+
+                        <p>
+
+                            Generative systems, algorithmic art,
+                            computational photography and
+                            experimental digital media.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain data">
+
+                        <div class="domain-number">
+                            02
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◌
+                        </div>
+
+
+                        <h3>
+                            Data Science
+                        </h3>
+
+
+                        <p>
+
+                            Data mining, analysis, visualization,
+                            statistical computing and
+                            data-driven discovery.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain ai">
+
+                        <div class="domain-number">
+                            03
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◎
+                        </div>
+
+
+                        <h3>
+                            Intelligence
+                        </h3>
+
+
+                        <p>
+
+                            Machine learning, deep learning,
+                            computer vision and generative
+                            artificial intelligence.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain chain">
+
+                        <div class="domain-number">
+                            04
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ⛓
+                        </div>
+
+
+                        <h3>
+                            Blockchain
+                        </h3>
+
+
+                        <p>
+
+                            NFTs, digital assets, blockchain
+                            analytics and decentralized
+                            creative ecosystems.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WORK
+        ====================================================== -->
+
+        <section id="work">
+
+            <div class="container">
+
+
+                <div class="section-label">
+                    03 / Selected Work
+                </div>
+
+
+                <h2 class="section-title">
+
+                    From
+
+                    <span class="gradient">
+                        pixels
+                    </span>
+
+                    to intelligence.
+
+                </h2>
+
+
+                <div class="project">
+
+
+                    <div class="project-visual">
+
+                        <img
+                            src="assets/DHA_Vision.png"
+                            alt="DHA Vision — Digital__Hana__Arts®"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="project-info">
+
+
+                        <div class="project-tag">
+                            Experimental Platform
+                        </div>
+
+
+                        <h3>
+
+                            DHA<br>
+                            Vision
+
+                        </h3>
+
+
+                        <p>
+
+                            A Julia-based computational-art
+                            platform exploring how photographs can
+                            be transformed through image processing,
+                            machine learning and generative systems
+                            into new digital artworks.
+
+                        </p>
+
+
+                        <div class="tech">
+
+                            <span>
+                                Julia
+                            </span>
+
+                            <span>
+                                Flux
+                            </span>
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                            <span>
+                                Image Processing
+                            </span>
+
+                            <span>
+                                Generative Art
+                            </span>
+
+                        </div>
+
+
+                        <br>
+
+
+                        <a
+                            href="https://github.com/DigitalHanaArts/DHA-Vision"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button secondary"
+                        >
+                            View project ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HANA
+        ====================================================== -->
+
+        <section
+            id="hana"
+            class="hana"
+        >
+
+            <div class="container">
+
+                <div class="hana-grid">
+
+
+                    <div class="hana-copy">
+
+
+                        <div class="section-label">
+                            04 / Origin
+                        </div>
+
+
+                        <h2>
+
+                            <span>
+                                Meet
+                            </span>
+
+                            <span class="hana-gradient">
+                                Hana.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Digital__Hana__Arts® is named after Hana —
+                            the kitten at the heart of the visual
+                            identity.
+
+                        </p>
+
+
+                        <p>
+
+                            Her presence introduces something
+                            intentionally human and organic into an
+                            otherwise computational world:
+
+                            <strong>
+                                curiosity, individuality and
+                                character.
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="hana-image">
+
+                        <img
+                            src="assets/Hana_the_kitten.jpeg"
+                            alt="Hana the kitten"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PHILOSOPHY
+        ====================================================== -->
+
+        <section class="philosophy">
+
+            <div class="container">
+
+
+                <div class="philosophy-mark">
+                    05 / The Question
+                </div>
+
+
+                <h2>
+
+                    What happens when
+
+                    <span>
+                        computation
+                    </span>
+
+                    becomes a
+
+                    <span>
+                        creative medium?
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
 
         <div class="container">
 
-            <div class="hero-grid">
+
+            <div class="footer-grid">
+
 
                 <div>
 
-                    <div class="eyebrow">
-                        Computational Creativity Studio
-                    </div>
 
-                    <h1>
+                    <div class="footer-brand">
+
+                        <img
+                            src="assets/DHA_logo.png"
+                            alt="Digital__Hana__Arts® logo"
+                            class="footer-logo"
+                        >
 
                         <span>
-                            DIGITAL
+                            DIGITAL HANA ARTS
                         </span>
 
-                        <span class="gradient">
-                            HANA
-                        </span>
+                    </div>
 
-                        <span>
-                            ARTS
-                        </span>
 
-                    </h1>
+                    <div class="footer-sub">
 
-                    <p class="hero-copy">
-
-                        Where
-                        <strong>art</strong>,
-                        <strong>data</strong>,
-                        <strong>artificial intelligence</strong>
-                        and
-                        <strong>decentralized technology</strong>
-                        converge into new forms of digital expression.
-
-                    </p>
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#work"
-                            class="button primary"
-                        >
-                            Explore the work
-                        </a>
-
-                        <a
-                            href="https://github.com/DigitalHanaArts"
-                            class="button secondary"
-                        >
-                            GitHub ↗
-                        </a>
+                        Art × Data × Intelligence × Blockchain
 
                     </div>
 
                 </div>
 
 
-                <div class="hero-art">
-
-                    <div class="planet">
-
-                        <span class="node n1"></span>
-                        <span class="node n2"></span>
-                        <span class="node n3"></span>
-                        <span class="node n4"></span>
-                        <span class="node n5"></span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         MARQUEE
-    ====================================================== -->
-
-    <div class="marquee">
-
-        <div class="marquee-track">
-
-            <span>ART</span>
-            <span>DATA</span>
-            <span>AI</span>
-            <span>BLOCKCHAIN</span>
-            <span>GENERATIVE</span>
-            <span>COMPUTATIONAL</span>
-            <span>INTELLIGENCE</span>
-            <span>VISUALIZATION</span>
-
-            <span>ART</span>
-            <span>DATA</span>
-            <span>AI</span>
-            <span>BLOCKCHAIN</span>
-            <span>GENERATIVE</span>
-            <span>COMPUTATIONAL</span>
-            <span>INTELLIGENCE</span>
-            <span>VISUALIZATION</span>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <div class="about-grid">
-
-                <div class="about-visual"></div>
-
-                <div class="about-text">
-
-                    <div class="section-label">
-                        01 / The Studio
-                    </div>
-
-                    <h2>
-                        Technology is
-                        <span class="gradient">
-                            material.
-                        </span>
-                    </h2>
-
-                    <p>
-
-                        Digital Hana Arts is an experimental
-                        computational creativity studio exploring
-                        the space between technology and artistic
-                        expression.
-
-                    </p>
-
-                    <p>
-
-                        We develop software, visual systems,
-                        machine-learning experiments, data-driven
-                        artwork and blockchain-oriented digital
-                        assets.
-
-                    </p>
-
-                    <p>
-
-                        Our central question is simple:
-
-                        <strong>
-                            What happens when computation becomes
-                            a creative medium?
-                        </strong>
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         DOMAINS
-    ====================================================== -->
-
-    <section id="domains">
-
-        <div class="container">
-
-            <div class="section-label">
-                02 / The Ecosystem
-            </div>
-
-            <h2 class="section-title">
-
-                Four domains.
-
-                <span class="gradient">
-                    One system.
-                </span>
-
-            </h2>
-
-            <p class="section-intro">
-
-                DHA operates across disciplines rather than
-                inside a single technological category.
-
-            </p>
-
-
-            <div class="domains">
-
-
-                <article class="domain art">
-
-                    <div class="domain-number">
-                        01
-                    </div>
-
-                    <div class="domain-symbol">
-                        ◇
-                    </div>
-
-                    <h3>
-                        Digital Art
-                    </h3>
-
-                    <p>
-                        Generative systems, algorithmic art,
-                        computational photography and
-                        experimental digital media.
-                    </p>
-
-                </article>
-
-
-                <article class="domain data">
-
-                    <div class="domain-number">
-                        02
-                    </div>
-
-                    <div class="domain-symbol">
-                        ◌
-                    </div>
-
-                    <h3>
-                        Data Science
-                    </h3>
-
-                    <p>
-                        Data mining, analysis, visualization,
-                        statistical computing and
-                        data-driven discovery.
-                    </p>
-
-                </article>
-
-
-                <article class="domain ai">
-
-                    <div class="domain-number">
-                        03
-                    </div>
-
-                    <div class="domain-symbol">
-                        ◎
-                    </div>
-
-                    <h3>
-                        Intelligence
-                    </h3>
-
-                    <p>
-                        Machine learning, deep learning,
-                        computer vision and generative
-                        artificial intelligence.
-                    </p>
-
-                </article>
-
-
-                <article class="domain chain">
-
-                    <div class="domain-number">
-                        04
-                    </div>
-
-                    <div class="domain-symbol">
-                        ⛓
-                    </div>
-
-                    <h3>
-                        Blockchain
-                    </h3>
-
-                    <p>
-                        NFTs, digital assets, blockchain
-                        analytics and decentralized
-                        creative ecosystems.
-                    </p>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         WORK
-    ====================================================== -->
-
-    <section id="work">
-
-        <div class="container">
-
-            <div class="section-label">
-                03 / Selected Work
-            </div>
-
-            <h2 class="section-title">
-
-                From
-                <span class="gradient">
-                    pixels
-                </span>
-                to intelligence.
-
-            </h2>
-
-
-            <div class="project">
-
-                <div class="project-visual">
-
-                    <div class="project-orbit">
-
-                        <div class="project-core"></div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <div class="project-tag">
-                        Experimental Platform
-                    </div>
-
-                    <h3>
-                        DHA<br>
-                        Vision
-                    </h3>
-
-                    <p>
-
-                        A Julia-based computational-art
-                        platform exploring how photographs can
-                        be transformed through image processing,
-                        machine learning and generative systems
-                        into new digital artworks.
-
-                    </p>
-
-                    <div class="tech">
-
-                        <span>Julia</span>
-                        <span>Flux</span>
-                        <span>Machine Learning</span>
-                        <span>Image Processing</span>
-                        <span>Generative Art</span>
-
-                    </div>
-
-                    <br>
+                <div class="footer-links">
 
                     <a
-                        href="https://github.com/DigitalHanaArts/DHA-Vision"
-                        class="button secondary"
+                        href="https://github.com/DigitalHanaArts"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        View project ↗
+                        GitHub
+                    </a>
+
+
+                    <a href="#top">
+                        Back to top ↑
                     </a>
 
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- =====================================================
-         HANA
-    ====================================================== -->
-
-    <section
-        id="hana"
-        class="hana"
-    >
-
-        <div class="container">
-
-            <div class="hana-grid">
-
-                <div class="hana-copy">
-
-                    <div class="section-label">
-                        04 / Origin
-                    </div>
-
-                    <h2>
-
-                        <span>
-                            Meet
-                        </span>
-
-                        <span class="hana-gradient">
-                            Hana.
-                        </span>
-
-                    </h2>
-
-                    <p>
-
-                        Digital Hana Arts is named after Hana —
-                        the kitten at the heart of the visual
-                        identity.
-
-                    </p>
-
-                    <p>
-
-                        Her presence introduces something
-                        intentionally human and organic into an
-                        otherwise computational world:
-
-                        <strong>
-                            curiosity, individuality and
-                            character.
-                        </strong>
-
-                    </p>
-
-                </div>
-
-
-                <div class="hana-image">
-
-                    <img
-                        src="assets/Hana_the_kitten.jpeg"
-                        alt="Hana the kitten"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PHILOSOPHY
-    ====================================================== -->
-
-    <section class="philosophy">
-
-        <div class="container">
-
-            <div class="philosophy-mark">
-                05 / The Question
-            </div>
-
-            <h2>
-
-                What happens when
+            <div class="copyright">
 
                 <span>
-                    computation
+                    © 2026 Digital__Hana__Arts®
                 </span>
-
-                becomes a
 
                 <span>
-                    creative medium?
+                    Computing as a creative medium.
                 </span>
 
-            </h2>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================== -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-
-                <div class="footer-brand">
-                    DIGITAL HANA ARTS
-                </div>
-
-                <div class="footer-sub">
-                    Art × Data × Intelligence × Blockchain
-                </div>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <a
-                    href="https://github.com/DigitalHanaArts"
-                >
-                    GitHub
-                </a>
-
-                <a href="#top">
-                    Back to top ↑
-                </a>
-
             </div>
 
         </div>
 
+    </footer>
 
-        <div class="copyright">
-
-            <span>
-                © 2026 Digital Hana Arts
-            </span>
-
-            <span>
-                Computing as a creative medium.
-            </span>
-
-        </div>
-
-    </div>
-
-</footer>
-```
 
 </body>
+
 </html>
