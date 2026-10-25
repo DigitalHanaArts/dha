@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Hana Gallery — NFT and photographic collection.">
+    <title>Gallery · Digital Hana Arts®</title>
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+    <header class="header">
+        <a href="index.html" class="brand">
+            <img src="assets/DHA_logo_h.png" alt="DHA">
+            <span>DHA®</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="works.html">Works</a>
+            <a href="blog.html">Blog</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="lang-dropdown">
+                <input type="checkbox" id="lang-input" class="lang-input">
+                <label for="lang-input" class="lang-btn">[EN] ▾</label>
+                <div class="lang-menu">
+                    <a href="#" class="active">[English]</a>
+					<a href="https://digitalhanaarts.github.io/dha-per/">[Persian]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha/">[English]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-cn/">[中文]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-ru/">[Русский]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-jp/">[日本語]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-ko/">[조선어]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-hi/">[हिन्दी]</a>
+				
+					<a href="https://digitalhanaarts.github.io/it_dha/">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/">[Español]</a>
+					
+					<a href="https://dha-123f39.gitpage.ir/">[فارسی]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha_ar/">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/">[ייִדיש]</a>
+                </div>
+            </div>
+            <button class="menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="drawer-overlay"></div>
+    <aside class="drawer">
+        <button class="drawer-close">×</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </aside>
+
+    <main>
+        <section class="hero" style="min-height:50vh; padding-top:160px;">
+            <div class="container" style="text-align:center;">
+                <span class="hero-label">— Gallery —</span>
+                <h1 style="font-size:clamp(2.4rem,8vw,6rem); margin:20px 0;">
+                    <span style="display:block;">The Gallery of</span>
+                    <span style="display:block; color:transparent; -webkit-text-stroke:2px var(--acid); font-style:italic;">Hana.</span>
+                </h1>
+                <p style="max-width:720px; margin:0 auto 40px; font-size:16px;">
+                    Every image is a moment from Hana's life — the kitten at the heart of our visual identity. Some of these are immortalized as NFTs.
+                </p>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="container">
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="portrait">Portraits</button>
+                    <button class="filter-btn" data-filter="nft">NFTs</button>
+                    <button class="filter-btn" data-filter="silhouette">Silhouettes</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-item" data-category="portrait"><img src="assets/Kitten_Hana.jpg" alt="Hana" loading="lazy"><figcaption class="gallery-caption">Hana · Portrait</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Kitten_Hana.jpg" alt="NFT Hana" loading="lazy"><figcaption class="gallery-caption">NFT Hana · 01</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Hana_back.jpg" alt="NFT Back" loading="lazy"><figcaption class="gallery-caption">NFT · Back</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Hana_Chan_01.jpg" alt="NFT 02" loading="lazy"><figcaption class="gallery-caption">NFT Hana · 02</figcaption></figure>
+                    <figure class="gallery-item" data-category="portrait"><img src="assets/Hana_Chan_02.jpg" alt="Hana Chan" loading="lazy"><figcaption class="gallery-caption">Hana · Chan 02</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Hana_Chan_03.jpg" alt="NFT 03" loading="lazy"><figcaption class="gallery-caption">NFT Hana · 03</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Hana_Chan_04.jpg" alt="NFT 04" loading="lazy"><figcaption class="gallery-caption">NFT Hana · 04</figcaption></figure>
+                    <figure class="gallery-item" data-category="nft"><img src="assets/NFT_Hana_overhead.jpg" alt="NFT 05" loading="lazy"><figcaption class="gallery-caption">NFT Hana · 05</figcaption></figure>
+                    <figure class="gallery-item" data-category="silhouette"><img src="assets/NFT_Hana_silhouette_01.jpg" alt="NFT Silhouette 01" loading="lazy"><figcaption class="gallery-caption">NFT Silhouette · 01</figcaption></figure>
+                    <figure class="gallery-item" data-category="silhouette"><img src="assets/NFT_Hana_silhouette_02.jpg" alt="NFT Silhouette 02" loading="lazy"><figcaption class="gallery-caption">NFT Silhouette · 02</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" style="text-align:center; border-bottom:none;">
+            <div class="container">
+                <h2 class="section-title">View on <span class="outline">OpenSea</span>.</h2>
+                <p style="max-width:600px; margin:0 auto 40px; font-size:16px;">All NFTs from the Hana collection are available on the OpenSea platform.</p>
+                <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener" class="btn btn-primary">OpenSea Collection ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox">
+        <button class="lightbox-close" aria-label="Close">×</button>
+        <img src="" alt="">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/DHA_logo.png" alt="DHA">
+                        <span>Digital Hana Arts®</span>
+                    </div>
+                    <p class="footer-desc">A gallery of Hana's works and tokens.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="works.html">Works</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Networks</h4>
+                    <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener">OpenSea</a>
+                    <a href="http://instagram.com/hana.bavarchi" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://x.com/DigitalHanaArts" target="_blank" rel="noopener">X (Twitter)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Digital Hana Arts®</span>
+                <span>Computing as a creative medium</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

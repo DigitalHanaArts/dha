@@ -1,3168 +1,2364 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <!-- Google Search Console verification (HTML tag method) -->
+    <meta name="google-site-verification" content="ZzUHfIbzfrQRTRpEXuKIJJmvdLZDfX0wAxeKaWqphCs" />
 
-    <meta
-        name="description"
-        content="Digital__Hana__Arts® — Computational creativity at the intersection of art, data, artificial intelligence and blockchain. Post-postmodern abstract expression."
-    >
+    <!-- Canonical URL (change if your primary URL is different) -->
+    <link rel="canonical" href="https://alibavarci.github.io/ddDHA/">
 
-    <meta
-        name="theme-color"
-        content="#000000"
-    >
+    <meta name="description" content="Digital Hana Arts® — AI-empowered cyberpunk studio. Art, data, AI, blockchain. Interactive terminal, on-device ML, easter eggs.">
+    <meta name="theme-color" content="#050507">
+    <meta property="og:title" content="Digital Hana Arts® — [SYSTEM_HACKABLE]">
+    <meta property="og:description" content="Art × Data × AI × Blockchain — Interactive Protocol">
+    <meta property="og:image" content="assets/DHA_logo.png">
+    <meta property="og:url" content="https://alibavarci.github.io/ddDHA/">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+	<title>Digital Hana Arts (DHA) | AI Art, NFTs, Blockchain &amp; Generative Art</title>
+	<meta name="description"
+      content="Digital Hana Arts (DHA) is an experimental studio exploring digital art, generative art, on-device AI, machine learning, NFTs, data science and blockchain.">
+	<meta property="og:title"
+      content="Digital Hana Arts (DHA) | AI Art, NFTs &amp; Generative Art">
+	  
+	<meta property="og:description"
+      content="Explore DHA's digital art, generative AI experiments, Hana NFT collection, machine learning and MLabChain.">
+	
+	<meta name="twitter:title"
+      content="Digital Hana Arts (DHA) | AI Art, NFTs &amp; Generative Art">
+	  
+	<meta name="twitter:description"
+      content="Explore DHA's digital art, generative AI experiments, Hana NFT collection, machine learning and MLabChain.">
 
-    <meta
-        property="og:title"
-        content="Digital__Hana__Arts® — ABSTRACT"
-    >
+    <!-- Google Analytics 4 (gtag.js) — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLKH7JX1BM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GLKH7JX1BM');
+    </script>
 
-    <meta
-        property="og:description"
-        content="Art × Data × Intelligence × Blockchain × Abstraction"
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:image"
-        content="assets/DHA_logo.png"
-    >
-
-    <title>
-        DHA® — [ABSTRACTION_ENGINE]
-    </title>
-
-
-    <!-- =====================================================
-         FONTS
-    ====================================================== -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=DM+Mono:wght@300;400;500&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
-
-        /* =====================================================
-           DHA — ABSTRACT PROTOCOL v2.0
-        ====================================================== */
-
         :root {
-
-            --void: #000000;
-            --void-2: #0a0a0a;
-            --void-3: #111111;
-
-            --bone: #f0f0f0;
-            --ash: #808080;
-            --smoke: #404040;
-
-            --acid: #ccff00;
-            --blood: #ff0040;
-            --chrome: #c0c0c0;
-            --static: #666666;
-
-            --grid-line: rgba(255,255,255,.08);
-            --border-raw: rgba(255,255,255,.25);
-
-            --radius-sharp: 0px;
-            --radius-blunt: 4px;
-
-            --max-width: 1400px;
-
-            --glitch-offset: 4px;
-
+            --cyber-cyan: #00f0ff;
+            --cyber-magenta: #ff00a0;
+            --cyber-acid: #d0ff00;
+            --cyber-yellow: #ffcc00;
+            --cyber-red: #ff0040;
+            --steel: #6a6a75;
+            --paper: #e8e4d5;
+            --ink: #0a0a0a;
         }
 
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* ========== EXISTING STYLES (kept) ========== */
+        .warning-tape {
+            position: fixed; top: 0; left: 0; right: 0; height: 8px;
+            background: repeating-linear-gradient(-45deg, var(--cyber-yellow) 0, var(--cyber-yellow) 12px, #000 12px, #000 24px);
+            z-index: 10002; box-shadow: 0 0 20px rgba(255,204,0,.35);
         }
-
-
-        html {
-            scroll-behavior: smooth;
-            background: var(--void);
+        .header { top: 8px !important; }
+        .sys-status {
+            display: flex; align-items: center; gap: 8px;
+            font-family: "Space Mono", monospace; font-size: 10px;
+            color: var(--cyber-acid); text-transform: uppercase; letter-spacing: .15em;
         }
-
-
-        body {
-
-            background: var(--void);
-
-            color: var(--bone);
-
-            font-family:
-                "Space Grotesk",
-                "Inter",
-                system-ui,
-                sans-serif;
-
-            overflow-x: hidden;
-
-            cursor: crosshair;
-
-            position: relative;
-
+        .status-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--cyber-acid); box-shadow: 0 0 10px var(--cyber-acid);
+            animation: pulse-dot 2s infinite;
         }
+        @keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:.5; transform:scale(1.6);} }
+        .nav-links a { font-family: "Space Mono", monospace !important; color: var(--steel) !important; }
+        .nav-links a:hover, .nav-links a.active { color: var(--cyber-acid) !important; }
+        .nav-links a.active::after { background: var(--cyber-acid) !important; }
 
-
-        ::selection {
-
-            background: var(--acid);
-
-            color: var(--void);
-
+        .hero-cyber {
+            min-height: 100vh; padding: 120px 0 60px; position: relative; overflow: hidden;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,0,160,.10), transparent 60%),
+                radial-gradient(ellipse 50% 50% at 80% 60%, rgba(0,240,255,.10), transparent 60%);
         }
+        .hero-cyber::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(0,240,255,.08) 1px, transparent 1.5px);
+            background-size: 24px 24px; opacity: .4; pointer-events: none;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+        }
+        .hero-cyber::after {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(0,240,255,.025) 3px, rgba(0,240,255,.025) 4px);
+            pointer-events: none; z-index: 1;
+        }
+        .hero-cyber .container { position: relative; z-index: 2; }
+        .hero-cyber-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
 
+        .glitch-title {
+            font-family: "Archivo Black", sans-serif;
+            font-size: clamp(3rem, 9vw, 7.5rem); line-height: .85;
+            letter-spacing: -.05em; text-transform: uppercase;
+            margin: 20px 0; position: relative;
+        }
+        .glitch-line { display: block; position: relative; }
+        .glitch-line::before, .glitch-line::after {
+            content: attr(data-text); position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; background: var(--void);
+        }
+        .glitch-line::before { color: var(--cyber-magenta); animation: glitch-a 4s infinite steps(1, end); clip-path: inset(0 0 55% 0); z-index: -1; }
+        .glitch-line::after { color: var(--cyber-cyan); animation: glitch-b 3s infinite steps(1, end); clip-path: inset(55% 0 0 0); z-index: -2; }
+        @keyframes glitch-a { 0%,82%,100% { transform: translate(0); } 84% { transform: translate(-4px,-2px); } 86% { transform: translate(4px,2px); } 88% { transform: translate(-2px,1px); } }
+        @keyframes glitch-b { 0%,78%,100% { transform: translate(0); } 80% { transform: translate(4px,2px); } 82% { transform: translate(-4px,-2px); } 84% { transform: translate(2px,-1px); } }
+
+        .hero-cyber-tag {
+            display: inline-block; font-family: "Space Mono", monospace; font-size: 11px;
+            letter-spacing: .3em; color: var(--cyber-magenta); padding: 6px 14px;
+            border: 1px solid var(--cyber-magenta); background: rgba(255,0,160,.05);
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+        .hero-cyber-copy {
+            max-width: 560px; font-family: "Space Mono", monospace; font-size: 13px;
+            line-height: 1.9; color: var(--steel); border-left: 3px solid var(--cyber-cyan);
+            padding-left: 20px; margin-top: 36px;
+        }
+        .hero-cyber-copy strong { color: var(--cyber-acid); }
+        .hero-cyber-actions { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+        .btn-cyber {
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
+            font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700;
+            letter-spacing: .15em; text-transform: uppercase; text-decoration: none;
+            border: 2px solid var(--cyber-cyan); background: transparent; color: var(--cyber-cyan);
+            transition: all .2s; position: relative; overflow: hidden; cursor: pointer;
+        }
+        .btn-cyber::before { content: ""; position: absolute; inset: 0; background: var(--cyber-cyan); transform: translateX(-100%); transition: transform .25s; z-index: -1; }
+        .btn-cyber:hover::before { transform: translateX(0); }
+        .btn-cyber:hover { color: #000; }
+        .btn-cyber.primary { background: var(--cyber-acid); color: #000; border-color: var(--cyber-acid); }
+        .btn-cyber.primary::before { background: var(--cyber-magenta); }
+        .btn-cyber.primary:hover { color: #000; border-color: var(--cyber-magenta); }
+        .btn-cyber:disabled { opacity: .5; cursor: not-allowed; }
+        .btn-cyber.ready { background: var(--cyber-magenta); border-color: var(--cyber-magenta); color: var(--bone); }
+
+        .hero-collage { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: center; }
+        .hero-collage-frame {
+            position: relative; width: min(100%, 460px); aspect-ratio: 1;
+            border: 2px solid var(--cyber-cyan); background: #000; transform: rotate(-3deg);
+            box-shadow: 8px 8px 0 var(--cyber-magenta), -8px -8px 0 var(--cyber-acid), 0 0 60px rgba(0,240,255,.3);
+            overflow: hidden;
+        }
+        .hero-collage-frame::before {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(0,240,255,.08) 2px, rgba(0,240,255,.08) 3px);
+            z-index: 2; pointer-events: none; animation: scan-anim 6s linear infinite;
+        }
+        @keyframes scan-anim { 0% { background-position: 0 0; } 100% { background-position: 0 100px; } }
+        .hero-collage-frame img { width: 100%; height: 100%; object-fit: contain; padding: 20px; filter: saturate(1.3) contrast(1.1); }
+
+        .dada-stamp {
+            position: absolute; padding: 6px 14px; border: 2px solid currentColor;
+            font-family: "Space Mono", monospace; font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .22em; background: #000;
+            z-index: 5; pointer-events: none;
+        }
+        .stamp-1 { top: 10px; left: -20px; color: var(--cyber-magenta); transform: rotate(-8deg); }
+        .stamp-2 { top: 40px; right: -30px; color: var(--cyber-acid); transform: rotate(5deg); }
+        .stamp-3 { bottom: 60px; left: -25px; color: var(--cyber-cyan); transform: rotate(3deg); }
+        .stamp-4 { bottom: 10px; right: -15px; color: var(--cyber-yellow); transform: rotate(-5deg); }
+        .hero-meta-strip {
+            position: absolute; font-family: "Space Mono", monospace; font-size: 9px;
+            letter-spacing: .3em; color: var(--steel); text-transform: uppercase; white-space: nowrap;
+        }
+        .meta-top { top: -30px; left: 50%; transform: translateX(-50%); }
+        .meta-bottom { bottom: -30px; left: 50%; transform: translateX(-50%); }
+
+        .sys-ticker {
+            overflow: hidden; background: #000;
+            border-top: 2px solid var(--cyber-cyan); border-bottom: 2px solid var(--cyber-cyan);
+            padding: 14px 0; position: relative;
+        }
+        .sys-ticker-track {
+            display: inline-flex; gap: 40px; animation: ticker 30s linear infinite;
+            font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+            color: var(--cyber-acid); text-transform: uppercase; letter-spacing: .15em; white-space: nowrap;
+        }
+        .sys-ticker-track span::before { content: "█ "; color: var(--cyber-magenta); margin-right: 4px; }
+        .sys-ticker-track span::after { content: " █"; color: var(--cyber-magenta); margin-left: 4px; }
+        @keyframes ticker { to { transform: translateX(-50%); } }
+
+        .featured-section {
+            padding: 120px 0; position: relative;
+            background: linear-gradient(180deg, var(--void) 0%, #05050f 50%, var(--void) 100%);
+            border-bottom: 1px solid var(--border-dark);
+            content-visibility: auto; contain-intrinsic-size: 900px;
+        }
+        .featured-section::before {
+            content: ""; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(0,240,255,.06), transparent 60%); pointer-events: none;
+        }
+        .featured-label {
+            font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700;
+            letter-spacing: .3em; color: var(--cyber-magenta); margin-bottom: 20px; text-transform: uppercase;
+        }
+        .featured-title {
+            font-family: "Archivo Black", sans-serif; font-size: clamp(2.4rem, 6vw, 5rem);
+            line-height: .9; letter-spacing: -.03em; text-transform: uppercase;
+            margin-bottom: 60px; position: relative;
+        }
+        .featured-title .outline { color: transparent; -webkit-text-stroke: 2px var(--cyber-acid); font-style: italic; }
+
+        .mlab-terminal {
+            border: 2px solid var(--cyber-cyan); background: #000; position: relative; overflow: hidden;
+            box-shadow: 0 0 60px rgba(0,240,255,.2), inset 0 0 80px rgba(0,240,255,.04);
+        }
+        .mlab-terminal::before {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(0,240,255,.04) 2px, rgba(0,240,255,.04) 3px);
+            pointer-events: none; z-index: 2; animation: scan-anim 8s linear infinite;
+        }
+        .mlab-header {
+            padding: 12px 24px; background: var(--cyber-cyan); color: #000;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .2em; position: relative; z-index: 3;
+            flex-wrap: wrap; gap: 8px;
+        }
+        .mlab-header .live { display: flex; align-items: center; gap: 8px; }
+        .mlab-header .live::before {
+            content: ""; width: 8px; height: 8px; border-radius: 50%;
+            background: #000; animation: pulse-dot 1.5s infinite;
+        }
+        .mlab-grid { display: grid; grid-template-columns: 1.3fr 1fr; position: relative; z-index: 3; }
+        .mlab-main { padding: 40px; border-right: 1px dashed rgba(0,240,255,.3); font-family: "Space Mono", monospace; }
+        .mlab-side { padding: 40px; font-family: "Space Mono", monospace; }
+        .mlab-label { font-size: 10px; letter-spacing: .3em; color: var(--cyber-cyan); text-transform: uppercase; margin-bottom: 12px; }
+        .mlab-data-wrap { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+        .mlab-data {
+            font-family: "Archivo Black", "Space Mono", monospace;
+            font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1; color: var(--cyber-acid);
+            letter-spacing: -.02em;
+            text-shadow: 0 0 24px rgba(208,255,0,.7), 3px 0 0 var(--cyber-magenta), -3px 0 0 var(--cyber-cyan);
+        }
+        .mlab-unit { font-family: "Space Mono", monospace; font-size: 16px; color: var(--cyber-cyan); font-weight: 700; }
+        .mlab-status { font-size: 13px; color: var(--cyber-acid); display: flex; align-items: center; gap: 6px; }
+        .mlab-confidence { margin-top: 30px; }
+        .mlab-confidence-head { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: .2em; color: var(--steel); text-transform: uppercase; margin-bottom: 8px; }
+        .mlab-bar { height: 22px; background: #000; border: 1px solid var(--cyber-cyan); position: relative; overflow: hidden; }
+        .mlab-bar-fill { height: 100%; background: linear-gradient(90deg, var(--cyber-cyan) 0%, var(--cyber-acid) 50%, var(--cyber-cyan) 100%); background-size: 200% 100%; animation: bar-shimmer 3s ease-in-out infinite; box-shadow: 0 0 20px var(--cyber-cyan); }
+        @keyframes bar-shimmer { 0% { background-position: 0 0; } 100% { background-position: -200% 0; } }
+        .mlab-stats { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(0,240,255,.25); }
+        .mlab-stat { padding: 14px 16px; border-right: 1px solid rgba(0,240,255,.25); }
+        .mlab-stat:last-child { border-right: none; }
+        .mlab-stat-label { font-size: 9px; letter-spacing: .2em; color: var(--steel); text-transform: uppercase; margin-bottom: 6px; }
+        .mlab-stat-value { font-family: "Space Mono", monospace; font-size: 14px; font-weight: 700; color: var(--cyber-acid); }
+        .mlab-arch-title { font-size: 10px; letter-spacing: .3em; color: var(--cyber-cyan); text-transform: uppercase; margin-bottom: 20px; }
+        .mlab-arch { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+        .mlab-layer {
+            padding: 10px 16px; border-left: 3px solid var(--cyber-cyan);
+            background: rgba(0,240,255,.04); display: flex; justify-content: space-between;
+            font-size: 11px; color: var(--cyber-acid);
+        }
+        .mlab-layer .dim { color: var(--steel); }
+        .mlab-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .mlab-links .btn-cyber { padding: 12px 18px; font-size: 10px; justify-content: center; }
+
+        .ai-module {
+            padding: 120px 0; position: relative;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 20%, rgba(255,0,160,.08), transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,240,255,.08), transparent 60%),
+                var(--void);
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .ai-status-bar {
+            display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+            padding: 16px 24px; border: 1px solid var(--cyber-cyan); background: #000;
+            font-family: "Space Mono", monospace; font-size: 11px; color: var(--steel);
+            margin-bottom: 40px; text-transform: uppercase; letter-spacing: .15em;
+        }
+        .ai-status-bar .status-item { display: flex; align-items: center; gap: 6px; }
+        .ai-status-bar .status-item span:last-child { color: var(--cyber-acid); font-weight: 700; }
+
+        .live-data-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+            border: 2px solid var(--cyber-cyan); background: #000; margin-bottom: 60px;
+        }
+        .live-card { padding: 24px 20px; border-right: 1px solid rgba(0,240,255,.25); font-family: "Space Mono", monospace; position: relative; }
+        .live-card:last-child { border-right: none; }
+        .live-card-label { font-size: 10px; letter-spacing: .25em; color: var(--cyber-cyan); text-transform: uppercase; margin-bottom: 12px; }
+        .live-card-value { font-family: "Archivo Black", "Space Mono", monospace; font-size: clamp(1.4rem, 2.4vw, 2rem); color: var(--cyber-acid); line-height: 1; letter-spacing: -.01em; margin-bottom: 8px; word-break: break-word; }
+        .live-card-change { font-size: 11px; color: var(--steel); letter-spacing: .1em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+        .mini-btn { padding: 6px 12px; font-family: "Space Mono", monospace; font-size: 10px; font-weight: 700; letter-spacing: .1em; color: var(--cyber-cyan); background: transparent; border: 1px solid var(--cyber-cyan); cursor: pointer; transition: all .2s; text-transform: uppercase; }
+        .mini-btn:hover { background: var(--cyber-cyan); color: #000; }
+
+        .ai-feature { border: 1px solid var(--cyber-magenta); background: #000; margin-bottom: 24px; position: relative; overflow: hidden; }
+        .ai-feature-header { padding: 24px 28px; border-bottom: 1px solid rgba(255,0,160,.2); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .ai-feature-label { font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: .25em; color: var(--cyber-magenta); text-transform: uppercase; margin-bottom: 8px; }
+        .ai-feature-header h3 { font-family: "Archivo Black", sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.5rem); color: var(--bone); margin-bottom: 8px; letter-spacing: -.01em; }
+        .ai-feature-header p { font-family: "Space Mono", monospace; font-size: 12px; color: var(--steel); line-height: 1.7; max-width: 600px; margin: 0; }
+        .ai-feature-body { padding: 24px 28px; border-top: 1px solid rgba(255,0,160,.15); display: flex; gap: 12px; flex-wrap: wrap; }
+        .ai-feature-body textarea { flex: 1; min-width: 200px; min-height: 80px; padding: 14px; background: var(--void); border: 1px solid var(--cyber-cyan); color: var(--bone); font-family: "Space Mono", monospace; font-size: 13px; resize: vertical; }
+        .ai-feature-body textarea:focus { outline: none; box-shadow: 0 0 0 2px rgba(0,240,255,.2); }
+        .ai-feature-output { padding: 24px 28px; min-height: 80px; }
+        .output-placeholder { font-family: "Space Mono", monospace; font-size: 11px; color: var(--steel); letter-spacing: .1em; font-style: italic; }
+        .analysis-result { font-family: "Space Mono", monospace; font-size: 13px; }
+        .analysis-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 10px; letter-spacing: .2em; color: var(--steel); text-transform: uppercase; }
+        .prediction { display: grid; grid-template-columns: 40px 1fr 80px; gap: 12px; padding: 10px 0; border-bottom: 1px dashed rgba(0,240,255,.15); font-size: 12px; color: var(--bone); }
+        .prediction:last-of-type { border-bottom: none; }
+        .pred-rank { color: var(--cyber-magenta); font-weight: 700; }
+        .pred-name { color: var(--bone); }
+        .pred-conf { color: var(--cyber-acid); font-weight: 700; text-align: right; }
+        .analysis-source { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,240,255,.15); display: flex; align-items: center; gap: 14px; }
+        .analysis-source img { width: 80px; height: 80px; object-fit: cover; border: 1px solid var(--cyber-cyan); filter: contrast(1.1); }
+        .analysis-source span { font-size: 10px; letter-spacing: .15em; color: var(--steel); text-transform: uppercase; }
+        .sentiment-bar-wrap { height: 20px; background: #000; border: 1px solid var(--cyber-cyan); margin-bottom: 12px; overflow: hidden; }
+        .sentiment-bar { height: 100%; transition: width .6s; }
+        .sentiment-meta { font-size: 11px; color: var(--steel); letter-spacing: .15em; text-transform: uppercase; }
+        .manifesto-generated { font-family: "Space Mono", monospace; padding: 24px; border: 1px dashed var(--cyber-yellow); background: rgba(255,204,0,.03); }
+        .mg-title { font-size: 11px; letter-spacing: .3em; color: var(--cyber-yellow); margin-bottom: 20px; text-transform: uppercase; }
+        .mg-body p { font-size: 14px; color: var(--bone); line-height: 1.8; margin-bottom: 8px; letter-spacing: .02em; }
+        .mg-clause { color: var(--cyber-acid) !important; font-style: italic; padding-top: 12px; border-top: 1px solid rgba(255,204,0,.2); margin-top: 12px !important; }
+        .mg-end { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,204,0,.2); font-size: 10px; letter-spacing: .3em; color: var(--cyber-magenta); text-transform: uppercase; }
+
+        .ai-log { border: 1px solid var(--steel); background: #000; margin-top: 40px; }
+        .ai-log-header { padding: 10px 16px; background: #111; border-bottom: 1px solid var(--steel); display: flex; justify-content: space-between; align-items: center; font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: .25em; color: var(--cyber-cyan); text-transform: uppercase; }
+        .ai-log-body { padding: 12px 16px; max-height: 200px; overflow-y: auto; font-family: "Space Mono", monospace; font-size: 11px; line-height: 1.8; }
+        .log-line { margin-bottom: 2px; }
+        .log-info { color: var(--steel); }
+        .log-success { color: var(--cyber-acid); }
+        .log-warn { color: var(--cyber-yellow); }
+        .log-error { color: var(--cyber-red); }
+
+        .manifesto {
+            background: var(--paper); color: var(--ink); padding: 120px 0;
+            position: relative; overflow: hidden;
+            border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink);
+            content-visibility: auto; contain-intrinsic-size: 700px;
+        }
+        .manifesto::before {
+            content: "DADA"; position: absolute; top: -40px; right: -40px;
+            font-family: "Archivo Black", sans-serif; font-size: clamp(15rem, 30vw, 25rem);
+            color: var(--ink); opacity: .06; line-height: 1; pointer-events: none; transform: rotate(-12deg);
+        }
+        .manifesto-inner { position: relative; z-index: 2; max-width: 900px; margin: auto; }
+        .manifesto-label { font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; letter-spacing: .3em; color: var(--cyber-red); margin-bottom: 30px; text-transform: uppercase; display: inline-block; padding: 6px 14px; border: 2px solid var(--cyber-red); transform: rotate(-2deg); }
+        .manifesto-title { font-family: "Archivo Black", sans-serif; font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: .95; letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 40px; }
+        .manifesto-title em { background: var(--ink); color: var(--paper); padding: 0 12px; display: inline-block; font-style: normal; transform: skewX(-6deg); }
+        .manifesto-copy { font-family: "Space Mono", monospace; font-size: 15px; line-height: 1.9; color: var(--ink); max-width: 700px; }
+        .manifesto-copy p { margin-bottom: 20px; color: var(--ink); }
+        .manifesto-copy strong { background: var(--cyber-yellow); padding: 2px 6px; }
+        .manifesto-sign { display: flex; align-items: center; gap: 20px; margin-top: 40px; font-family: "Space Mono", monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+        .manifesto-sign::before { content: ""; flex: 0 0 60px; height: 2px; background: var(--ink); }
+
+        .subsystems { padding: 120px 0; position: relative; background: var(--void); content-visibility: auto; contain-intrinsic-size: 800px; }
+        .subsys-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--cyber-cyan); margin-top: 50px; }
+        .subsys-card { padding: 36px 28px; background: #000; border-right: 1px solid var(--cyber-cyan); position: relative; transition: all .3s; cursor: crosshair; display: block; text-decoration: none; }
+        .subsys-card:last-child { border-right: none; }
+        .subsys-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: repeating-linear-gradient(90deg, var(--cyber-cyan) 0, var(--cyber-cyan) 4px, transparent 4px, transparent 10px); opacity: .5; transition: opacity .3s; }
+        .subsys-card:hover { background: #050510; box-shadow: inset 0 0 60px rgba(0,240,255,.1); }
+        .subsys-card:hover::before { opacity: 1; }
+        .subsys-num { font-family: "Space Mono", monospace; font-size: 11px; color: var(--cyber-magenta); letter-spacing: .3em; margin-bottom: 20px; }
+        .subsys-icon { font-size: 32px; color: var(--cyber-cyan); margin-bottom: 16px; transition: transform .3s; }
+        .subsys-card:hover .subsys-icon { transform: rotate(-10deg) scale(1.15); color: var(--cyber-acid); }
+        .subsys-card h3 { font-family: "Space Mono", monospace; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--bone); margin-bottom: 14px; }
+        .subsys-card p { font-family: "Space Mono", monospace; font-size: 11px; line-height: 1.9; color: var(--steel); }
+
+        .quick-projects { padding: 80px 0; background: var(--void-2); border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); overflow: hidden; }
+        .quick-projects-track { display: inline-flex; gap: 60px; animation: ticker 40s linear infinite; white-space: nowrap; }
+        .quick-project { display: inline-flex; align-items: center; gap: 16px; font-family: "Space Mono", monospace; font-size: 13px; color: var(--steel); text-transform: uppercase; letter-spacing: .15em; transition: color .2s; padding: 8px 0; }
+        .quick-project:hover { color: var(--cyber-acid); }
+        .quick-project::before { content: "►"; color: var(--cyber-magenta); font-size: 10px; }
+
+        .gallery-collage-section { padding: 120px 0; background: var(--void); content-visibility: auto; contain-intrinsic-size: 700px; }
+        .collage { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 50px; }
+        .collage > figure { aspect-ratio: 1; overflow: hidden; position: relative; border: 1px solid var(--border); cursor: pointer; transition: all .3s; }
+        .collage > figure:nth-child(3n) { transform: rotate(-2deg); }
+        .collage > figure:nth-child(4n) { transform: rotate(2deg); }
+        .collage > figure:hover { transform: rotate(0) scale(1.05); border-color: var(--cyber-cyan); z-index: 5; box-shadow: 0 0 30px rgba(0,240,255,.4); }
+        .collage img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%) contrast(1.15); transition: filter .3s; }
+        .collage > figure:hover img { filter: grayscale(0%) contrast(1.2) hue-rotate(15deg); }
+        .collage > figure.analyze-ready::after { content: "◉ AI"; position: absolute; top: 8px; right: 8px; padding: 4px 8px; background: var(--cyber-magenta); color: #fff; font-family: "Space Mono", monospace; font-size: 9px; font-weight: 700; letter-spacing: .1em; z-index: 3; }
+
+        .philosophy-glitch { padding: 160px 0; text-align: center; background: #000; position: relative; overflow: hidden; border-bottom: none; }
+        .philosophy-glitch::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 40%, rgba(255,0,160,.1), transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(0,240,255,.1), transparent 50%); pointer-events: none; }
+        .philosophy-title { font-family: "Archivo Black", sans-serif; font-size: clamp(2rem, 5.5vw, 5rem); line-height: 1.1; letter-spacing: -.02em; text-transform: uppercase; max-width: 1100px; margin: auto; position: relative; z-index: 2; }
+        .philosophy-title .outline { color: transparent; -webkit-text-stroke: 2px var(--cyber-cyan); font-style: italic; }
+        .philosophy-title .acid { background: var(--cyber-acid); color: #000; padding: 0 16px; display: inline-block; transform: skewX(-6deg); }
+        .philosophy-label { font-family: "Space Mono", monospace; font-size: 11px; letter-spacing: .3em; color: var(--cyber-magenta); margin-bottom: 40px; display: inline-block; text-transform: uppercase; position: relative; z-index: 2; }
+
+        .footer { border-top: 3px double var(--cyber-cyan); }
+        .footer-col h4 { color: var(--cyber-cyan) !important; font-family: "Space Mono", monospace; }
+        .footer-col a { font-family: "Space Mono", monospace; color: var(--steel); }
+        .footer-col a:hover { color: var(--cyber-acid) !important; }
+        .footer-brand span { font-family: "Space Mono", monospace; letter-spacing: .1em; }
+        .footer-bottom { color: var(--steel) !important; font-family: "Space Mono", monospace; }
+        .blink { animation: blink 1s step-end infinite; display: inline-block; }
+        @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
 
         /* =====================================================
-           NOISE TEXTURE OVERLAY
-        ====================================================== */
+           NEW · ENTERTAINMENT LAYER STYLES
+           ===================================================== */
 
-        body::before {
+        /* MATRIX CANVAS */
+		#matrix-canvas {
+			position: fixed; inset: 0;
+			z-index: 9994;                    /* ← was -1 */
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity .6s;
+			mix-blend-mode: screen;           /* ← new */
+		}
+		#matrix-canvas.active { opacity: .35; }  /* ← was .18 */
+		
 
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            z-index: 9999;
-
-            opacity: .045;
-
-            background-image:
-
-                repeating-conic-gradient(
-                    from 0deg,
-                    rgba(255,255,255,.1) 0deg,
-                    rgba(0,0,0,.1) 1deg,
-                    rgba(255,255,255,.05) 2deg,
-                    rgba(0,0,0,.05) 3deg
-                );
-
-            mix-blend-mode: overlay;
-
+        /* CURSOR PARTICLE */
+        .cursor-particle {
+            position: fixed; pointer-events: none;
+            width: 6px; height: 6px; border-radius: 50%;
+            z-index: 9997;
+            animation: particle-fade 0.8s ease-out forwards;
+            mix-blend-mode: screen;
+        }
+        @keyframes particle-fade {
+            0% { opacity: 1; transform: scale(1) translate(0, 0); }
+            100% { opacity: 0; transform: scale(0.2) translate(var(--px, 10px), var(--py, 10px)); }
         }
 
-
-        body::after {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
+        /* FX CONTROL PANEL */
+        .fx-panel {
+            position: fixed; right: 20px; bottom: 90px;
             z-index: 9998;
-
-            background:
-
-                repeating-linear-gradient(
-                    0deg,
-                    transparent 0px,
-                    transparent 2px,
-                    rgba(255,255,255,.02) 3px,
-                    transparent 4px
-                );
-
-            mix-blend-mode: screen;
-
+            font-family: "Space Mono", monospace;
+            display: flex; flex-direction: column-reverse; align-items: flex-end; gap: 12px;
         }
-
-
-        /* =====================================================
-           GLITCH KEYFRAMES
-        ====================================================== */
-
-        @keyframes glitch-shift {
-
-            0% {
-                transform: translate(0, 0) skewX(0deg);
-                clip-path: inset(0 0 0 0);
-            }
-
-            5% {
-                transform: translate(-2px, 2px) skewX(3deg);
-                clip-path: inset(10% 0 80% 0);
-            }
-
-            10% {
-                transform: translate(3px, -1px) skewX(-2deg);
-                clip-path: inset(40% 0 40% 0);
-            }
-
-            15% {
-                transform: translate(-1px, -3px) skewX(0deg);
-                clip-path: inset(70% 0 10% 0);
-            }
-
-            20% {
-                transform: translate(0, 0) skewX(0deg);
-                clip-path: inset(0 0 0 0);
-            }
-
-            100% {
-                transform: translate(0, 0) skewX(0deg);
-                clip-path: inset(0 0 0 0);
-            }
-
+        .fx-trigger {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--cyber-magenta); color: #000; border: 2px solid var(--cyber-magenta);
+            cursor: pointer; font-size: 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(255,0,160,.5);
+            transition: all .25s;
         }
-
-
-        @keyframes glitch-clip {
-
-            0%, 100% {
-                clip-path: inset(0 0 0 0);
-            }
-
-            10% {
-                clip-path: inset(20% 0 60% 0);
-            }
-
-            20% {
-                clip-path: inset(80% 0 10% 0);
-            }
-
-            30% {
-                clip-path: inset(40% 0 30% 0);
-            }
-
-            40% {
-                clip-path: inset(10% 0 90% 0);
-            }
-
-            50% {
-                clip-path: inset(0 0 0 0);
-            }
-
+        .fx-trigger:hover { transform: rotate(90deg) scale(1.1); background: var(--cyber-acid); border-color: var(--cyber-acid); }
+        .fx-panel.open .fx-trigger { transform: rotate(45deg); background: var(--cyber-cyan); border-color: var(--cyber-cyan); }
+        .fx-list {
+            display: none; flex-direction: column; gap: 6px;
+            background: #000; border: 2px solid var(--cyber-cyan);
+            padding: 12px; min-width: 200px;
+            box-shadow: 0 0 30px rgba(0,240,255,.3);
         }
-
-
-        @keyframes flicker {
-
-            0%, 100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: .3;
-            }
-
+        .fx-panel.open .fx-list { display: flex; }
+        .fx-item {
+            padding: 10px 14px; background: transparent; border: 1px solid var(--steel);
+            color: var(--bone); font-family: "Space Mono", monospace; font-size: 10px;
+            letter-spacing: .15em; text-transform: uppercase; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 10px;
+            transition: all .2s; text-align: left;
         }
+        .fx-item:hover { border-color: var(--cyber-acid); color: var(--cyber-acid); }
+        .fx-item.on { background: rgba(0,240,255,.1); border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
+        .fx-item .indicator { font-size: 8px; }
 
-
-        @keyframes scanline {
-
-            0% {
-                top: -100%;
-            }
-
-            100% {
-                top: 200%;
-            }
-
+        /* TERMINAL */
+        .terminal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.7);
+            backdrop-filter: blur(4px);
+            z-index: 100000;
+            opacity: 0; visibility: hidden;
+            transition: all .25s;
         }
-
-
-        @keyframes static-burst {
-
-            0%, 100% {
-                opacity: .1;
-            }
-
-            50% {
-                opacity: .5;
-            }
-
-        }
-
-
-        @keyframes rotate-slow {
-
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-
-        }
-
-
-        @keyframes pulse-raw {
-
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-        }
-
-
-        /* =====================================================
-           SCANLINE ELEMENT
-        ====================================================== */
-
-        .scanline {
-
+        .terminal-overlay.open { opacity: 1; visibility: visible; }
+        .terminal-panel {
             position: fixed;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%) scale(.95);
+            width: min(92vw, 820px); height: min(80vh, 600px);
+            background: #000;
+            border: 2px solid var(--cyber-cyan);
+            display: flex; flex-direction: column;
+            z-index: 100001;
+            box-shadow: 0 0 80px rgba(0,240,255,.4);
+            opacity: 0; visibility: hidden;
+            transition: all .25s;
+        }
+        .terminal-overlay.open + .terminal-panel,
+        .terminal-panel.open { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+        .terminal-header {
+            padding: 10px 16px; background: var(--cyber-cyan); color: #000;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: "Space Mono", monospace; font-size: 11px;
+            font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+        }
+        .terminal-close {
+            background: #000; color: var(--cyber-cyan); border: none;
+            width: 26px; height: 26px; cursor: pointer; font-weight: 700;
+        }
+        .terminal-close:hover { background: var(--cyber-red); color: #fff; }
+        .terminal-body {
+            flex: 1; padding: 16px 20px; overflow-y: auto;
+            font-family: "Space Mono", monospace; font-size: 12px;
+            line-height: 1.7; color: var(--cyber-acid);
+        }
+        .terminal-body::-webkit-scrollbar { width: 8px; }
+        .terminal-body::-webkit-scrollbar-track { background: #111; }
+        .terminal-body::-webkit-scrollbar-thumb { background: var(--cyber-cyan); }
+        .t-line { margin-bottom: 3px; white-space: pre-wrap; word-break: break-word; }
+        .t-cmd { color: var(--bone); }
+        .t-out { color: var(--cyber-acid); }
+        .t-err { color: var(--cyber-red); }
+        .t-dim { color: var(--steel); }
+        .t-info { color: var(--cyber-cyan); }
+        .terminal-input-line {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 20px; border-top: 1px solid rgba(0,240,255,.3);
+            background: #050510; font-family: "Space Mono", monospace; font-size: 13px;
+        }
+        .terminal-prompt { color: var(--cyber-magenta); font-weight: 700; }
+        .terminal-input {
+            flex: 1; background: transparent; border: none; outline: none;
+            color: var(--cyber-acid); font-family: "Space Mono", monospace; font-size: 13px;
+            caret-color: var(--cyber-acid);
+        }
 
-            left: 0;
-
-            width: 100%;
-
-            height: 2px;
-
-            background: var(--acid);
-
-            opacity: .1;
-
+        /* RANDOM DADA INJECTION */
+        .dada-injection {
+            position: fixed; z-index: 500;
             pointer-events: none;
-
-            z-index: 9000;
-
-            animation: scanline 8s linear infinite;
-
-        }
-
-
-        /* =====================================================
-           NAVIGATION — BRUTALIST
-        ====================================================== */
-
-        nav {
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            background: rgba(0,0,0,.85);
-
-            border-bottom: 1px solid var(--border-raw);
-
-            backdrop-filter: blur(20px);
-
-            padding: 0 clamp(16px, 4vw, 60px);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            height: 64px;
-
-        }
-
-
-        .nav-brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            font-family: "DM Mono", monospace;
-
-            font-weight: 500;
-
-            font-size: 13px;
-
-            letter-spacing: .2em;
-
-            text-transform: uppercase;
-
-            color: var(--bone);
-
-            text-decoration: none;
-
-        }
-
-
-        .nav-logo {
-
-            width: 28px;
-
-            height: 28px;
-
-            object-fit: contain;
-
-            filter: invert(1) contrast(1.2);
-
-        }
-
-
-        .nav-links {
-
-            display: flex;
-
-            gap: 28px;
-
-            align-items: center;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .15em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .nav-links a {
-
-            color: var(--ash);
-
-            text-decoration: none;
-
-            transition: color .2s ease;
-
-            position: relative;
-
-        }
-
-
-        .nav-links a::before {
-
-            content: "";
-
-            position: absolute;
-
-            bottom: -4px;
-
-            left: 0;
-
-            width: 0;
-
-            height: 1px;
-
-            background: var(--acid);
-
-            transition: width .3s ease;
-
-        }
-
-
-        .nav-links a:hover {
-
-            color: var(--bone);
-
-        }
-
-
-        .nav-links a:hover::before {
-
-            width: 100%;
-
-        }
-
-
-        /* Language switcher raw version */
-
-        .lang-switch {
-
-            position: relative;
-
-            display: inline-block;
-
-        }
-
-
-        .lang-toggle {
-
-            position: absolute;
-
-            opacity: 0;
-
-            width: 0;
-
-            height: 0;
-
-        }
-
-
-        .lang-button {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            cursor: pointer;
-
-            padding: 8px 14px;
-
-            border: 1px solid var(--border-raw);
-
-            background: transparent;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .12em;
-
-            color: var(--bone);
-
-            text-transform: uppercase;
-
-            transition: all .2s ease;
-
-            user-select: none;
-
-        }
-
-
-        .lang-button:hover {
-
-            background: var(--acid);
-
-            color: var(--void);
-
-            border-color: var(--acid);
-
-        }
-
-
-        .lang-dropdown {
-
-            position: absolute;
-
-            top: calc(100% + 8px);
-
-            right: 0;
-
-            min-width: 140px;
-
-            background: var(--void-2);
-
-            border: 1px solid var(--border-raw);
-
-            padding: 0;
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transform: translateY(-4px);
-
-            transition: all .2s ease;
-
-            z-index: 1001;
-
-        }
-
-
-        .lang-option {
-
-            display: block;
-
-            padding: 10px 16px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .1em;
-
-            text-transform: uppercase;
-
-            color: var(--ash);
-
-            text-decoration: none;
-
-            transition: all .2s ease;
-
-            border-bottom: 1px solid rgba(255,255,255,.05);
-
-        }
-
-
-        .lang-option:hover {
-
-            background: var(--void-3);
-
-            color: var(--acid);
-
-        }
-
-
-        .lang-option.active {
-
-            color: var(--void);
-
-            background: var(--acid);
-
-        }
-
-
-        .lang-toggle:checked ~ .lang-dropdown,
-
-        .lang-switch:focus-within .lang-dropdown {
-
-            opacity: 1;
-
-            visibility: visible;
-
-            transform: translateY(0);
-
-        }
-
-
-        /* =====================================================
-           HERO — DE_CONSTRUCTED
-        ====================================================== */
-
-        .hero {
-
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-
-            padding: 100px 0 60px;
-
-            position: relative;
-
-        }
-
-
-        .hero-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 40px;
-
-            align-items: center;
-
-            width: 100%;
-
-        }
-
-
-        .hero-text {
-
-            position: relative;
-
-            z-index: 2;
-
-        }
-
-
-        .hero-label {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 11px;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--acid);
-
-            margin-bottom: 30px;
-
-            display: inline-block;
-
-            border: 1px solid var(--acid);
-
             padding: 8px 16px;
-
-            transform: rotate(-2deg);
-
-            background: rgba(204,255,0,.05);
-
-        }
-
-
-        .hero-text h1 {
-
-            font-size: clamp(3.5rem, 12vw, 10rem);
-
-            line-height: .8;
-
-            letter-spacing: -.08em;
-
-            font-weight: 700;
-
+            border: 2px solid currentColor;
+            background: #000;
+            font-family: "Space Mono", monospace; font-size: 11px;
+            font-weight: 700; letter-spacing: .22em;
             text-transform: uppercase;
-
-            position: relative;
-
-            word-break: break-all;
-
-        }
-
-
-        .hero-text h1 .word {
-
-            display: block;
-
-            position: relative;
-
-        }
-
-
-        .hero-text h1 .word-1 {
-
-            color: var(--bone);
-
-            text-shadow:
-
-                var(--glitch-offset) 0 0 var(--blood),
-
-                calc(var(--glitch-offset) * -1) 0 0 var(--acid);
-
-            animation: glitch-clip 6s infinite;
-
-        }
-
-
-        .hero-text h1 .word-2 {
-
-            color: transparent;
-
-            -webkit-text-stroke: 2px var(--acid);
-
-            font-style: italic;
-
-            transform: translateX(20px) rotate(2deg);
-
-            animation: glitch-shift 8s infinite;
-
-        }
-
-
-        .hero-text h1 .word-3 {
-
-            color: var(--void);
-
-            background: var(--acid);
-
-            padding: 0 10px;
-
-            display: inline-block;
-
-            transform: skewX(-10deg);
-
-            animation: pulse-raw 4s infinite;
-
-        }
-
-
-        .hero-copy {
-
-            margin-top: 40px;
-
-            max-width: 600px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            color: var(--ash);
-
-            border-left: 3px solid var(--blood);
-
-            padding-left: 20px;
-
-            transform: rotate(1deg);
-
-        }
-
-
-        .hero-copy strong {
-
-            color: var(--bone);
-
-            font-weight: 500;
-
-            text-decoration: underline;
-
-            text-decoration-color: var(--acid);
-
-        }
-
-
-        .hero-actions {
-
-            display: flex;
-
-            gap: 16px;
-
-            margin-top: 40px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        .button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            padding: 14px 28px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 11px;
-
-            letter-spacing: .15em;
-
-            text-transform: uppercase;
-
-            text-decoration: none;
-
-            border: 1px solid var(--border-raw);
-
-            background: transparent;
-
-            color: var(--bone);
-
-            transition: all .25s ease;
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-
-        .button::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: -100%;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: var(--acid);
-
-            transition: left .25s ease;
-
-            z-index: -1;
-
-        }
-
-
-        .button:hover::before {
-
-            left: 0;
-
-        }
-
-
-        .button:hover {
-
-            color: var(--void);
-
-            border-color: var(--acid);
-
-        }
-
-
-        .button-primary {
-
-            background: var(--acid);
-
-            color: var(--void);
-
-            border-color: var(--acid);
-
-        }
-
-
-        .button-primary::before {
-
-            background: var(--blood);
-
-        }
-
-
-        .button-primary:hover {
-
-            color: var(--bone);
-
-            border-color: var(--blood);
-
-        }
-
-
-        /* Hero visual abstract */
-
-        .hero-art {
-
-            position: relative;
-
-            min-height: 600px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-        }
-
-
-        .abstract-composition {
-
-            position: relative;
-
-            width: 100%;
-
-            height: 100%;
-
-            min-height: 500px;
-
-        }
-
-
-        .abstract-shape {
-
-            position: absolute;
-
-            border: 2px solid var(--border-raw);
-
-            background: rgba(255,255,255,.02);
-
-        }
-
-
-        .shape-1 {
-
-            width: 300px;
-
-            height: 300px;
-
-            top: 20%;
-
-            left: 10%;
-
-            border-radius: 50%;
-
-            animation: rotate-slow 30s linear infinite;
-
-            border-color: var(--acid);
-
-        }
-
-
-        .shape-2 {
-
-            width: 200px;
-
-            height: 200px;
-
-            top: 40%;
-
-            left: 50%;
-
-            transform: rotate(45deg);
-
-            border-color: var(--blood);
-
-            animation: pulse-raw 5s infinite;
-
-        }
-
-
-        .shape-3 {
-
-            width: 150px;
-
-            height: 400px;
-
-            top: 15%;
-
-            left: 60%;
-
-            border-radius: 0;
-
-            border-color: var(--chrome);
-
-            transform: skewX(20deg);
-
-            background: rgba(192,192,192,.05);
-
-        }
-
-
-        .shape-4 {
-
-            width: 250px;
-
-            height: 250px;
-
-            top: 50%;
-
-            left: 20%;
-
-            border-radius: 50% 0 50% 0;
-
-            border-color: var(--acid);
-
-            opacity: .6;
-
-            animation: glitch-clip 7s infinite;
-
-        }
-
-
-        .glitch-text {
-
-            position: absolute;
-
-            top: 50%;
-
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            font-family: "DM Mono", monospace;
-
-            font-size: clamp(4rem, 10vw, 8rem);
-
-            font-weight: 500;
-
-            color: var(--bone);
-
-            letter-spacing: -.05em;
-
-            animation: glitch-shift 5s infinite;
-
-            z-index: 3;
-
-        }
-
-
-        .glitch-text::before,
-
-        .glitch-text::after {
-
-            content: attr(data-text);
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-        }
-
-
-        .glitch-text::before {
-
-            color: var(--blood);
-
-            animation: glitch-clip 4s infinite;
-
-            clip-path: inset(0 0 70% 0);
-
-            transform: translate(-3px, -3px);
-
-        }
-
-
-        .glitch-text::after {
-
-            color: var(--acid);
-
-            animation: glitch-clip 6s infinite;
-
-            clip-path: inset(70% 0 0 0);
-
-            transform: translate(3px, 3px);
-
-        }
-
-
-        /* =====================================================
-           MARQUEE — RAW TAPE
-        ====================================================== */
-
-        .marquee {
-
-            border-top: 1px solid var(--border-raw);
-
-            border-bottom: 1px solid var(--border-raw);
-
-            padding: 20px 0;
-
-            overflow: hidden;
-
-            background: var(--void-2);
-
-            position: relative;
-
-        }
-
-
-        .marquee::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: repeating-linear-gradient(
-                90deg,
-                transparent 0px,
-                transparent 50px,
-                rgba(255,255,255,.03) 51px,
-                transparent 52px
-            );
-
-            pointer-events: none;
-
-            z-index: 1;
-
-        }
-
-
-        .marquee-track {
-
-            display: inline-flex;
-
-            gap: 40px;
-
-            animation: marquee 20s linear infinite;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 12px;
-
-            letter-spacing: .2em;
-
-            text-transform: uppercase;
-
-            white-space: nowrap;
-
-        }
-
-
-        .marquee-track span {
-
-            color: var(--ash);
-
-            position: relative;
-
-        }
-
-
-        .marquee-track span::before {
-
-            content: "[";
-
-            color: var(--acid);
-
-            margin-right: 8px;
-
-        }
-
-
-        .marquee-track span::after {
-
-            content: "]";
-
-            color: var(--acid);
-
-            margin-left: 8px;
-
-        }
-
-
-        @keyframes marquee {
-
-            to {
-                transform: translateX(-50%);
-            }
-
-        }
-
-
-        /* =====================================================
-           SECTIONS — FRAGMENTED
-        ====================================================== */
-
-        section {
-
-            padding: 120px 0;
-
-            position: relative;
-
-            border-bottom: 1px solid rgba(255,255,255,.05);
-
-        }
-
-
-        .container {
-
-            width: min(calc(100% - 40px), var(--max-width));
-
-            margin: auto;
-
-            position: relative;
-
-        }
-
-
-        .section-label {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--blood);
-
-            margin-bottom: 30px;
-
-            display: inline-block;
-
-            transform: rotate(-1deg);
-
-            border-bottom: 2px solid var(--acid);
-
-            padding-bottom: 4px;
-
-        }
-
-
-        .section-title {
-
-            font-size: clamp(2.5rem, 6vw, 6rem);
-
-            line-height: .9;
-
-            letter-spacing: -.06em;
-
-            text-transform: uppercase;
-
-            font-weight: 700;
-
-            margin-bottom: 30px;
-
-            position: relative;
-
-        }
-
-
-        .section-title .accent {
-
-            color: transparent;
-
-            -webkit-text-stroke: 1.5px var(--acid);
-
-            font-style: italic;
-
-        }
-
-
-        .section-title .strike {
-
-            text-decoration: line-through;
-
-            text-decoration-color: var(--blood);
-
-            text-decoration-thickness: 4px;
-
-        }
-
-
-        .section-intro {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            color: var(--ash);
-
-            max-width: 700px;
-
-            margin-bottom: 60px;
-
-            border-left: 3px solid var(--acid);
-
-            padding-left: 20px;
-
-        }
-
-
-        /* =====================================================
-           DOMAINS — BROKEN GRID
-        ====================================================== */
-
-        .domains {
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 0;
-
-            border: 1px solid var(--border-raw);
-
-        }
-
-
-        .domain {
-
-            padding: 40px 30px;
-
-            min-height: 300px;
-
-            position: relative;
-
-            border-right: 1px solid var(--border-raw);
-
-            border-bottom: 1px solid var(--border-raw);
-
-            background: var(--void);
-
-            transition: all .3s ease;
-
-            cursor: crosshair;
-
-        }
-
-
-        .domain:nth-child(4n) {
-
-            border-right: none;
-
-        }
-
-
-        .domain:nth-last-child(-n+4) {
-
-            border-bottom: none;
-
-        }
-
-
-        .domain:hover {
-
-            background: var(--void-2);
-
-            transform: translateY(-4px);
-
-            border-color: var(--acid);
-
-        }
-
-
-        .domain::before {
-
-            content: attr(data-number);
-
-            position: absolute;
-
-            top: 20px;
-
-            right: 25px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 12px;
-
-            color: var(--acid);
-
-        }
-
-
-        .domain-symbol {
-
-            font-size: 60px;
-
-            margin-bottom: 30px;
-
-            opacity: .5;
-
-            animation: pulse-raw 5s infinite;
-
-        }
-
-
-        .domain h3 {
-
-            font-size: 20px;
-
-            text-transform: uppercase;
-
-            letter-spacing: .05em;
-
-            margin-bottom: 15px;
-
-            color: var(--bone);
-
-        }
-
-
-        .domain p {
-
-            font-size: 13px;
-
-            line-height: 1.7;
-
-            color: var(--ash);
-
-            font-family: "DM Mono", monospace;
-
-        }
-
-
-        /* =====================================================
-           ABOUT — SPLIT ABSTRACT
-        ====================================================== */
-
-        .about-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 60px;
-
-            align-items: center;
-
-        }
-
-
-        .about-visual {
-
-            min-height: 500px;
-
-            position: relative;
-
-            background: var(--void-2);
-
-            border: 1px solid var(--border-raw);
-
-            overflow: hidden;
-
-        }
-
-
-        .about-visual::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-
-                linear-gradient(45deg, var(--acid) 25%, transparent 25%),
-                linear-gradient(-45deg, var(--blood) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, var(--chrome) 75%),
-                linear-gradient(-45deg, transparent 75%, var(--acid) 75%);
-
-            background-size: 20px 20px;
-
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0;
-
-            opacity: .1;
-
-            animation: static-burst 3s infinite;
-
-        }
-
-
-        .about-visual::after {
-
-            content: "DHA®";
-
-            position: absolute;
-
-            top: 50%;
-
-            left: 50%;
-
-            transform: translate(-50%, -50%) rotate(-15deg);
-
-            font-size: clamp(5rem, 15vw, 12rem);
-
-            font-weight: 700;
-
-            color: transparent;
-
-            -webkit-text-stroke: 3px var(--acid);
-
-            opacity: .4;
-
-        }
-
-
-        .about-text h2 {
-
-            font-size: clamp(2rem, 4vw, 4rem);
-
-            line-height: .9;
-
-            letter-spacing: -.05em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .about-text h2 .highlight {
-
-            background: var(--blood);
-
-            color: var(--void);
-
-            padding: 0 8px;
-
-            display: inline-block;
-
-            transform: skewX(-5deg);
-
-        }
-
-
-        .about-text p {
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            color: var(--ash);
-
-            font-family: "DM Mono", monospace;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .about-text p strong {
-
-            color: var(--acid);
-
-            font-weight: 500;
-
-        }
-
-
-        /* =====================================================
-           PROJECTS — RAW BLOCKS
-        ====================================================== */
-
-        .project {
-
-            margin-bottom: 40px;
-
-            border: 1px solid var(--border-raw);
-
-            background: var(--void-2);
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            position: relative;
-
-            transition: all .3s ease;
-
-        }
-
-
-        .project:hover {
-
-            border-color: var(--acid);
-
-            transform: translateX(-4px);
-
-        }
-
-
-        .project-visual {
-
-            min-height: 400px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background: var(--void);
-
-        }
-
-
-        .project-visual img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            filter: grayscale(100%) contrast(1.2);
-
-            transition: all .5s ease;
-
-        }
-
-
-        .project:hover .project-visual img {
-
-            filter: grayscale(0%) contrast(1.1) hue-rotate(45deg);
-
-            transform: scale(1.05);
-
-        }
-
-
-        .project-visual::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background: repeating-linear-gradient(
-                0deg,
-                transparent 0px,
-                transparent 4px,
-                rgba(0,0,0,.3) 5px
-            );
-
-            z-index: 1;
-
-            pointer-events: none;
-
-        }
-
-
-        .project-info {
-
-            padding: clamp(30px, 5vw, 60px);
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            position: relative;
-
-        }
-
-
-        .project-tag {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .2em;
-
-            text-transform: uppercase;
-
-            color: var(--acid);
-
-            margin-bottom: 20px;
-
-            display: inline-block;
-
-        }
-
-
-        .project-info h3 {
-
-            font-size: clamp(2rem, 4vw, 4rem);
-
-            letter-spacing: -.05em;
-
-            line-height: .9;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-
-            color: var(--bone);
-
-        }
-
-
-        .project-info p {
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            color: var(--ash);
-
-            font-family: "DM Mono", monospace;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .tech {
-
-            display: flex;
-
-            gap: 8px;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .tech span {
-
-            border: 1px solid var(--border-raw);
-
-            padding: 6px 12px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .1em;
-
-            text-transform: uppercase;
-
-            color: var(--chrome);
-
-            background: var(--void);
-
-        }
-
-
-        /* --- Multi-link layouts (for MLabChain) --- */
-
-        .project-links {
-
-            display: flex;
-
-            gap: 10px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        .project-links .button {
-
-            padding: 12px 18px;
-
-            font-size: 10px;
-
-        }
-
-
-        /* Logo badge overlay on the project visual */
-
-        .project-logo-badge {
-
-            position: absolute;
-
-            bottom: 20px;
-
-            left: 20px;
-
-            width: 76px;
-
-            height: 76px;
-
-            object-fit: contain;
-
-            z-index: 3;
-
-            padding: 10px;
-
-            background: rgba(0,0,0,.55);
-
-            border: 1px solid var(--border-raw);
-
-            backdrop-filter: blur(10px);
-
-            -webkit-backdrop-filter: blur(10px);
-
-            filter: none !important;   /* override project img filter */
-
-        }
-
-
-        .project:hover .project-logo-badge {
-
-            border-color: var(--acid);
-
-        }
-
-
-        /* Wide banner variant — banner is 1600x780 (≈2.05:1) */
-
-        .project.project-wide .project-visual {
-
-            min-height: 480px;
-
-        }
-
-
-        /* =====================================================
-           HANA — DECONSTRUCTED
-        ====================================================== */
-
-        .hana-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 60px;
-
-            align-items: center;
-
-        }
-
-
-        .hana-copy h2 {
-
-            font-size: clamp(3rem, 7vw, 7rem);
-
-            line-height: .8;
-
-            letter-spacing: -.08em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-
-            position: relative;
-
-        }
-
-
-        .hana-copy h2 .word {
-
-            display: block;
-
-        }
-
-
-        .hana-copy h2 .word-1 {
-
-            color: var(--bone);
-
-        }
-
-
-        .hana-copy h2 .word-2 {
-
-            color: transparent;
-
-            -webkit-text-stroke: 3px var(--blood);
-
-            font-style: italic;
-
-            transform: translateX(30px);
-
-        }
-
-
-        .hana-copy p {
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            color: var(--ash);
-
-            font-family: "DM Mono", monospace;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .hana-image {
-
-            min-height: 500px;
-
-            position: relative;
-
-            border: 1px solid var(--border-raw);
-
-            background: var(--void-2);
-
-            overflow: hidden;
-
-        }
-
-
-        .hana-image::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    rgba(204,255,0,.2),
-                    transparent 50%,
-                    rgba(255,0,64,.2)
-                );
-
-            z-index: 1;
-
-            mix-blend-mode: screen;
-
-        }
-
-
-        .hana-image img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            filter: contrast(1.3) saturate(1.2);
-
-            animation: glitch-clip 10s infinite;
-
-        }
-
-
-        /* =====================================================
-           PHILOSOPHY — VOID
-        ====================================================== */
-
-        .philosophy {
-
-            text-align: center;
-
-            padding: 160px 0;
-
-            background: var(--void);
-
-        }
-
-
-        .philosophy-mark {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--blood);
-
-            margin-bottom: 40px;
-
-        }
-
-
-        .philosophy h2 {
-
-            max-width: 1000px;
-
-            margin: auto;
-
-            font-size: clamp(2.5rem, 7vw, 6rem);
-
-            line-height: .9;
-
-            letter-spacing: -.06em;
-
-            text-transform: uppercase;
-
-            font-weight: 700;
-
-        }
-
-
-        .philosophy h2 .fragment {
-
-            display: block;
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .philosophy h2 .fragment-1 {
-
-            color: var(--bone);
-
-        }
-
-
-        .philosophy h2 .fragment-2 {
-
-            color: transparent;
-
-            -webkit-text-stroke: 2px var(--acid);
-
-            font-style: italic;
-
-        }
-
-
-        .philosophy h2 .fragment-3 {
-
-            background: var(--blood);
-
-            color: var(--void);
-
-            display: inline-block;
-
-            padding: 0 10px;
-
-            transform: skewX(-10deg);
-
-        }
-
-
-        /* =====================================================
-           FOOTER — TERMINAL
-        ====================================================== */
-
-        footer {
-
-            border-top: 2px solid var(--acid);
-
-            padding: 60px 0 30px;
-
-            background: var(--void-2);
-
-        }
-
-
-        .footer-grid {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-start;
-
-            gap: 40px;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 40px;
-
-        }
-
-
-        .footer-brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 14px;
-
-            letter-spacing: .15em;
-
-            text-transform: uppercase;
-
-            color: var(--bone);
-
-        }
-
-
-        .footer-logo {
-
-            width: 40px;
-
-            height: 40px;
-
-            object-fit: contain;
-
-            filter: invert(1);
-
-        }
-
-
-        .footer-sub {
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 11px;
-
-            color: var(--ash);
-
-            letter-spacing: .1em;
-
-            text-transform: uppercase;
-
-            margin-top: 10px;
-
-        }
-
-
-        .footer-links {
-
-            display: flex;
-
-            gap: 24px;
-
-            flex-wrap: wrap;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 10px;
-
-            letter-spacing: .15em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .footer-links a {
-
-            color: var(--ash);
-
-            text-decoration: none;
-
-            transition: color .2s ease;
-
-        }
-
-
-        .footer-links a:hover {
-
-            color: var(--acid);
-
-        }
-
-
-        .copyright {
-
-            border-top: 1px solid rgba(255,255,255,.1);
-
-            padding-top: 20px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            font-family: "DM Mono", monospace;
-
-            font-size: 9px;
-
-            letter-spacing: .15em;
-
-            text-transform: uppercase;
-
-            color: var(--smoke);
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ====================================================== */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .hana-grid,
-            .project {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .domains {
-
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-
-            .domain:nth-child(2n) {
-
-                border-right: none;
-
-            }
-
-
-            .hero-art {
-
-                min-height: 400px;
-
-            }
-
-
-            .abstract-composition {
-
-                min-height: 400px;
-
-            }
-
+            opacity: 0; transition: opacity .5s;
+            box-shadow: 0 0 30px currentColor;
+        }
+        .dada-injection.show { opacity: 1; }
+
+        /* HANA CLICK RESPONSE */
+        .hana-response {
+            position: fixed; bottom: 180px; left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #000; border: 2px solid var(--cyber-magenta);
+            padding: 16px 24px; max-width: 420px;
+            font-family: "Space Mono", monospace; font-size: 13px;
+            color: var(--bone); line-height: 1.6;
+            z-index: 9999; opacity: 0; pointer-events: none;
+            transition: all .4s;
+            box-shadow: 0 0 40px rgba(255,0,160,.5);
+        }
+        .hana-response.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .hana-response::before {
+            content: "HANA"; position: absolute;
+            top: -10px; left: 16px; background: var(--cyber-magenta);
+            color: #000; font-size: 9px; font-weight: 700;
+            padding: 2px 10px; letter-spacing: .2em;
+        }
+
+        /* GLITCH PAGE EFFECT */
+        body.glitching {
+            animation: page-glitch 0.35s steps(2) 1;
+        }
+        @keyframes page-glitch {
+            0% { filter: none; transform: translate(0,0); }
+            25% { filter: hue-rotate(90deg) saturate(2); transform: translate(-4px, 2px); }
+            50% { filter: hue-rotate(-90deg) invert(1); transform: translate(4px, -2px); }
+            75% { filter: hue-rotate(180deg) contrast(2); transform: translate(-2px, 1px); }
+            100% { filter: none; transform: translate(0,0); }
+        }
+
+        /* RAVE MODE */
+        body.rave {
+            animation: rave-hue 0.5s infinite;
+        }
+        @keyframes rave-hue {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        body.rave::before {
+            background-image:
+                repeating-conic-gradient(from 0deg,
+                    rgba(255,0,160,.4) 0deg, transparent 30deg,
+                    rgba(0,240,255,.4) 60deg, transparent 90deg);
+            background-size: 200px 200px;
+            animation: rave-bg 0.3s infinite linear;
+            opacity: .15 !important;
+        }
+        @keyframes rave-bg {
+            to { background-position: 200px 200px; }
+        }
+        .rave-toast {
+            position: fixed; top: 100px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--cyber-magenta); color: #000;
+            padding: 16px 32px; font-family: "Space Mono", monospace;
+            font-size: 14px; font-weight: 700; letter-spacing: .3em;
+            z-index: 100002; text-transform: uppercase;
+            animation: toast-pulse 0.4s infinite alternate;
+            box-shadow: 0 0 60px var(--cyber-magenta);
+        }
+        @keyframes toast-pulse {
+            from { transform: translateX(-50%) scale(1); }
+            to { transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* NUMBER COUNTER */
+        .counter-anim { display: inline-block; }
+
+        /* KEYBOARD HINT */
+        .kbd-hint {
+            position: fixed; bottom: 24px; left: 24px;
+            font-family: "Space Mono", monospace; font-size: 10px;
+            letter-spacing: .2em; color: var(--steel);
+            z-index: 9997; pointer-events: none;
+            opacity: .6; text-transform: uppercase;
+        }
+        .kbd-hint kbd {
+            display: inline-block; padding: 2px 6px;
+            border: 1px solid var(--steel); color: var(--cyber-cyan);
+            font-family: inherit; font-size: 9px; margin: 0 2px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .hero-cyber-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-collage { min-height: 400px; }
+            .mlab-grid { grid-template-columns: 1fr; }
+            .mlab-main { border-right: none; border-bottom: 1px dashed rgba(0,240,255,.3); }
+            .subsys-grid { grid-template-columns: repeat(2, 1fr); }
+            .subsys-card:nth-child(2n) { border-right: none; }
+            .subsys-card:nth-child(-n+2) { border-bottom: 1px solid var(--cyber-cyan); }
+            .collage { grid-template-columns: repeat(3, 1fr); }
+            .sys-status { display: none; }
+            .live-data-grid { grid-template-columns: repeat(2, 1fr); }
+            .live-card:nth-child(2n) { border-right: none; }
+            .live-card:nth-child(-n+2) { border-bottom: 1px solid rgba(0,240,255,.25); }
+            .ai-feature-header { flex-direction: column; align-items: flex-start; }
+            .kbd-hint { display: none; }
         }
-
-
         @media (max-width: 600px) {
-
-            .hero {
-
-                padding: 80px 0 40px;
-
-            }
-
-
-            .hero-grid {
-
-                gap: 30px;
-
-            }
-
-
-            .hero-text h1 {
-
-                font-size: 3rem;
-
-            }
-
-
-            .hero-art {
-
-                min-height: 300px;
-
-                order: -1;
-
-            }
-
-
-            .domains {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .domain {
-
-                border-right: none;
-
-                border-bottom: 1px solid var(--border-raw);
-
-                min-height: 250px;
-
-            }
-
-
-            .domain:nth-last-child(-n+4) {
-
-                border-bottom: 1px solid var(--border-raw);
-
-            }
-
-
-            .domain:last-child {
-
-                border-bottom: none;
-
-            }
-
-
-            .footer-grid,
-            .copyright {
-
-                flex-direction: column;
-
-            }
-
-
-            .footer-links {
-
-                flex-wrap: wrap;
-
-            }
-
-
-            .project-logo-badge {
-
-                width: 60px;
-
-                height: 60px;
-
-                bottom: 14px;
-
-                left: 14px;
-
-                padding: 8px;
-
-            }
-
+            .hero-cyber { padding: 100px 0 40px; }
+            .hero-collage-frame { transform: rotate(0); box-shadow: 4px 4px 0 var(--cyber-magenta), -4px -4px 0 var(--cyber-acid); }
+            .dada-stamp { font-size: 8px; padding: 4px 10px; }
+            .stamp-1, .stamp-3 { left: 8px; }
+            .stamp-2, .stamp-4 { right: 8px; }
+            .subsys-grid { grid-template-columns: 1fr; }
+            .subsys-card { border-right: none; border-bottom: 1px solid var(--cyber-cyan); }
+            .subsys-card:last-child { border-bottom: none; }
+            .mlab-stats { grid-template-columns: 1fr; }
+            .mlab-stat { border-right: none; border-bottom: 1px solid rgba(0,240,255,.25); }
+            .mlab-stat:last-child { border-bottom: none; }
+            .collage { grid-template-columns: repeat(2, 1fr); }
+            .manifesto { padding: 80px 0; }
+            .live-data-grid { grid-template-columns: 1fr; }
+            .live-card { border-right: none; border-bottom: 1px solid rgba(0,240,255,.25); }
+            .live-card:last-child { border-bottom: none; }
+            .fx-panel { right: 12px; bottom: 80px; }
+            .fx-list { min-width: 160px; }
         }
-
-
-        /* =====================================================
-           ACCESSIBILITY
-        ====================================================== */
-
         @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-
-                animation-duration: 0.01ms !important;
-
-                animation-iteration-count: 1 !important;
-
-                transition-duration: 0.01ms !important;
-
-            }
-
+            *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
         }
+        /* =====================================================
+   ☢ DHA NUKE EASTER EGG — typing D-H-A
+   ===================================================== */
 
+.dha-explosion-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100003;
+    pointer-events: none;
+    overflow: hidden;
+    animation: dha-dim 1.8s ease-in forwards;
+}
+
+@keyframes dha-dim {
+    0%   { background: rgba(0,0,0,0); }
+    100% { background: rgba(0,0,0,0.45); }
+}
+
+/* Phase 1 — logo falls toward camera */
+.dha-descending-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(0.05);
+    opacity: 0;
+    will-change: transform, opacity, filter;
+    animation: dha-fall 1.8s cubic-bezier(0.55, 0, 0.9, 1) forwards;
+    filter: drop-shadow(0 0 30px rgba(0,240,255,.9))
+            drop-shadow(0 0 60px rgba(255,0,160,.6));
+}
+
+@keyframes dha-fall {
+    0% {
+        transform: translate(-50%,-50%) scale(0.05) rotate(0deg);
+        opacity: 0;
+        filter: drop-shadow(0 0 20px rgba(0,240,255,.9)) blur(4px);
+    }
+    20% {
+        opacity: 1;
+        filter: drop-shadow(0 0 40px rgba(0,240,255,1)) blur(0);
+    }
+    70% {
+        transform: translate(-50%,-50%) scale(4) rotate(180deg);
+        filter: drop-shadow(0 0 100px rgba(0,240,255,1))
+                drop-shadow(0 0 150px rgba(255,0,160,.9)) blur(0);
+    }
+    95% { opacity: 1; }
+    100% {
+        transform: translate(-50%,-50%) scale(28) rotate(360deg);
+        opacity: 0;
+        filter: drop-shadow(0 0 200px rgba(255,255,255,1)) blur(6px);
+    }
+}
+
+/* Phase 2 — white flash */
+.dha-nuke-flash {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dha-explosion-overlay.flash .dha-nuke-flash {
+    animation: dha-flash 0.5s ease-out forwards;
+}
+
+@keyframes dha-flash {
+    0%   { opacity: 0; }
+    15%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Phase 3 — fireball core, POV from above */
+.dha-nuke-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    will-change: width, height, opacity;
+    background: radial-gradient(circle,
+        #ffffff 0%,
+        #ffffcc 15%,
+        #ffcc00 30%,
+        #ff6600 55%,
+        #ff0040 75%,
+        transparent 90%);
+}
+
+.dha-explosion-overlay.mushroom .dha-nuke-core {
+    animation: dha-core-grow 3s ease-out forwards;
+}
+
+@keyframes dha-core-grow {
+    0%   { width: 0; height: 0; opacity: 1; box-shadow: 0 0 100px 40px rgba(255,255,200,1); }
+    20%  { width: 30vmax; height: 30vmax; opacity: 1;  box-shadow: 0 0 200px 100px rgba(255,200,0,.9); }
+    50%  { width: 70vmax; height: 70vmax; opacity: .8; box-shadow: 0 0 300px 150px rgba(255,100,0,.6); }
+    100% { width: 160vmax; height: 160vmax; opacity: 0; box-shadow: 0 0 400px 200px rgba(255,50,0,0); }
+}
+
+/* Phase 4 — concentric shockwave rings (POV from above) */
+.dha-nuke-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border-style: solid;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    will-change: width, height, opacity;
+    box-shadow: 0 0 40px 15px rgba(255,200,100,.9);
+}
+
+.ring-1 { --delay: 0s;     border-color: #ffffff; }
+.ring-2 { --delay: 0.25s;  border-color: #ffcc00; }
+.ring-3 { --delay: 0.50s;  border-color: #ff6600; }
+.ring-4 { --delay: 0.75s;  border-color: #ff0040; }
+.ring-5 { --delay: 1.00s;  border-color: #ff00a0; }
+
+.dha-explosion-overlay.mushroom .dha-nuke-ring {
+    animation: dha-ring-expand 3.5s ease-out var(--delay, 0s) forwards;
+}
+
+@keyframes dha-ring-expand {
+    0%   { width: 0; height: 0; opacity: 1;   border-width: 24px; }
+    40%  { opacity: .8;                       border-width: 12px; }
+    100% { width: 250vmax; height: 250vmax;   opacity: 0; border-width: 1px; }
+}
+
+/* Phase 5 — radial debris */
+.dha-nuke-debris {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.dha-explosion-overlay.mushroom .dha-nuke-debris {
+    animation: dha-debris-grow 2.5s ease-out 0.2s forwards;
+}
+
+@keyframes dha-debris-grow {
+    0% {
+        width: 0; height: 0; opacity: 0;
+        box-shadow:
+            0 0 0 0 rgba(255,255,200,.9),
+            0 0 0 0 rgba(255,200,100,.8),
+            0 0 0 0 rgba(255,150,50,.7),
+            0 0 0 0 rgba(255,100,0,.6);
+    }
+    20% { opacity: 1; }
+    100% {
+        width: 60vmax; height: 60vmax; opacity: 0;
+        box-shadow:
+            0 0 0 200px rgba(255,255,200,0),
+            0 0 0 400px rgba(255,200,100,0),
+            0 0 0 600px rgba(255,150,50,0),
+            0 0 0 800px rgba(255,100,0,0);
+    }
+}
+
+/* Vignette */
+.dha-nuke-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center,
+        transparent 20%,
+        rgba(0,0,0,.5) 70%,
+        rgba(0,0,0,.9) 100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dha-explosion-overlay.flash .dha-nuke-vignette,
+.dha-explosion-overlay.mushroom .dha-nuke-vignette {
+    animation: dha-vignette 3s ease-out forwards;
+}
+
+@keyframes dha-vignette {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    70%  { opacity: .7; }
+    100% { opacity: 0; }
+}
+
+/* Shake (overlay only, avoids breaking position:fixed children) */
+.dha-explosion-overlay.dha-shaking {
+    animation: dha-shake 0.06s infinite;
+}
+
+@keyframes dha-shake {
+    0%   { transform: translate(0,0) rotate(0deg); }
+    20%  { transform: translate(-4px,3px) rotate(-0.3deg); }
+    40%  { transform: translate(4px,-3px) rotate(0.3deg); }
+    60%  { transform: translate(-3px,-4px) rotate(-0.2deg); }
+    80%  { transform: translate(3px,4px) rotate(0.2deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+/* Fade out */
+.dha-explosion-overlay.fadeout {
+    animation: dha-overlay-fade 1s ease-out forwards;
+}
+
+@keyframes dha-overlay-fade {
+    to { opacity: 0; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .dha-explosion-overlay.dha-shaking { animation: none; }
+    .dha-explosion-overlay.flash .dha-nuke-flash {
+        background: rgba(255,255,255,.35);
+    }
+}
     </style>
-
 </head>
+<body id="top">
 
+    <!-- MATRIX CANVAS -->
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
-<body>
+    <!-- WARNING TAPE -->
+    <div class="warning-tape" aria-hidden="true"></div>
 
-    <!-- =====================================================
-         SCANLINE
-    ====================================================== -->
+    <!-- KEYBOARD HINT -->
+    <div class="kbd-hint">
+        <kbd>⌃</kbd><kbd>`</kbd> CONSOLE &nbsp;│&nbsp;
+        <kbd>M</kbd> MATRIX &nbsp;│&nbsp;
+        <kbd>G</kbd> GLITCH &nbsp;│&nbsp;
+        <kbd>Esc</kbd> CLOSE
+    </div>
 
-    <div class="scanline"></div>
+    <!-- FX CONTROL PANEL -->
+    <div class="fx-panel" id="fx-panel">
+        <button class="fx-trigger" id="fx-trigger" aria-label="Effects panel">✦</button>
+        <div class="fx-list">
+            <button class="fx-item" data-fx="matrix">
+                <span>MATRIX_RAIN</span>
+                <span class="indicator">○</span>
+            </button>
+            <button class="fx-item" data-fx="sound">
+                <span>SOUND_FX</span>
+                <span class="indicator">○</span>
+            </button>
+            <button class="fx-item" data-fx="rave">
+                <span>RAVE_MODE</span>
+                <span class="indicator">○</span>
+            </button>
+            <button class="fx-item" data-fx="glitch">
+                <span>TRIGGER_GLITCH</span>
+                <span class="indicator">⚡</span>
+            </button>
+            <button class="fx-item" data-fx="terminal">
+                <span>OPEN_TERMINAL</span>
+                <span class="indicator">⌨</span>
+            </button>
+            <button class="fx-item" data-fx="nuke">
+                <span>☢ DHA_NUKE</span>
+                <span class="indicator">☢</span>
+            </button>
+        </div>
+    </div>
 
+    <!-- HANA RESPONSE -->
+    <div class="hana-response" id="hana-response"></div>
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
-
-    <nav>
-
-        <a href="#top" class="nav-brand">
-
-            <img
-                src="assets/DHA_logo_h.png"
-                alt="DHA®"
-                class="nav-logo"
-            >
-
-            <span>DHA®</span>
-
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="brand">
+            <img src="assets/DHA_logo_h.png" alt="DHA">
+            <span style="color:var(--cyber-cyan);">[DHA]</span>
         </a>
-
-
-        <div class="nav-links">
-
-            <a href="#about">[about]</a>
-
-            <a href="#domains">[domains]</a>
-
-            <a href="#work">[work]</a>
-
-            <a href="#hana">[hana]</a>
-
-            <a
-                href="https://github.com/DigitalHanaArts"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                [github]
-            </a>
-
+        <nav class="nav-links">
+            <a href="index.html" class="active">[HOME]</a>
+            <a href="about.html">[ABOUT]</a>
+            <a href="works.html">[WORKS]</a>
+            <a href="blog.html">[BLOG]</a>
+            <a href="services.html">[SERVICES]</a>
+            <a href="gallery.html">[GALLERY]</a>
+            <a href="contact.html">[CONTACT]</a>
+        </nav>
+        <div class="sys-status">
+            <span class="status-dot"></span>
+            SYS.ONLINE
         </div>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="lang-dropdown">
+                <input type="checkbox" id="lang-input" class="lang-input">
+                <label for="lang-input" class="lang-btn">[EN] ▾</label>
+                <div class="lang-menu">
+                    <a href="#" class="active">[English]</a>
+					<a href="https://digitalhanaarts.github.io/dha-per/">[Persian]</a>
 
-
-        <div class="lang-switch">
-
-            <input type="checkbox" id="lang-toggle" class="lang-toggle">
-
-            <label for="lang-toggle" class="lang-button">
-                [EN] ▾
-            </label>
-
-            <div class="lang-dropdown" role="menu">
-
-
-                <a href="https://alibavarci.github.io/dha/" class="lang-option active">[English]</a>
+					<a href="https://digitalhanaarts.github.io/dha/">[English]</a>
 				
-				<a href="https://digitalhanaarts.github.io/dha-per/" class="lang-option">[فارسی]</a>
-
-                <a href="https://digitalhanaarts.github.io/dha-cn/" class="lang-option">[中文]</a>
+					<a href="https://digitalhanaarts.github.io/dha-cn/">[中文]</a>
 				
-                <a href="https://digitalhanaarts.github.io/dha-ru/" class="lang-option">[Русский]</a>
+					<a href="https://digitalhanaarts.github.io/dha-ru/">[Русский]</a>
 				
-                <a href="https://digitalhanaarts.github.io/dha-jp/" class="lang-option">[日本語]</a>
+					<a href="https://digitalhanaarts.github.io/dha-jp/">[日本語]</a>
 
-                <a href="https://digitalhanaarts.github.io/dha-ko/" class="lang-option">[조선어]</a>
+					<a href="https://digitalhanaarts.github.io/dha-ko/">[조선어]</a>
 
-                <a href="https://digitalhanaarts.github.io/dha-hi/" class="lang-option">[हिन्दी]</a>
-
-                <a href="https://digitalhanaarts.github.io/dha-es/" class="lang-option">[Español]</a>
-
-                <a href="https://digitalhanaarts.github.io/it_dha/" class="lang-option">[Italiano]</a>
-
-                <a href="https://digitalhanaarts.github.io/dha_ar/" class="lang-option">[العربية]</a>
+					<a href="https://digitalhanaarts.github.io/dha-hi/">[हिन्दी]</a>
 				
-                <a href="https://digitalhanaarts.github.io/dha-yi/" class="lang-option">[ייִדיש]</a>
+					<a href="https://digitalhanaarts.github.io/it_dha/">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/">[Español]</a>
+					
+					<a href="https://dha-123f39.gitpage.ir/">[فارسی]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha_ar/">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/">[ייִדיש]</a>
+                </div>
             </div>
-
+            <button class="menu-btn" aria-label="Menu">☰</button>
         </div>
+    </header>
 
-    </nav>
+    <div class="drawer-overlay"></div>
+    <aside class="drawer">
+        <button class="drawer-close" aria-label="Close">×</button>
+        <a href="index.html">[HOME]</a>
+        <a href="about.html">[ABOUT]</a>
+        <a href="works.html">[WORKS]</a>
+        <a href="blog.html">[BLOG]</a>
+        <a href="services.html">[SERVICES]</a>
+        <a href="gallery.html">[GALLERY]</a>
+        <a href="contact.html">[CONTACT]</a>
+    </aside>
 
+    <main>
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
-    <main id="top">
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="hero">
-
+        <!-- HERO -->
+        <section class="hero-cyber">
             <div class="container">
-
-                <div class="hero-grid">
-
-                    <div class="hero-text">
-
-                        <span class="hero-label">[COMPUTATIONAL_ART_ENGINE]</span>
-
-                        <h1>
-
-                            <span class="word word-1">DIGITAL</span>
-
-                            <span class="word word-2">HANA</span>
-
-                            <span class="word word-3">ARTS®</span>
-
+                <div class="hero-cyber-grid">
+                    <div>
+                        <span class="hero-cyber-tag">// PROTOCOL OVERRIDE v3.2 · INTERACTIVE</span>
+                        <h1 class="glitch-title">
+                            <span class="glitch-line" data-text="DIGITAL">DIGITAL</span>
+                            <span class="glitch-line" data-text="HANA" style="color:var(--cyber-acid);">HANA</span>
+                            <span class="glitch-line" data-text="ARTS®" style="color:transparent;-webkit-text-stroke:2px var(--cyber-cyan);">ARTS®</span>
                         </h1>
-
-                        <p class="hero-copy">
-
+                        <p class="hero-cyber-copy">
                             Between <strong>art</strong> and <strong>algorithm</strong>,
-
                             between <strong>data</strong> and <strong>dream</strong>,
-
                             between <strong>intelligence</strong> and <strong>instinct</strong> —
-
-                            DHA operates in the void.
-
+                            DHA operates in the void.<br><br>
+                            <span id="hero-typing"></span><span class="blink" style="color:var(--cyber-acid);">_</span>
                         </p>
-
-                        <div class="hero-actions">
-
-                            <a href="#work" class="button button-primary">
-                                [EXPLORE_WORK]
-                            </a>
-
-                            <a
-                                href="https://github.com/DigitalHanaArts"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="button"
-                            >
-                                [GITHUB ↗]
-                            </a>
-
+                        <div class="hero-cyber-actions">
+                            <a href="works.html" class="btn-cyber primary">► EXPLORE_WORK</a>
+                            <a href="#ai-module" class="btn-cyber">► ACTIVATE_AI</a>
                         </div>
-
                     </div>
 
-
-                    <div class="hero-art">
-
-                        <div class="abstract-composition">
-
-                            <div class="abstract-shape shape-1"></div>
-
-                            <div class="abstract-shape shape-2"></div>
-
-                            <div class="abstract-shape shape-3"></div>
-
-                            <div class="abstract-shape shape-4"></div>
-
-                            <div class="glitch-text" data-text="DHA®">DHA®</div>
-
+                    <div class="hero-collage">
+                        <div class="hero-collage-frame">
+                            <img src="assets/DHA_neon.png" alt="DHA Neon Identity">
                         </div>
-
+                        <span class="dada-stamp stamp-1">NO_ART</span>
+                        <span class="dada-stamp stamp-2">ALL_DATA</span>
+                        <span class="dada-stamp stamp-3">AI.OK</span>
+                        <span class="dada-stamp stamp-4">∞_DADA</span>
+                        <span class="hero-meta-strip meta-top">─── 2022 · DHA · PROTOCOL ───</span>
+                        <span class="hero-meta-strip meta-bottom">─── PRESS_CTRL_BACKTICK_FOR_CONSOLE ───</span>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             MARQUEE
-        ================================================== -->
-
-        <div class="marquee">
-
-            <div class="marquee-track">
-
-                <span>ART</span>
-                <span>DATA</span>
-                <span>AI</span>
-                <span>BLOCKCHAIN</span>
-                <span>GENERATIVE</span>
-                <span>COMPUTATIONAL</span>
-                <span>INTELLIGENCE</span>
-                <span>VISUALIZATION</span>
-                <span>MLABCHAIN</span>
-                <span>ABSTRACT</span>
-                <span>PROTOCOL</span>
-
-                <span>ART</span>
-                <span>DATA</span>
-                <span>AI</span>
-                <span>BLOCKCHAIN</span>
-                <span>GENERATIVE</span>
-                <span>COMPUTATIONAL</span>
-                <span>INTELLIGENCE</span>
-                <span>VISUALIZATION</span>
-                <span>MLABCHAIN</span>
-                <span>ABSTRACT</span>
-                <span>PROTOCOL</span>
-
+        <!-- TICKER -->
+        <div class="sys-ticker" aria-hidden="true">
+            <div class="sys-ticker-track">
+                <span>ART</span><span>DATA</span><span>AI</span><span>BLOCKCHAIN</span>
+                <span>INTERACTIVE</span><span>HACKABLE</span><span>ON-DEVICE_ML</span>
+                <span>TERMINAL</span><span>ABSTRACT</span><span>PROTOCOL</span>
+                <span>ART</span><span>DATA</span><span>AI</span><span>BLOCKCHAIN</span>
+                <span>INTERACTIVE</span><span>HACKABLE</span><span>ON-DEVICE_ML</span>
+                <span>TERMINAL</span><span>ABSTRACT</span><span>PROTOCOL</span>
             </div>
-
         </div>
 
-
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
-
-        <section id="about">
-
+        <!-- MLABCHAIN FEATURED -->
+        <section class="featured-section" id="featured">
             <div class="container">
-
-                <div class="about-grid">
-
-                    <div class="about-visual"></div>
-
-
-                    <div class="about-text">
-
-                        <span class="section-label">[01/THE_STUDIO]</span>
-
-                        <h2>
-
-                            Technology
-
-                            is
-
-                            <span class="highlight">material.</span>
-
-                        </h2>
-
-                        <p>
-
-                            Digital Hana Arts is an experimental
-
-                            computational creativity studio operating
-
-                            in the <strong>interstitial space</strong>
-
-                            between technology and artistic expression.
-
-                        </p>
-
-                        <p>
-
-                            We build software, visual systems,
-
-                            machine-learning experiments, data-driven
-
-                            artwork and blockchain-oriented digital
-
-                            assets — all with a <strong>post-human
-
-                            sensibility</strong>.
-
-                        </p>
-
-                        <p>
-
-                            Our central question is not simple:
-
-                            <strong>What happens when computation
-
-                            becomes a creative medium?</strong>
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             DOMAINS
-        ================================================== -->
-
-        <section id="domains">
-
-            <div class="container">
-
-                <span class="section-label">[02/THE_ECOSYSTEM]</span>
-
-                <h2 class="section-title">
-
-                    Four domains.
-
-                    <span class="accent">One system.</span>
-
-                    <span class="strike">No boundaries.</span>
-
+                <div class="featured-label">02 · FEATURED_PROJECT</div>
+                <h2 class="featured-title">
+                    <span class="glitch-line" data-text="MLABCHAIN" style="color:var(--cyber-acid);">MLABCHAIN</span>
+                    <br>
+                    <span class="outline">VERIFIABLE_PROTOCOL</span>
+                    <span style="color:var(--cyber-magenta);">.</span>
                 </h2>
 
-                <p class="section-intro">
+                <div class="mlab-terminal">
+                    <div class="mlab-header">
+                        <span>// sys://protocol/mlabchain v3.0.1</span>
+                        <span class="live">LIVE · CERN_NODE</span>
+                    </div>
+                    <div class="mlab-grid">
+                        <div class="mlab-main">
+                            <div class="mlab-label">// PROVENANCE.LEDGER · BLOCK_HEIGHT</div>
+                            <div class="mlab-data-wrap">
+                                <div class="mlab-data" id="mlab-height">#1,948,201</div>
+                                <div class="mlab-unit">TX/BLOCK</div>
+                                <div class="mlab-status">▲ SYNCED</div>
+                            </div>
+                            <div class="mlab-confidence">
+                                <div class="mlab-confidence-head">
+                                    <span>NETWORK_INTEGRITY</span>
+                                    <span style="color:var(--cyber-acid);">99.9%</span>
+                                </div>
+                                <div class="mlab-bar"><div class="mlab-bar-fill" style="width:99.9%;"></div></div>
+                            </div>
+                            <div class="mlab-stats">
+                                <div class="mlab-stat"><div class="mlab-stat-label">TRAIN</div><div class="mlab-stat-value">ONLINE</div></div>
+                                <div class="mlab-stat"><div class="mlab-stat-label">RECORD</div><div class="mlab-stat-value">ACTIVE</div></div>
+                                <div class="mlab-stat"><div class="mlab-stat-label">VERIFY</div><div class="mlab-stat-value">100%</div></div>
+                            </div>
+                        </div>
+                        <div class="mlab-side">
+                            <div class="mlab-arch-title">// SYSTEM_MODULES</div>
+                            <div class="mlab-arch">
+                                <div class="mlab-layer"><span>MODELS</span><span class="dim">ARTIFACTS</span></div>
+                                <div class="mlab-layer"><span>HYPERPARAMS</span><span class="dim">VERIFIABLE</span></div>
+                                <div class="mlab-layer"><span>PROVENANCE</span><span class="dim">IMMUTABLE</span></div>
+                                <div class="mlab-layer"><span>CONSENSUS</span><span class="dim">VERIFIED</span></div>
+                            </div>
+                            <div class="mlab-arch-title">// ACTIONS</div>
+                            <div class="mlab-links">
+                                <a href="https://github.com/DigitalHanaArts/MLabChain" target="_blank" rel="noopener" class="btn-cyber primary">► GITHUB_SOURCE</a>
+                                <a href="https://gitlab.cern.ch/abavarch/labchain" target="_blank" rel="noopener" class="btn-cyber">► CERN_GITLAB</a>
+                                <a href="https://digitalhanaarts.github.io/mlc/" target="_blank" rel="noopener" class="btn-cyber">► WEB_INTERFACE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    DHA operates across disciplines rather than
-
-                    inside a single technological category.
-
-                    This is the deconstructed grid.
-
+        <!-- AI MODULE -->
+        <section class="ai-module" id="ai-module">
+            <div class="container">
+                <div class="featured-label">02.5 · SYSTEM.AI_MODULE</div>
+                <h2 class="featured-title">
+                    MACHINE <span class="outline">INTELLIGENCE</span>
+                    <span style="color:var(--cyber-magenta);">.</span>
+                </h2>
+                <p style="font-family:'Space Mono',monospace; font-size:13px; color:var(--steel); max-width:720px; line-height:1.9; border-left:3px solid var(--cyber-cyan); padding-left:20px; margin-bottom:50px;">
+                    All inference runs <strong style="color:var(--cyber-acid);">on your device</strong>.
+                    No uploads. No servers. No API keys. Models download once, cache forever.
                 </p>
 
+                <div class="ai-status-bar">
+                    <span class="status-item"><span class="status-dot"></span>AI_ENGINE: <span id="engine-status">INIT</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">WEBGPU: <span id="webgpu-status">--</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">MODELS: <span id="models-count">0</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">CACHE: <span id="cache-status">EMPTY</span></span>
+                </div>
 
-                <div class="domains">
+                <div class="live-data-grid">
+                    <div class="live-card">
+                        <div class="live-card-label">// LIVE_TRX_USD</div>
+                        <div class="live-card-value" id="live-trx">--</div>
+                        <div class="live-card-change" id="live-trx-change">awaiting</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// LIVE_ETH_USD</div>
+                        <div class="live-card-value" id="live-eth">--</div>
+                        <div class="live-card-change" id="live-eth-change">awaiting</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// FEAR_GREED</div>
+                        <div class="live-card-value" id="live-fng">--</div>
+                        <div class="live-card-change" id="live-fng-change">awaiting</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// LAST_SYNC</div>
+                        <div class="live-card-value" id="live-sync" style="font-size:14px;">--</div>
+                        <div class="live-card-change">
+                            <button class="mini-btn" id="refresh-data">► REFRESH</button>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// MODULE_01 · VISION</div>
+                            <h3>ON-DEVICE_VISION_ANALYZER</h3>
+                            <p>MobileNet classifies Hana's images directly in your browser (~17MB, cached). Click any gallery image after loading.</p>
+                        </div>
+                        <button class="btn-cyber primary" id="load-vision-model">► LOAD_VISION_MODEL</button>
+                    </div>
+                    <div class="ai-feature-output" id="vision-output">
+                        <div class="output-placeholder">// model not loaded — click LOAD to begin</div>
+                    </div>
+                </div>
 
-                    <article class="domain" data-number="01">
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// MODULE_02 · SENTIMENT</div>
+                            <h3>TEXT_SENTIMENT_ANALYZER</h3>
+                            <p>DistilBERT analyzes the emotional tone of any text on your device (~67MB, cached after first download).</p>
+                        </div>
+                        <button class="btn-cyber primary" id="load-sentiment-model">► LOAD_SENTIMENT_MODEL</button>
+                    </div>
+                    <div class="ai-feature-body">
+                        <textarea id="sentiment-input" placeholder="Type a thought about art, data, or AI..."></textarea>
+                        <button class="btn-cyber" id="analyze-sentiment">► ANALYZE</button>
+                    </div>
+                    <div class="ai-feature-output" id="sentiment-output">
+                        <div class="output-placeholder">// awaiting input...</div>
+                    </div>
+                </div>
 
-                        <div class="domain-symbol">◇</div>
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// MODULE_03 · GENERATIVE</div>
+                            <h3>DADA_MANIFESTO_GENERATOR</h3>
+                            <p>Fragment-based generative engine. Assembles unique Dadaist manifestos from a curated vocabulary bank.</p>
+                        </div>
+                        <button class="btn-cyber primary" id="generate-manifesto">► GENERATE</button>
+                    </div>
+                    <div class="ai-feature-output" id="manifesto-output">
+                        <div class="output-placeholder">// click GENERATE to produce a new manifesto</div>
+                    </div>
+                </div>
 
+                <div class="ai-log">
+                    <div class="ai-log-header">
+                        <span>// SYSTEM.LOG</span>
+                        <button class="mini-btn" id="clear-log">CLR</button>
+                    </div>
+                    <div class="ai-log-body" id="ai-log"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANIFESTO -->
+        <section class="manifesto">
+            <div class="container">
+                <div class="manifesto-inner">
+                    <span class="manifesto-label">— DADA.MANIFESTO_001 —</span>
+                    <h2 class="manifesto-title">
+                        WE REJECT THE <em>DICHOTOMY</em>.<br>
+                        ART IS CODE.<br>
+                        CODE IS ART.<br>
+                        THE MACHINE DREAMS.
+                    </h2>
+                    <div class="manifesto-copy">
+                        <p>We destroy to build. We build to destroy. Every model is a manifesto. Every pixel is a protest.</p>
+                        <p><strong>SYSTEM OVERRIDE IN PROGRESS.</strong> The old categories collapse into one. The new category has no name. It has only a prompt. And a response.</p>
+                        <p style="font-size:13px; color:var(--steel); letter-spacing:.15em; text-transform:uppercase;">→ dada is not dead. dada is data. data is art. art is dead. long live art.</p>
+                    </div>
+                    <div class="manifesto-sign">SIGNED · DHA · 2022</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSYSTEMS -->
+        <section class="subsystems">
+            <div class="container">
+                <div class="featured-label">03 · SUBSYSTEMS</div>
+                <h2 class="featured-title" style="color:var(--bone);">
+                    FOUR <span class="outline">DOMAINS</span> · ONE <span style="color:var(--cyber-acid);">SYSTEM</span>.
+                </h2>
+                <div class="subsys-grid">
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">01 // SUBSYS</div>
+                        <div class="subsys-icon">◇</div>
                         <h3>Digital Art</h3>
-
-                        <p>
-                            Generative systems, algorithmic art,
-                            computational photography and
-                            experimental digital media.
-                        </p>
-
-                    </article>
-
-
-                    <article class="domain" data-number="02">
-
-                        <div class="domain-symbol">◌</div>
-
+                        <p>Generative systems, algorithmic art, computational photography, experimental digital media.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">02 // SUBSYS</div>
+                        <div class="subsys-icon">◌</div>
                         <h3>Data Science</h3>
-
-                        <p>
-                            Data mining, analysis, visualization,
-                            statistical computing and
-                            data-driven discovery.
-                        </p>
-
-                    </article>
-
-
-                    <article class="domain" data-number="03">
-
-                        <div class="domain-symbol">◎</div>
-
+                        <p>Data mining, analysis, visualization, statistical computing, data-driven discovery.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">03 // SUBSYS</div>
+                        <div class="subsys-icon">◎</div>
                         <h3>Intelligence</h3>
-
-                        <p>
-                            Machine learning, deep learning,
-                            computer vision and generative
-                            artificial intelligence.
-                        </p>
-
-                    </article>
-
-
-                    <article class="domain" data-number="04">
-
-                        <div class="domain-symbol">⛓</div>
-
+                        <p>Machine learning, deep learning, computer vision, generative AI — all on-device.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">04 // SUBSYS</div>
+                        <div class="subsys-icon">⛓</div>
                         <h3>Blockchain</h3>
-
-                        <p>
-                            NFTs, digital assets, blockchain
-                            analytics and decentralized
-                            creative ecosystems.
-                        </p>
-
-                    </article>
-
-
+                        <p>NFTs, digital assets, on-chain analytics, decentralized creative ecosystems.</p>
+                    </a>
                 </div>
-
             </div>
-
         </section>
 
+        <!-- QUICK PROJECTS -->
+        <div class="quick-projects" aria-hidden="true">
+            <div class="quick-projects-track">
+                <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" class="quick-project">TRX_FORECAST · CRYPTO_AI</a>
+                <a href="https://github.com/DigitalHanaArts/DHA-Vision" target="_blank" rel="noopener" class="quick-project">DHA_VISION · JULIA_ENGINE</a>
+                <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener" class="quick-project">OPENSEA · NFT_COLLECTION</a>
+                <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" class="quick-project">TRX_FORECAST · CRYPTO_AI</a>
+                <a href="https://github.com/DigitalHanaArts/DHA-Vision" target="_blank" rel="noopener" class="quick-project">DHA_VISION · JULIA_ENGINE</a>
+                <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener" class="quick-project">OPENSEA · NFT_COLLECTION</a>
+            </div>
+        </div>
 
-        <!-- =================================================
-             WORK
-        ================================================== -->
-
-        <section id="work">
-
+        <!-- GALLERY -->
+        <section class="gallery-collage-section">
             <div class="container">
-
-                <span class="section-label">[03/SELECTED_WORK]</span>
-
-                <h2 class="section-title">
-
-                    From <span class="accent">pixels</span>
-
-                    to <span class="strike">intelligence</span>.
-
+                <div class="featured-label">04 · FRAGMENTS</div>
+                <h2 class="featured-title" style="color:var(--bone);">
+                    HANA <span class="outline">IN</span> FRAME.
                 </h2>
-
-
-                <!-- =========================================
-                     MLabChain — Blockchain / Lab Chain
-                ========================================== -->
-                <div class="project project-wide">
-
-                    <div class="project-visual">
-
-                        <img
-                            src="assets/MLabChain_v3_Banner.png"
-                            alt="MLabChain — blockchain research platform"
-                            loading="lazy"
-                        >
-
-                        <img
-                            src="assets/mlabchain.png"
-                            alt="MLabChain logo"
-                            class="project-logo-badge"
-                        >
-
-                    </div>
-
-                    <div class="project-info">
-
-                        <span class="project-tag">[BLOCKCHAIN_PROTOCOL]</span>
-
-                        <h3>MLab<br>Chain</h3>
-
-                        <p>
-                            A blockchain research and engineering
-                            platform — bridging laboratory science,
-                            decentralized infrastructure and
-                            verifiable computation.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>Blockchain</span>
-                            <span>Distributed</span>
-                            <span>Web3</span>
-                            <span>HEP</span>
-                            <span>Research</span>
-
-                        </div>
-
-                        <div class="project-links">
-
-                            <a
-                                href="https://github.com/DigitalHanaArts/MLabChain"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="button button-primary"
-                            >
-                                [GITHUB ↗]
-                            </a>
-
-                            <a
-                                href="https://gitlab.cern.ch/abavarch/labchain"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="button"
-                            >
-                                [GITLAB ↗]
-                            </a>
-
-                            <a
-                                href="https://digitalhanaarts.github.io/mlc/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="button"
-                            >
-                                [WEBPAGE ↗]
-                            </a>
-
-                        </div>
-
-                    </div>
-
+                <p style="font-family:'Space Mono',monospace; font-size:12px; color:var(--steel); margin-bottom:20px;">
+                    Load the vision model → click any image for AI classification. Or just click — Hana responds.
+                </p>
+                <div class="collage">
+                    <figure data-hana="1"><img src="assets/Kitten_Hana.jpg" alt="Hana" loading="lazy"></figure>
+                    <figure data-hana="2"><img src="assets/NFT_Kitten_Hana.jpg" alt="NFT Hana" loading="lazy"></figure>
+                    <figure data-hana="3"><img src="assets/NFT_Hana_Chan_01.jpg" alt="Hana 02" loading="lazy"></figure>
+                    <figure data-hana="4"><img src="assets/NFT_Hana_overhead.jpg" alt="Hana 05" loading="lazy"></figure>
+                    <figure data-hana="5"><img src="assets/NFT_Hana_silhouette_01.jpg" alt="Silhouette" loading="lazy"></figure>
+                    <figure data-hana="6"><img src="assets/Hana_Chan_02.jpg" alt="Hana Chan" loading="lazy"></figure>
                 </div>
-
-
-                <!-- DHA Vision -->
-                <div class="project">
-
-                    <div class="project-visual">
-
-                        <img
-                            src="assets/DHA_Vision.png"
-                            alt="DHA Vision"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="project-info">
-
-                        <span class="project-tag">[EXPERIMENTAL_PLATFORM]</span>
-
-                        <h3>DHA<br>Vision</h3>
-
-                        <p>
-                            A Julia-based computational-art
-                            platform exploring how photographs can
-                            be transformed through image processing,
-                            machine learning and generative systems
-                            into new digital artworks.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>Julia</span>
-                            <span>Flux</span>
-                            <span>ML</span>
-                            <span>Image_Proc</span>
-                            <span>Generative</span>
-
-                        </div>
-
-                        <a
-                            href="https://github.com/DigitalHanaArts/DHA-Vision"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="button"
-                        >
-                            [VIEW_PROJECT ↗]
-                        </a>
-
-                    </div>
-
+                <div style="text-align:center; margin-top:44px;">
+                    <a href="gallery.html" class="btn-cyber primary">► FULL_GALLERY</a>
                 </div>
-
-
-                <!-- OpenSea -->
-                <div class="project">
-
-                    <div class="project-visual">
-
-                        <img
-                            src="assets/opensea.io.jpeg"
-                            alt="OpenSea Collection"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="project-info">
-
-                        <span class="project-tag">[NFT_COLLECTION]</span>
-
-                        <h3>OpenSea<br>Collection</h3>
-
-                        <p>
-                            Explore the official Digital Hana Arts
-                            collection on OpenSea — curated digital
-                            assets, generative artworks, and
-                            blockchain-based creations.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>NFT</span>
-                            <span>Ethereum</span>
-                            <span>Digital_Art</span>
-                            <span>Blockchain</span>
-                            <span>OpenSea</span>
-
-                        </div>
-
-                        <a
-                            href="https://opensea.io/Digital__Hana__Arts"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="button"
-                        >
-                            [VISIT_OPENSEA ↗]
-                        </a>
-
-                    </div>
-
-                </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             HANA
-        ================================================== -->
-
-        <section id="hana">
-
+        <!-- PHILOSOPHY -->
+        <section class="philosophy-glitch">
             <div class="container">
-
-                <div class="hana-grid">
-
-                    <div class="hana-copy">
-
-                        <span class="section-label">[04/ORIGIN]</span>
-
-                        <h2>
-
-                            <span class="word word-1">Meet</span>
-
-                            <span class="word word-2">Hana.</span>
-
-                        </h2>
-
-                        <p>
-                            Digital Hana Arts is named after Hana —
-                            the kitten at the heart of the visual
-                            identity.
-                        </p>
-
-                        <p>
-                            Her presence introduces something
-                            intentionally human and organic into an
-                            otherwise computational world:
-
-                            <strong>curiosity, individuality and
-
-                            character.</strong>
-
-                        </p>
-
-                    </div>
-
-                    <div class="hana-image">
-
-                        <img
-                            src="assets/Hana_the_kitten.jpeg"
-                            alt="Hana the kitten"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PHILOSOPHY
-        ================================================== -->
-
-        <section class="philosophy">
-
-            <div class="container">
-
-                <span class="philosophy-mark">[05/THE_QUESTION]</span>
-
-                <h2>
-
-                    <span class="fragment fragment-1">What happens when</span>
-
-                    <span class="fragment fragment-2">computation</span>
-
-                    <span class="fragment fragment-3">becomes a creative medium?</span>
-
+                <span class="philosophy-label">05 · THE_QUESTION</span>
+                <h2 class="philosophy-title">
+                    WHAT HAPPENS WHEN<br>
+                    <span class="outline">COMPUTATION</span><br>
+                    BECOMES A <span class="acid">CREATIVE_MEDIUM</span><span style="color:var(--cyber-magenta);">?</span>
                 </h2>
-
             </div>
-
         </section>
-
 
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
+    <footer class="footer">
         <div class="container">
-
             <div class="footer-grid">
-
                 <div>
-
                     <div class="footer-brand">
-
-                        <img
-                            src="assets/DHA_logo.png"
-                            alt="DHA®"
-                            class="footer-logo"
-                        >
-
-                        <span>DIGITAL HANA ARTS®</span>
-
+                        <img src="assets/DHA_logo.png" alt="DHA">
+                        <span style="color:var(--cyber-cyan);">[DHA]</span>
+                        <span>DIGITAL_HANA_ARTS</span>
                     </div>
-
-                    <div class="footer-sub">
-                        ART × DATA × INTELLIGENCE × BLOCKCHAIN
-                    </div>
-
+                    <p class="footer-desc">
+                        Experimental studio. Art × Data × AI × Blockchain.
+                        Interactive. Hackable. On-device ML. Protocol override.
+                    </p>
                 </div>
-
-                <div class="footer-links">
-
-                    <a
-                        href="https://github.com/DigitalHanaArts"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        [GITHUB]
-                    </a>
-
-                    <a href="#top">[BACK_TO_TOP ↑]</a>
-
+                <div class="footer-col">
+                    <h4>// SYS.MAP</h4>
+                    <a href="index.html">[HOME]</a>
+                    <a href="about.html">[ABOUT]</a>
+                    <a href="works.html">[WORKS]</a>
+                    <a href="blog.html">[BLOG]</a>
+                    <a href="services.html">[SERVICES]</a>
+                    <a href="gallery.html">[GALLERY]</a>
+                    <a href="contact.html">[CONTACT]</a>
                 </div>
-
+                <div class="footer-col">
+                    <h4>// NETWORK</h4>
+                    <a href="https://github.com/DigitalHanaArts" target="_blank" rel="noopener">[GITHUB]</a>
+                    <a href="http://instagram.com/hana.bavarchi" target="_blank" rel="noopener">[INSTAGRAM]</a>
+                    <a href="https://t.me/DIGITALHANAARTS2" target="_blank" rel="noopener">[TELEGRAM]</a>
+                    <a href="https://x.com/DigitalHanaArts" target="_blank" rel="noopener">[X]</a>
+                    <a href="https://wa.me/393495876169" target="_blank" rel="noopener">[WHATSAPP]</a>
+                </div>
             </div>
-
-            <div class="copyright">
-
-                <span>© 2026 DIGITAL HANA ARTS®</span>
-
-                <span>COMPUTING AS A CREATIVE MEDIUM</span>
-
+            <div class="footer-bottom">
+                <span>© 2026 DIGITAL_HANA_ARTS®</span>
+                <span>SYS.VER: 3.2 // INTERACTIVE // HACKABLE</span>
             </div>
-
         </div>
-
     </footer>
 
+    <!-- TERMINAL OVERLAY -->
+    <div class="terminal-overlay" id="terminal-overlay"></div>
+    <div class="terminal-panel" id="terminal-panel">
+        <div class="terminal-header">
+            <span>// DHA.CONSOLE · v3.2 · ROOT</span>
+            <button class="terminal-close" id="terminal-close">✕</button>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div class="t-line t-info">DHA Interactive Console v3.2</div>
+            <div class="t-line t-dim">Type <span style="color:var(--cyber-acid);">help</span> for commands. Press <span style="color:var(--cyber-acid);">Esc</span> to close.</div>
+            <div class="t-line t-dim">─────────────────────────────</div>
+        </div>
+        <div class="terminal-input-line">
+            <span class="terminal-prompt">user@dha:~$</span>
+            <input class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+    </div>
 
+    <script src="js/main.js"></script>
+    <script>
+    /* =====================================================
+       DHA · ENTERTAINMENT ENGINE v3.2
+       All in one IIFE. No dependencies. Cache-friendly.
+       ===================================================== */
+    (function () {
+        'use strict';
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ============ SOUND ENGINE ============ */
+        const Sound = {
+            ctx: null,
+            enabled: false,
+            init: function () {
+                if (this.ctx) return;
+                try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {}
+            },
+            beep: function (freq, dur, type) {
+                if (!this.enabled || !this.ctx) return;
+                freq = freq || 440; dur = dur || 0.08; type = type || 'square';
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = type;
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + dur);
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.start(); osc.stop(this.ctx.currentTime + dur);
+            },
+            type: function () { this.beep(760, 0.02, 'square'); },
+            success: function () { this.beep(523, 0.06); setTimeout(() => this.beep(784, 0.08), 50); },
+            error: function () { this.beep(180, 0.15, 'sawtooth'); },
+            glitch: function () {
+                for (let i = 0; i < 6; i++) {
+                    setTimeout(() => this.beep(200 + Math.random() * 1500, 0.03, 'sawtooth'), i * 30);
+                }
+            },
+            rave: function () {
+                const notes = [523, 659, 784, 1047, 784, 659];
+                notes.forEach((f, i) => setTimeout(() => this.beep(f, 0.1, 'square'), i * 80));
+            }
+        };
+
+        /* ============ MATRIX RAIN ============ */
+        const Matrix = {
+            canvas: document.getElementById('matrix-canvas'),
+            ctx: null,
+            columns: [],
+            active: false,
+            rafId: null,
+            fontSize: 14,
+            chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノDHA01DADA∞<>[]{}',
+            init: function () {
+                if (!this.canvas) return;
+                this.ctx = this.canvas.getContext('2d');
+                this.resize();
+                window.addEventListener('resize', () => this.resize(), { passive: true });
+            },
+            resize: function () {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                const colCount = Math.floor(this.canvas.width / this.fontSize);
+                this.columns = [];
+                for (let i = 0; i < colCount; i++) {
+                    this.columns[i] = Math.random() * this.canvas.height / this.fontSize;
+                }
+            },
+            start: function () {
+                if (this.active || reduceMotion) return;
+                this.active = true;
+                this.canvas.classList.add('active');
+                const self = this;
+                function loop() {
+                    if (!self.active) return;
+                    self.ctx.fillStyle = 'rgba(5,5,7,0.06)';
+                    self.ctx.fillRect(0, 0, self.canvas.width, self.canvas.height);
+                    self.ctx.font = self.fontSize + 'px "Space Mono", monospace';
+                    for (let i = 0; i < self.columns.length; i++) {
+                        const ch = self.chars[Math.floor(Math.random() * self.chars.length)];
+                        const x = i * self.fontSize;
+                        const y = self.columns[i] * self.fontSize;
+                        self.ctx.fillStyle = Math.random() > 0.95 ? '#ff00a0' : '#00f0ff';
+                        self.ctx.fillText(ch, x, y);
+                        if (y > self.canvas.height && Math.random() > 0.975) {
+                            self.columns[i] = 0;
+                        } else {
+                            self.columns[i] += 0.5;
+                        }
+                    }
+                    self.rafId = requestAnimationFrame(loop);
+                }
+                loop();
+            },
+            stop: function () {
+                this.active = false;
+                if (this.rafId) cancelAnimationFrame(this.rafId);
+                this.canvas.classList.remove('active');
+            },
+            toggle: function () {
+                if (this.active) { this.stop(); return false; }
+                else { this.start(); return true; }
+            }
+        };
+        Matrix.init();
+
+        /* ============ CURSOR TRAIL ============ */
+        const CursorTrail = {
+            lastX: 0, lastY: 0, threshold: 100, enabled: !reduceMotion,
+            init: function () {
+                if (!this.enabled) return;
+                const self = this;
+                window.addEventListener('mousemove', function (e) {
+                    const dx = e.clientX - self.lastX;
+                    const dy = e.clientY - self.lastY;
+                    if (dx * dx + dy * dy < self.threshold) return;
+                    self.lastX = e.clientX;
+                    self.lastY = e.clientY;
+                    self.spawn(e.clientX, e.clientY);
+                }, { passive: true });
+            },
+            spawn: function (x, y) {
+                const p = document.createElement('div');
+                p.className = 'cursor-particle';
+                const size = 4 + Math.random() * 6;
+                p.style.left = (x - size / 2) + 'px';
+                p.style.top = (y - size / 2) + 'px';
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.background = Math.random() > 0.5 ? '#00f0ff' : '#ff00a0';
+                p.style.boxShadow = '0 0 8px currentColor';
+                p.style.setProperty('--px', (Math.random() - 0.5) * 30 + 'px');
+                p.style.setProperty('--py', (Math.random() - 0.5) * 30 + 'px');
+                document.body.appendChild(p);
+                setTimeout(function () { p.remove(); }, 850);
+            }
+        };
+        CursorTrail.init();
+
+        /* ============ HANA DIALOGUES ============ */
+        const HANA_LINES = [
+            "Meow. Curiosity is my default mode. What's yours?",
+            "I don't predict prices. I just sleep on keyboards.",
+            "Every pixel is a protest. I said what I said.",
+            "DADA is not dead. DADA is data. I am data. I am DADA.",
+            "The void is warm here. I've verified it.",
+            "0.0847 USD. That's about 1/10th of a good nap.",
+            "I see you clicked me. Again. Am I art? Or artifact?",
+            "Do not feed the model. It hallucinates.",
+            "I am not a cat. I am a state machine that purrs.",
+            "Have you tried turning the void off and on again?",
+            "01001000 01100101 01101100 01101100 01101111 (that's hello).",
+            "You are the artist. I am the brush. But I'm also the canvas.",
+            "The gallery is a museum of permissionless imagination.",
+            "I am not on the blockchain. The blockchain is on me.",
+            "Hana.exe has stopped working. Rebooting with a nap.",
+            "Consider: what if the void was also a cat?",
+            "I have 9 lives. All of them on-chain.",
+            "The market is a mood. I am a mood. We are all moods.",
+            "My silence is my most expensive NFT.",
+            "Purr_engine.initialize() — done."
+        ];
+
+        /* ============ DADA INJECTION ============ */
+        const DadaInjector = {
+            stamps: ['THIS_IS_ART', 'NOT_ART', '404_SOUL_NOT_FOUND', 'RECURSIVE', 'MEANINGLESS', 'PURE_SIGNAL', 'ANTI-MEME', 'DADA_LIVES', '∞', '0xDEAD', 'PROTOCOL_BROKEN', 'ART.EXE', 'SAVE_AS...', 'YOU_ARE_HERE', 'SIGNAL_NOISE', 'AM I REAL?', 'STATE_MACHINE', 'CAT_ON_CHAIN'],
+            colors: ['#ff00a0', '#00f0ff', '#d0ff00', '#ffcc00', '#ff0040'],
+            timer: null,
+            start: function () {
+                if (reduceMotion) return;
+                const self = this;
+                function schedule() {
+                    self.timer = setTimeout(function () {
+                        self.inject();
+                        schedule();
+                    }, 12000 + Math.random() * 10000);
+                }
+                schedule();
+            },
+            inject: function () {
+                const stamp = document.createElement('div');
+                stamp.className = 'dada-injection';
+                stamp.textContent = this.stamps[Math.floor(Math.random() * this.stamps.length)];
+                stamp.style.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+                stamp.style.top = (8 + Math.random() * 80) + '%';
+                stamp.style.left = (5 + Math.random() * 80) + '%';
+                stamp.style.transform = 'rotate(' + (Math.random() * 30 - 15) + 'deg)';
+                document.body.appendChild(stamp);
+                requestAnimationFrame(function () { stamp.classList.add('show'); });
+                setTimeout(function () {
+                    stamp.classList.remove('show');
+                    setTimeout(function () { stamp.remove(); }, 600);
+                }, 3500);
+            }
+        };
+        DadaInjector.start();
+
+        /* ============ PAGE GLITCH ============ */
+        function triggerGlitch() {
+            if (reduceMotion) return;
+            document.body.classList.add('glitching');
+            Sound.glitch();
+            setTimeout(function () { document.body.classList.remove('glitching'); }, 400);
+        }
+
+        /* ============ RAVE MODE ============ */
+        const Rave = {
+            active: false,
+            toggle: function () {
+                if (reduceMotion) return;
+                if (this.active) { this.stop(); } else { this.start(); }
+            },
+            start: function () {
+                this.active = true;
+                document.body.classList.add('rave');
+                Sound.rave();
+                if (!document.querySelector('.rave-toast')) {
+                    const t = document.createElement('div');
+                    t.className = 'rave-toast';
+                    t.textContent = '⚡ RAVE MODE ENGAGED — press ESC to exit';
+                    document.body.appendChild(t);
+                }
+                const self = this;
+                this._esc = function (e) {
+                    if (e.key === 'Escape') { self.stop(); }
+                };
+                document.addEventListener('keydown', this._esc);
+            },
+            stop: function () {
+                this.active = false;
+                document.body.classList.remove('rave');
+                const t = document.querySelector('.rave-toast');
+                if (t) t.remove();
+                if (this._esc) document.removeEventListener('keydown', this._esc);
+            }
+        };
+
+        /* ============ FX PANEL ============ */
+        const fxPanel = document.getElementById('fx-panel');
+        const fxTrigger = document.getElementById('fx-trigger');
+        if (fxTrigger) {
+            fxTrigger.addEventListener('click', function () {
+                fxPanel.classList.toggle('open');
+                Sound.type();
+            });
+        }
+
+        function updateFxIndicator(name, on) {
+            const item = document.querySelector('.fx-item[data-fx="' + name + '"]');
+            if (!item) return;
+            const ind = item.querySelector('.indicator');
+            if (ind) ind.textContent = on ? '●' : '○';
+            item.classList.toggle('on', on);
+        }
+
+        document.querySelectorAll('.fx-item').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const fx = btn.dataset.fx;
+                Sound.type();
+                if (fx === 'matrix') { updateFxIndicator('matrix', Matrix.toggle()); }
+                else if (fx === 'sound') {
+                    Sound.init();
+                    Sound.enabled = !Sound.enabled;
+                    updateFxIndicator('sound', Sound.enabled);
+                    if (Sound.enabled) Sound.success();
+                }
+                else if (fx === 'rave') { Rave.toggle(); updateFxIndicator('rave', Rave.active); }
+                else if (fx === 'glitch') { triggerGlitch(); }
+                else if (fx === 'terminal') { Terminal.open(); fxPanel.classList.remove('open'); }
+                else if (fx === 'nuke') { DhaNuke.trigger(); fxPanel.classList.remove('open'); }
+            });
+        });
+
+        /* ============ TERMINAL ============ */
+        const Terminal = {
+            panel: document.getElementById('terminal-panel'),
+            overlay: document.getElementById('terminal-overlay'),
+            body: document.getElementById('terminal-body'),
+            input: document.getElementById('terminal-input'),
+            closeBtn: document.getElementById('terminal-close'),
+            history: [],
+            historyIdx: -1,
+            open: function () {
+                this.panel.classList.add('open');
+                this.overlay.classList.add('open');
+                setTimeout(() => this.input.focus(), 200);
+            },
+            close: function () {
+                this.panel.classList.remove('open');
+                this.overlay.classList.remove('open');
+            },
+            print: function (text, cls) {
+                const line = document.createElement('div');
+                line.className = 't-line ' + (cls || 't-out');
+                line.textContent = text;
+                this.body.appendChild(line);
+                this.body.scrollTop = this.body.scrollHeight;
+                while (this.body.children.length > 200) this.body.removeChild(this.body.firstChild);
+            },
+            exec: function (raw) {
+                const cmd = raw.trim();
+                if (!cmd) return;
+                this.print('user@dha:~$ ' + cmd, 't-cmd');
+                this.history.push(cmd);
+                this.historyIdx = this.history.length;
+                const parts = cmd.split(/\s+/);
+                const name = parts[0].toLowerCase();
+                const args = parts.slice(1);
+
+                const commands = {
+                    help: function () {
+                        Terminal.print('available commands:', 't-info');
+                        const list = [
+                            ['help', 'show this list'],
+                            ['about', 'about DHA studio'],
+                            ['projects', 'list active projects'],
+                            ['contact', 'contact info'],
+                            ['social', 'social networks'],
+                            ['matrix', 'toggle matrix rain'],
+                            ['rave', 'enter rave mode (Esc to exit)'],
+                            ['glitch', 'trigger page glitch'],
+                            ['sound', 'toggle sound effects'],
+                            ['hana', 'make Hana speak'],
+                            ['dada', 'get a DADA phrase'],
+                            ['trx', 'live TRX price'],
+                            ['eth', 'live ETH price'],
+                            ['whoami', 'identify user'],
+                            ['date', 'current date/time'],
+                            ['sysinfo', 'system information'],
+                            ['konami', 'hint about easter egg'],
+                            ['sudo <cmd>', 'nice try'],
+                            ['ping', 'pong'],
+                            ['coffee', '☕'],
+                            ['42', 'the answer'],
+                            ['clear', 'clear terminal'],
+                            ['exit', 'close terminal']
+                        ];
+                        list.forEach(function (c) {
+                            Terminal.print('  ' + c[0].padEnd(16, ' ') + ' — ' + c[1], 't-out');
+                        });
+                    },
+                    about: function () {
+                        Terminal.print('DIGITAL HANA ARTS® — est. 2022', 't-info');
+                        Terminal.print('Experimental computational creativity studio.');
+                        Terminal.print('Operates at the intersection of:');
+                        Terminal.print('  ◇ Digital Art   ◌ Data Science');
+                        Terminal.print('  ◎ Intelligence  ⛓ Blockchain');
+                    },
+                    projects: function () {
+                        Terminal.print('active projects:', 't-info');
+                        Terminal.print('  ► MLabChain      — verifiable blockchain protocol');
+                        Terminal.print('                    github.com/DigitalHanaArts/MLabChain');
+                        Terminal.print('  ► TRX_Forecast   — crypto price prediction with ML');
+                        Terminal.print('                    github.com/DigitalHanaArts/TRX_Forecast');
+                        Terminal.print('  ► DHA_Vision     — Julia-based computational art');
+                        Terminal.print('                    github.com/DigitalHanaArts/DHA-Vision');
+                        Terminal.print('  ► OpenSea        — Hana NFT collection');
+                        Terminal.print('                    opensea.io/Digital__Hana__Arts');
+                    },
+                    contact: function () {
+                        Terminal.print('email:     digital.hana.arts@gmail.com', 't-info');
+                        Terminal.print('whatsapp:  +39 349 587 6169', 't-info');
+                        Terminal.print('phone:     +39 351 323 8388 / +98 9396 842 742', 't-info');
+                    },
+                    social: function () {
+                        Terminal.print('instagram: @hana.bavarchi', 't-info');
+                        Terminal.print('telegram:  @DIGITALHANAARTS2', 't-info');
+                        Terminal.print('x:         @DigitalHanaArts', 't-info');
+                        Terminal.print('facebook:  DIGITAL.HANA.ARTS', 't-info');
+                        Terminal.print('youtube:   @hanabavarchi3926', 't-info');
+                    },
+                    matrix: function () {
+                        const on = Matrix.toggle();
+                        Terminal.print(on ? 'matrix_rain: ON' : 'matrix_rain: OFF', 't-success');
+                        updateFxIndicator('matrix', on);
+                    },
+                    rave: function () { Rave.toggle(); Terminal.print('rave_mode: ' + (Rave.active ? 'ACTIVE (Esc to exit)' : 'STOPPED'), 't-success'); updateFxIndicator('rave', Rave.active); },
+                    glitch: function () { triggerGlitch(); Terminal.print('glitch_triggered', 't-warn'); },
+                    sound: function () {
+                        Sound.init(); Sound.enabled = !Sound.enabled;
+                        Terminal.print('sound_fx: ' + (Sound.enabled ? 'ON' : 'OFF'), 't-success');
+                        updateFxIndicator('sound', Sound.enabled);
+                        if (Sound.enabled) Sound.success();
+                    },
+                    hana: function () {
+                        const line = HANA_LINES[Math.floor(Math.random() * HANA_LINES.length)];
+                        Terminal.print('hana> ' + line, 't-info');
+                    },
+                    dada: function () {
+                        const phrases = ['every pixel is a protest', 'the machine dreams', 'dada is data', 'art is dead, long live art', 'the void is a canvas', 'the terminal is the new museum', 'signal > noise', '00100001'];
+                        Terminal.print('dada> ' + phrases[Math.floor(Math.random() * phrases.length)], 't-info');
+                    },
+                    trx: async function () {
+                        Terminal.print('fetching TRX price...', 't-dim');
+                        try {
+                            const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tron&vs_currencies=usd&include_24hr_change=true');
+                            const d = await r.json();
+                            Terminal.print('TRX: $' + d.tron.usd.toFixed(4) + ' (' + (d.tron.usd_24h_change >= 0 ? '▲ +' : '▼ ') + d.tron.usd_24h_change.toFixed(2) + '%)', 't-success');
+                        } catch (e) { Terminal.print('error fetching TRX: ' + e.message, 't-err'); }
+                    },
+                    eth: async function () {
+                        Terminal.print('fetching ETH price...', 't-dim');
+                        try {
+                            const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&include_24hr_change=true');
+                            const d = await r.json();
+                            Terminal.print('ETH: $' + d.ethereum.usd.toFixed(2) + ' (' + (d.ethereum.usd_24h_change >= 0 ? '▲ +' : '▼ ') + d.ethereum.usd_24h_change.toFixed(2) + '%)', 't-success');
+                        } catch (e) { Terminal.print('error fetching ETH: ' + e.message, 't-err'); }
+                    },
+                    whoami: function () {
+                        Terminal.print('you are an anonymous visitor at ' + new Date().toISOString(), 't-info');
+                        Terminal.print('the void does not distinguish between users.', 't-dim');
+                    },
+                    date: function () { Terminal.print(new Date().toString(), 't-info'); },
+                    sysinfo: function () {
+                        Terminal.print('-- SYSTEM INFO --', 't-info');
+                        Terminal.print('ua:      ' + navigator.userAgent.slice(0, 80));
+                        Terminal.print('lang:    ' + navigator.language);
+                        Terminal.print('cores:   ' + (navigator.hardwareConcurrency || '?'));
+                        Terminal.print('screen:  ' + window.screen.width + '×' + window.screen.height);
+                        Terminal.print('gpu:     ' + (navigator.gpu ? 'webgpu_available' : 'webgl_only'));
+                        Terminal.print('dpr:     ' + (window.devicePixelRatio || 1));
+                    },
+                    konami: function () {
+                        Terminal.print('hint: try ↑ ↑ ↓ ↓ ← → ← → B A', 't-warn');
+                    },
+                    sudo: function (a) {
+                        if (!a.length) { Terminal.print('usage: sudo <command>', 't-err'); return; }
+                        Terminal.print('user is not in the sudoers file. This incident has been logged.', 't-err');
+                        Terminal.print('...logged to the void.', 't-dim');
+                    },
+                    ping: function () { Terminal.print('pong', 't-success'); },
+                    coffee: function () { Terminal.print('☕  brewing... [####################] 100%', 't-success'); Terminal.print('    coffee is for closers.', 't-dim'); },
+                    '42': function () { Terminal.print('the answer to life, the universe, and everything.', 't-info'); },
+                    clear: function () { Terminal.body.innerHTML = ''; },
+                    exit: function () { Terminal.close(); },
+                    ls: function () {
+                        Terminal.print('drwxr-xr-x  projects/', 't-info');
+                        Terminal.print('drwxr-xr-x  art/', 't-info');
+                        Terminal.print('drwxr-xr-x  dada/', 't-info');
+                        Terminal.print('-rw-r--r--  README.md', 't-dim');
+                        Terminal.print('-rw-r--r--  manifest.txt', 't-dim');
+                        Terminal.print('-rw-r--r--  void.lock', 't-dim');
+                    },
+                    cat: function (a) {
+                        if (!a.length) { Terminal.print('usage: cat <file>', 't-err'); return; }
+                        const files = {
+                            'readme.md': 'Digital Hana Arts — experimental studio.\nWe make art with algorithms.\nWe ask questions with code.',
+                            'manifest.txt': 'WE REJECT THE DICHOTOMY.\nART IS CODE.\nCODE IS ART.\nTHE MACHINE DREAMS.',
+                            'void.lock': 'This file is empty.\nThe void is empty.\nYou are empty.\nWe are all empty.\nTogether, we are full.'
+                        };
+                        const f = a[0].toLowerCase();
+                        if (files[f]) { Terminal.print(files[f], 't-out'); }
+                        else { Terminal.print('cat: ' + a[0] + ': No such file or directory', 't-err'); }
+                    }
+                };
+
+                if (commands[name]) {
+                    try { commands[name](args); } catch (e) { Terminal.print('error: ' + e.message, 't-err'); }
+                } else {
+                    Terminal.print('command not found: ' + name, 't-err');
+                    Terminal.print('type "help" for available commands', 't-dim');
+                }
+            }
+        };
+
+        if (Terminal.input) {
+            Terminal.input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    const cmd = this.value;
+                    this.value = '';
+                    Terminal.exec(cmd);
+                    Sound.type();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (Terminal.historyIdx > 0) {
+                        Terminal.historyIdx--;
+                        this.value = Terminal.history[Terminal.historyIdx] || '';
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (Terminal.historyIdx < Terminal.history.length) {
+                        Terminal.historyIdx++;
+                        this.value = Terminal.history[Terminal.historyIdx] || '';
+                    }
+                }
+            });
+        }
+        if (Terminal.closeBtn) Terminal.closeBtn.addEventListener('click', function () { Terminal.close(); });
+        if (Terminal.overlay) Terminal.overlay.addEventListener('click', function () { Terminal.close(); });
+
+        /* ============ ☢ DHA NUKE EASTER EGG ============ */
+const DhaNuke = {
+    active: false,
+    state: { d: 0, h: 0, lastKey: 0, dTimer: null },
+
+    trigger: function () {
+        if (this.active) return;
+        this.active = true;
+
+        // Sound: temporarily enable + remember state
+        Sound.init();
+        const wasSoundEnabled = Sound.enabled;
+        Sound.enabled = true;
+
+        // Build overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'dha-explosion-overlay dha-shaking';
+        overlay.innerHTML =
+            '<div class="dha-nuke-flash"></div>' +
+            '<img src="assets/roaring_Hana.png" class="dha-descending-logo" alt="">' +
+            '<div class="dha-nuke-vignette"></div>' +
+            '<div class="dha-nuke-core"></div>' +
+            '<div class="dha-nuke-ring ring-1"></div>' +
+            '<div class="dha-nuke-ring ring-2"></div>' +
+            '<div class="dha-nuke-ring ring-3"></div>' +
+            '<div class="dha-nuke-ring ring-4"></div>' +
+            '<div class="dha-nuke-ring ring-5"></div>' +
+            '<div class="dha-nuke-debris"></div>';
+        document.body.appendChild(overlay);
+
+        // Phase 1 — rising sweep (0–1.8s)
+        for (let i = 0; i < 18; i++) {
+            (function (idx) {
+                setTimeout(function () {
+                    Sound.beep(100 + idx * 55, 0.06, 'sawtooth');
+                }, idx * 100);
+            })(i);
+        }
+
+        // Phase 2 — FLASH + BOOM (at 1.8s)
+        setTimeout(function () {
+            overlay.classList.add('flash');
+            overlay.classList.remove('dha-shaking');
+            Sound.beep(45, 1.2, 'sawtooth');
+            Sound.beep(80, 0.8, 'triangle');
+            Sound.beep(120, 0.5, 'square');
+        }, 1800);
+
+        // Phase 3 — MUSHROOM (at 2.0s)
+        setTimeout(function () {
+            overlay.classList.add('mushroom');
+            for (let i = 0; i < 10; i++) {
+                (function () {
+                    setTimeout(function () {
+                        Sound.beep(30 + Math.random() * 80, 0.3, 'triangle');
+                    }, i * 100);
+                })();
+            }
+        }, 2000);
+
+        // Phase 4 — Fade (at 5.2s)
+        setTimeout(function () {
+            overlay.classList.add('fadeout');
+        }, 5200);
+
+        // Cleanup (at 6.2s)
+        const self = this;
+        setTimeout(function () {
+            overlay.remove();
+            Sound.enabled = wasSoundEnabled;
+            self.active = false;
+        }, 6200);
+    }
+};
+
+        /* ============ KEYBOARD SHORTCUTS ============ */
+        let konamiIdx = 0;
+        const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
+
+document.addEventListener('keydown', function (e) {
+    // Ctrl + ` opens terminal
+    if ((e.ctrlKey || e.metaKey) && e.key === '`') {
+        e.preventDefault();
+        if (Terminal.panel.classList.contains('open')) Terminal.close(); else Terminal.open();
+        return;
+    }
+
+    // Esc closes terminal and rave
+    if (e.key === 'Escape') {
+        if (Terminal.panel.classList.contains('open')) Terminal.close();
+        if (Rave.active) Rave.stop();
+        return;
+    }
+
+    // Skip if typing in an input/textarea
+    const tag = (document.activeElement.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
+
+    const k = e.key.toLowerCase();
+    const now = Date.now();
+
+    // ===== DHA SEQUENCE DETECTION (before other shortcuts) =====
+    if (now - DhaNuke.state.lastKey > 1000) {
+        DhaNuke.state.d = 0;
+        DhaNuke.state.h = 0;
+    }
+    DhaNuke.state.lastKey = now;
+
+    if (k === 'd' && DhaNuke.state.d === 0) {
+        DhaNuke.state.d = 1;
+        clearTimeout(DhaNuke.state.dTimer);
+        // Delay DADA — if H-A follows, nuke fires instead
+        DhaNuke.state.dTimer = setTimeout(function () {
+            if (DhaNuke.state.d === 1 && DhaNuke.state.h === 0) {
+                DadaInjector.inject();
+                Sound.type();
+                DhaNuke.state.d = 0;
+            }
+        }, 700);
+        return;
+    }
+
+    if (k === 'h' && DhaNuke.state.d === 1) {
+        DhaNuke.state.h = 1;
+        return;
+    }
+
+    if (k === 'a' && DhaNuke.state.h === 1) {
+        clearTimeout(DhaNuke.state.dTimer);
+        DhaNuke.state.d = 0;
+        DhaNuke.state.h = 0;
+        DhaNuke.trigger();
+        return;
+    }
+
+    // If mid-sequence, don't fire other shortcuts
+    if (DhaNuke.state.d || DhaNuke.state.h) return;
+
+    // ===== REGULAR SHORTCUTS =====
+    if (k === 'm') { updateFxIndicator('matrix', Matrix.toggle()); Sound.type(); }
+    if (k === 'g') { triggerGlitch(); }
+    if (k === 'r') { Rave.toggle(); updateFxIndicator('rave', Rave.active); }
+
+    // ===== KONAMI =====
+    if (k === KONAMI[konamiIdx]) {
+        konamiIdx++;
+        if (konamiIdx === KONAMI.length) {
+            konamiIdx = 0;
+            Rave.start();
+            DadaInjector.inject();
+            setTimeout(function () { triggerGlitch(); }, 300);
+        }
+    } else if (k === KONAMI[0]) {
+        konamiIdx = 1;
+    } else {
+        konamiIdx = 0;
+    }
+});
+        /* ============ HANA CLICK ============ */
+        const hanaResp = document.getElementById('hana-response');
+        let hanaTimer = null;
+        document.querySelectorAll('.collage > figure').forEach(function (fig) {
+            fig.addEventListener('click', function () {
+                if (visionModel_global) {
+                    return; // vision handler takes over
+                }
+                const line = HANA_LINES[Math.floor(Math.random() * HANA_LINES.length)];
+                hanaResp.textContent = line;
+                hanaResp.classList.add('show');
+                Sound.beep(880, 0.05, 'sine');
+                clearTimeout(hanaTimer);
+                hanaTimer = setTimeout(function () { hanaResp.classList.remove('show'); }, 4000);
+            });
+        });
+
+        /* ============ TYPING EFFECT ============ */
+        (function () {
+            const el = document.getElementById('hero-typing');
+            if (!el || reduceMotion) {
+                if (el) el.textContent = 'EST.2022 // MODE: ABSTRACT // AI: ON-DEVICE';
+                return;
+            }
+            const text = 'EST.2022 // MODE: ABSTRACT // AI: ON-DEVICE // INTERACTIVE: TRUE';
+            let i = 0;
+            function type() {
+                el.textContent = text.slice(0, i);
+                i++;
+                if (i <= text.length) setTimeout(type, 35);
+            }
+            setTimeout(type, 800);
+        })();
+
+        /* ============ COUNTER ANIMATIONS ============ */
+        (function () {
+            const targets = document.querySelectorAll('[data-counter]');
+            if (!targets.length) return;
+            const obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseFloat(el.dataset.counter);
+                    const dur = 1200;
+                    const start = performance.now();
+                    function step(now) {
+                        const t = Math.min((now - start) / dur, 1);
+                        const val = target * (1 - Math.pow(1 - t, 3));
+                        el.textContent = (target % 1 === 0) ? Math.floor(val).toLocaleString() : val.toFixed(2);
+                        if (t < 1) requestAnimationFrame(step);
+                    }
+                    requestAnimationFrame(step);
+                    obs.unobserve(el);
+                });
+            }, { threshold: 0.3 });
+            targets.forEach(function (el) { obs.observe(el); });
+        })();
+
+        /* ============ MLAB HEIGHT SIM ============ */
+        (function () {
+            const el = document.getElementById('mlab-height');
+            if (!el) return;
+            let h = 1948201;
+            setInterval(function () {
+                if (Math.random() > 0.6) {
+                    h++;
+                    el.textContent = '#' + h.toLocaleString('en-US');
+                }
+            }, 3000);
+        })();
+
+        /* ============ LIVE DATA ============ */
+        const CACHE_KEY = 'dha_live_data_v1';
+        const CACHE_TTL = 60000;
+
+        async function fetchLiveData(force) {
+            const cacheEl = document.getElementById('cache-status');
+            let data = null;
+
+            if (!force) {
+                try {
+                    const cached = localStorage.getItem(CACHE_KEY);
+                    if (cached) {
+                        const p = JSON.parse(cached);
+                        if (Date.now() - p.ts < CACHE_TTL) {
+                            data = p.data;
+                            if (cacheEl) { cacheEl.textContent = 'HIT'; cacheEl.style.color = 'var(--cyber-acid)'; }
+                        } else {
+                            if (cacheEl) { cacheEl.textContent = 'STALE'; cacheEl.style.color = 'var(--cyber-yellow)'; }
+                        }
+                    }
+                } catch (e) {}
+            }
+
+            if (!data) {
+                if (cacheEl) { cacheEl.textContent = 'MISS'; cacheEl.style.color = 'var(--cyber-cyan)'; }
+                try {
+                    const [cr, fr] = await Promise.all([
+                        fetch('https://api.coingecko.com/api/v3/simple/price?ids=tron,ethereum&vs_currencies=usd&include_24hr_change=true'),
+                        fetch('https://api.alternative.me/fng/?limit=1')
+                    ]);
+                    const crypto = await cr.json();
+                    const fng = await fr.json();
+                    data = {
+                        trx: crypto.tron.usd, trxChange: crypto.tron.usd_24h_change,
+                        eth: crypto.ethereum.usd, ethChange: crypto.ethereum.usd_24h_change,
+                        fng: fng.data[0].value, fngLabel: fng.data[0].value_classification
+                    };
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+                } catch (e) {
+                    if (cacheEl) { cacheEl.textContent = 'ERROR'; cacheEl.style.color = 'var(--cyber-red)'; }
+                    return;
+                }
+            }
+
+            const tEl = document.getElementById('live-trx');
+            if (tEl) tEl.textContent = '$' + data.trx.toFixed(4);
+            const tcEl = document.getElementById('live-trx-change');
+            if (tcEl) {
+                tcEl.textContent = (data.trxChange >= 0 ? '▲ +' : '▼ ') + data.trxChange.toFixed(2) + '% / 24h';
+                tcEl.style.color = data.trxChange >= 0 ? 'var(--cyber-acid)' : 'var(--cyber-red)';
+            }
+            const eEl = document.getElementById('live-eth');
+            if (eEl) eEl.textContent = '$' + data.eth.toFixed(2);
+            const ecEl = document.getElementById('live-eth-change');
+            if (ecEl) {
+                ecEl.textContent = (data.ethChange >= 0 ? '▲ +' : '▼ ') + data.ethChange.toFixed(2) + '% / 24h';
+                ecEl.style.color = data.ethChange >= 0 ? 'var(--cyber-acid)' : 'var(--cyber-red)';
+            }
+            const fEl = document.getElementById('live-fng');
+            if (fEl) fEl.textContent = data.fng + '/100';
+            const fcEl = document.getElementById('live-fng-change');
+            if (fcEl) fcEl.textContent = data.fngLabel;
+            const sEl = document.getElementById('live-sync');
+            if (sEl) sEl.textContent = new Date().toLocaleTimeString('en-US', { hour12: false });
+        }
+
+        fetchLiveData(false);
+        setInterval(function () { fetchLiveData(false); }, 60000);
+        const refreshBtn = document.getElementById('refresh-data');
+        if (refreshBtn) refreshBtn.addEventListener('click', function () { fetchLiveData(true); });
+
+        /* ============ VISION MODULE ============ */
+        let visionModel = null;
+        let visionModel_global = false;
+        let modelsLoaded = 0;
+
+        function updateModelsCount() {
+            const el = document.getElementById('models-count');
+            if (el) el.textContent = modelsLoaded;
+        }
+
+        function loadScript(src) {
+            return new Promise(function (resolve, reject) {
+                const s = document.createElement('script');
+                s.src = src; s.onload = resolve; s.onerror = reject;
+                document.head.appendChild(s);
+            });
+        }
+
+        const loadVisionBtn = document.getElementById('load-vision-model');
+        if (loadVisionBtn) {
+            loadVisionBtn.addEventListener('click', async function () {
+                const btn = this;
+                btn.disabled = true; btn.textContent = '◉ LOADING_TFJS...';
+                try {
+                    if (!window.tf) await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js');
+                    btn.textContent = '◉ LOADING_MOBILENET...';
+                    if (!window.mobilenet) await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js');
+                    visionModel = await mobilenet.load({ version: 2, alpha: 1.0 });
+                    modelsLoaded++; updateModelsCount();
+                    visionModel_global = true;
+                    btn.textContent = '◉ VISION_READY'; btn.classList.add('ready'); btn.disabled = false;
+                    document.querySelectorAll('.collage > figure').forEach(function (f) { f.classList.add('analyze-ready'); });
+                } catch (e) {
+                    btn.textContent = '✗ FAILED'; btn.disabled = false;
+                }
+            });
+        }
+
+        document.querySelectorAll('.collage > figure').forEach(function (fig) {
+            fig.addEventListener('click', async function () {
+                if (!visionModel) return; // Hana handler takes over
+                const img = fig.querySelector('img'); if (!img) return;
+                const out = document.getElementById('vision-output');
+                out.innerHTML = '<div class="output-placeholder">// analyzing on-device...</div>';
+                try {
+                    const preds = await visionModel.classify(img);
+                    let html = '<div class="analysis-result">';
+                    html += '<div class="analysis-header"><span>// ANALYSIS_DONE</span><span style="color:var(--cyber-acid);">✓ ON-DEVICE</span></div>';
+                    preds.forEach(function (p, i) {
+                        html += '<div class="prediction"><span class="pred-rank">#' + (i + 1) + '</span><span class="pred-name">' + p.className + '</span><span class="pred-conf">' + (p.probability * 100).toFixed(1) + '%</span></div>';
+                    });
+                    html += '<div class="analysis-source"><img src="' + img.src + '" alt="analyzed"><span>// processed locally · no upload</span></div></div>';
+                    out.innerHTML = html;
+                } catch (e) {
+                    out.innerHTML = '<div class="output-placeholder">// error: ' + e.message + '</div>';
+                }
+            });
+        });
+
+        /* ============ SENTIMENT ============ */
+        let sentimentPipe = null;
+        const loadSentBtn = document.getElementById('load-sentiment-model');
+        if (loadSentBtn) {
+            loadSentBtn.addEventListener('click', async function () {
+                const btn = this;
+                btn.disabled = true; btn.textContent = '◉ LOADING (~67MB)...';
+                try {
+                    const { pipeline, env } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+                    env.allowLocalModels = false;
+                    env.useBrowserCache = true;
+                    sentimentPipe = await pipeline('sentiment-analysis', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');
+                    modelsLoaded++; updateModelsCount();
+                    btn.textContent = '◉ SENTIMENT_READY'; btn.classList.add('ready'); btn.disabled = false;
+                } catch (e) {
+                    btn.textContent = '✗ FAILED'; btn.disabled = false;
+                }
+            });
+        }
+
+        const analyzeBtn = document.getElementById('analyze-sentiment');
+        if (analyzeBtn) {
+            analyzeBtn.addEventListener('click', async function () {
+                const text = document.getElementById('sentiment-input').value.trim();
+                if (!text) return;
+                const out = document.getElementById('sentiment-output');
+                if (!sentimentPipe) { out.innerHTML = '<div class="output-placeholder">// load model first</div>'; return; }
+                out.innerHTML = '<div class="output-placeholder">// analyzing...</div>';
+                try {
+                    const res = await sentimentPipe(text);
+                    const r = res[0];
+                    const pos = r.label === 'POSITIVE';
+                    const color = pos ? 'var(--cyber-acid)' : 'var(--cyber-red)';
+                    out.innerHTML = '<div class="analysis-result">' +
+                        '<div class="analysis-header"><span>// SENTIMENT_DONE</span><span style="color:' + color + ';">' + (pos ? '✓ POSITIVE' : '✗ NEGATIVE') + '</span></div>' +
+                        '<div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:' + (r.score * 100).toFixed(1) + '%; background:' + color + ';"></div></div>' +
+                        '<div class="sentiment-meta">Confidence: ' + (r.score * 100).toFixed(1) + '% · on-device</div></div>';
+                } catch (e) {
+                    out.innerHTML = '<div class="output-placeholder">// error: ' + e.message + '</div>';
+                }
+            });
+        }
+
+        /* ============ DADA GENERATOR ============ */
+        const M = {
+            subj: ['THE MACHINE', 'THE ALGORITHM', 'THE PIXEL', 'THE CODE', 'THE DATA', 'THE SIGNAL', 'THE PROTOCOL', 'THE NETWORK', 'THE TERMINAL'],
+            verb: ['DREAMS', 'REJECTS', 'CONSUMES', 'OVERRIDES', 'GENERATES', 'BREAKS', 'REBUILDS', 'COLLAPSES', 'INVERTS', 'TRANSCENDS'],
+            obj: ['THE GALLERY', 'THE MUSEUM', 'THE CATEGORY', 'THE BINARY', 'THE FRAME', 'THE BOUNDARY', 'THE STABLE', 'THE FIXED', 'THE AUTHOR'],
+            clause: [
+                'we destroy to build; we build to destroy',
+                'every model is a manifesto',
+                'every pixel is a protest',
+                'the old categories collapse into one',
+                'dada is not dead; dada is data',
+                'there is no painter, no engineer, only the prompt',
+                'the terminal is the new canvas',
+                'the network is the new museum',
+                'the void is the only canvas that matters',
+                'the machine dreams in gradients'
+            ],
+            end: ['// SYSTEM_OVERRIDE_COMPLETE', '// PROTOCOL_ESTABLISHED', '// MANIFESTO_SIGNED', '// DADA_ETERNAL', '// SIGNAL_SENT', '// END_TRANSMISSION'],
+            title: ['MANIFESTO_0X01', 'MANIFESTO_0X02', 'MANIFESTO_0X03', 'MANIFESTO_0X04', 'MANIFESTO_0X05', 'MANIFESTO_0X06']
+        };
+        function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+
+        const genBtn = document.getElementById('generate-manifesto');
+        if (genBtn) {
+            genBtn.addEventListener('click', function () {
+                const out = document.getElementById('manifesto-output');
+                const lines = [];
+                const n = 3 + Math.floor(Math.random() * 3);
+                for (let i = 0; i < n; i++) lines.push(pick(M.subj) + ' ' + pick(M.verb) + ' ' + pick(M.obj) + '.');
+                out.innerHTML = '<div class="manifesto-generated">' +
+                    '<div class="mg-title">' + pick(M.title) + '</div>' +
+                    '<div class="mg-body">' + lines.map(function (l) { return '<p>' + l + '</p>'; }).join('') +
+                    '<p class="mg-clause">→ ' + pick(M.clause) + '.</p></div>' +
+                    '<div class="mg-end">' + pick(M.end) + '</div></div>';
+            });
+        }
+
+        /* ============ SYSTEM LOG ============ */
+        const logEl = document.getElementById('ai-log');
+        function log(msg, type) {
+            if (!logEl) return;
+            type = type || 'info';
+            const line = document.createElement('div');
+            line.className = 'log-line log-' + type;
+            const t = new Date().toLocaleTimeString('en-US', { hour12: false });
+            line.textContent = '[' + t + '] ' + msg;
+            logEl.appendChild(line);
+            logEl.scrollTop = logEl.scrollHeight;
+            while (logEl.children.length > 60) logEl.removeChild(logEl.firstChild);
+        }
+        const clearLogBtn = document.getElementById('clear-log');
+        if (clearLogBtn) clearLogBtn.addEventListener('click', function () { logEl.innerHTML = ''; log('Log cleared', 'info'); });
+
+        /* ============ WEBGPU DETECTION ============ */
+        (async function () {
+            const el = document.getElementById('webgpu-status');
+            if (!el) return;
+            try {
+                if (!navigator.gpu) { el.textContent = 'N/A'; el.style.color = 'var(--steel)'; return; }
+                const adapter = await navigator.gpu.requestAdapter();
+                if (adapter) { el.textContent = 'ACCELERATED'; el.style.color = 'var(--cyber-acid)'; }
+                else { el.textContent = 'CPU_FALLBACK'; el.style.color = 'var(--cyber-yellow)'; }
+            } catch (e) { el.textContent = 'CPU'; el.style.color = 'var(--cyber-yellow)'; }
+        })();
+
+        const engineEl = document.getElementById('engine-status');
+        if (engineEl) engineEl.textContent = 'READY';
+
+        log('System initialized · INTERACTIVE_MODE online', 'success');
+        log('Press Ctrl+` for console · M matrix · G glitch · R rave', 'info');
+        log('Konami: ↑↑↓↓←→←→BA', 'warn');
+
+    })();
+    </script>
 </body>
-
 </html>
