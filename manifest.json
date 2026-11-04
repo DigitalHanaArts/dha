@@ -1,0 +1,44 @@
+{
+  "background_color": "#5740f6",
+  "description": "Digital Hana Arts® — AI-empowered cyberpunk studio. Art, data, AI, blockchain. Interactive terminal, on-device ML, easter eggs.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Digital Hana Arts®",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "DHA",
+  "start_url": "/",
+  "theme_color": "#eb1414",
+  "icons": [
+    {
+      "src": "https://digitalhanaarts.github.io/dha/assets/DHA_neon.jpg",
+      "type": "image/jpeg",
+      "sizes": "1024x1024",
+      "isSquare": true,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": true,
+      "width": 1024,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    },
+    {
+      "src": "https://digitalhanaarts.github.io/dha/assets/DHA_logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "1254x1254",
+      "isSquare": true,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": true,
+      "width": 1254,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "/",
+  "share_target": {
+    "method": "GET"
+  }
+}
